@@ -58,11 +58,16 @@ class SiteController extends Controller
         //test CreateUser
         //$user = new Users;
         //$user->ip = '127.0.0.1';
-        print_r(Yii::$app->user->identity);
+        //print_r(Yii::$app->user->identity);
         /*if (!$user->save())
             print_r($user->getErrors());*/
         //print_r(Yii::$app->getRequest()->getUserIP());
 
+        $userRole = Yii::$app->authManager->getRole('user');
+        //Yii::$app->authManager->assign($userRole, 1); Назаначение роли пользователю
+        print_r(Yii::$app->authManager->getRolesByUser(Yii::$app->user->id));
+
+        print_r(Yii::$app->user->can('user'));
     }
 
     public function actionLogin()
