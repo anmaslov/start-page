@@ -18,18 +18,18 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'css/bootstrap.css', //bootstrap
         'css/site.css',
     ];
     public $jsOptions = [
-        'condition' => 'lt IE 9',
         'position' => \yii\web\View::POS_HEAD,
     ];
     public $js = [
-        'js/html5shiv.js',
-        'js/respond.min.js',
+        //'js/jquery.min.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'app\assets\IEJqueryAsset'
     ];
 }

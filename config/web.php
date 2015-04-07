@@ -44,12 +44,18 @@ $config = [
         'assetManager' => [
             'bundles' => [
                 'yii\web\JqueryAsset' => [
-                    'sourcePath' => null,   // не опубликовывать комплект
+                    'sourcePath' => null,
+                    'basePath' => '@webroot',
+                    'baseUrl' => '@web',
                     'js' => [
-                        '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+                        'js/jquery.min.js',
                     ]
                 ],
+                'yii\bootstrap\BootstrapAsset' => [
+                    'css' => [],
+                ],
             ],
+            'appendTimestamp' => true,
         ],
     ],
     'params' => $params,
