@@ -41,11 +41,21 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'assetManager' => [
+            'bundles' => [
+                'yii\web\JqueryAsset' => [
+                    'sourcePath' => null,   // не опубликовывать комплект
+                    'js' => [
+                        '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+                    ]
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];
 
-if (YII_ENV_DEV) {
+if (!YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = 'yii\debug\Module';

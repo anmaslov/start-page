@@ -20,7 +20,13 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
     ];
+    public $jsOptions = [
+        'condition' => 'lt IE 9',
+        'position' => \yii\web\View::POS_HEAD,
+    ];
     public $js = [
+        'js/html5shiv.js',
+        'js/respond.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',
