@@ -28,6 +28,12 @@ class m150403_085205_create_user_table extends Migration
 
         $this->createIndex('idx_user_ip', '{{%user}}', 'ip', true);
         $this->createIndex('idx_user_status', '{{%user}}', 'status');
+
+        $this->insert('{{%user}}', [
+            'username' => 'localhost',
+            'ip' => '127.0.0.1'
+        ]);
+
     }
 
 
@@ -35,15 +41,5 @@ class m150403_085205_create_user_table extends Migration
     {
         $this->dropTable('{{%user}}');
     }
-    
-    /*
-    // Use safeUp/safeDown to run migration code within a transaction
-    public function safeUp()
-    {
-    }
-    
-    public function safeDown()
-    {
-    }
-    */
+
 }
