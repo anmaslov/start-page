@@ -3,14 +3,19 @@
 $params = require(__DIR__ . '/params.php');
 
 $config = [
-    'id' => 'basic',
+    'id' => 'page',
     'basePath' => dirname(__DIR__),
+    'language' => 'ru-RU',
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '3OGRrGatQ1P9jYZVw3eucsBRz3NHAdMl',
         ],
+        /*'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+        ],*/
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
