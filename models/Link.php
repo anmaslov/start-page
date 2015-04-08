@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%link}}".
@@ -21,6 +22,11 @@ use Yii;
  */
 class Link extends \yii\db\ActiveRecord
 {
+
+    const STATUS_DISABLE = 0;
+    const STATUS_ACTIVE = 1;
+    const STATUS_HIDDEN = 2;
+
     /**
      * @inheritdoc
      */
@@ -29,6 +35,12 @@ class Link extends \yii\db\ActiveRecord
         return '{{%link}}';
     }
 
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
     /**
      * @inheritdoc
      */
@@ -39,7 +51,24 @@ class Link extends \yii\db\ActiveRecord
             [['block_id', 'order', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 64],
             [['href'], 'string', 'max' => 128],
-            [['icon'], 'string', 'max' => 32]
+            [['icon'], 'string', 'max' => 32],
+
+            ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
+        ];
+    }
+
+    public function getStatusName()
+    {
+        $statuses = self::getStatusesArray();
+        return isset($statuses[$this->status]) ? $statuses[$this->status] : '';
+    }
+
+    public static function getStatusesArray()
+    {
+        return [
+            self::STATUS_DISABLE => 'Заблокирована',
+            self::STATUS_ACTIVE => 'Активена',
+            self::STATUS_HIDDEN => 'Скрыта',
         ];
     }
 
@@ -52,12 +81,12 @@ class Link extends \yii\db\ActiveRecord
             'id' => 'ID',
             'block_id' => 'Block ID',
             'order' => 'Order',
-            'status' => 'Status',
-            'title' => 'Title',
-            'href' => 'Href',
-            'icon' => 'Icon',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'status' => 'Статус',
+            'title' => 'Имя',
+            'href' => 'Ссылка',
+            'icon' => 'Иконка',
+            'created_at' => 'Создана',
+            'updated_at' => 'Обновлена',
         ];
     }
 
