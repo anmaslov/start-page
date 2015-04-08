@@ -90,20 +90,21 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
     public static function sync($userId)
     {
         $blocks = Block::find()->all(); //TODO add this template
-        $userBlocks = self::find()->where(['user_id' => $userId])->indexBy('id')->all();
+        $userBlocks = self::find()->where(['user_id' => $userId])->indexBy('block_id')->all();
 
         foreach($blocks as $block)
         {
             if(!array_key_exists($block->id, $userBlocks))
             {
                 $ub = new self;
+                $ub->attributes = $block->attributes;
+
                 $ub->user_id = $userId;
                 $ub->block_id = $block->id;
-                $ub->column = $block->column;
-                $ub->order = $block->order;
-                $ub->hidden = $block->hidden;
                 $ub->save();
             }
         }
     }
+
+
 }

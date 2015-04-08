@@ -80,4 +80,18 @@ class Block extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Link::className(), ['block_id' => 'id']);
     }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getUserSettingsBlocks()
+    {
+        return $this->hasMany(UserSettingsBlock::className(), ['block_id' => 'id']);
+    }
+
+    public function getInfoLink()
+    {
+        return Link::find()->where(['block_id' => $this->id])->all();
+    }
+
 }

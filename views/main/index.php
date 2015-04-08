@@ -1,7 +1,43 @@
 <?php
 /* @var $this yii\web\View */
+use yii\helpers\ArrayHelper;
 $this->title = 'Стартовая страница';
 ?>
+
+<div class="row">
+<?$colId = ArrayHelper::map($model, 'column', 'column');?>
+<pre>
+    <? //print_r($model)?>
+</pre>
+<?foreach($colId as $col):?>
+    <div class="col-md-4">
+        <?foreach($model as $arItem):?>
+            <?if($arItem->column == $col):?>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <?=$arItem->block->title?> (<?=$arItem->block->id?>)
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                    <? $links = $arItem->block->infolink ?>
+                    <?if(count($links)>0):?>
+                        <div class="list-group">
+                            <?foreach($links as $link):?>
+                                <a href="<?=$link->href?>" class="list-group-item">
+                                    <?if(strlen($link->icon)>0):?>
+                                        <i class="glyphicon glyphicon-<?=$link->icon?>"></i>
+                                    <?endif?>
+                                    <?=$link->title?>
+                                </a>
+                            <?endforeach?>
+                        </div>
+                    <?endif?>
+                </div>
+            <?endif?>
+        <?endforeach?>
+    </div>
+<?endforeach?>
+</div>
+
 
 <div class="row">
     <div class="col-sm-4">
