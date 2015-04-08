@@ -17,8 +17,11 @@ use Yii;
  *
  * @property Link[] $links
  */
-class PgBlock extends \yii\db\ActiveRecord
+class Block extends \yii\db\ActiveRecord
 {
+
+    const STATUS_HIDDEN = 0;
+    const STATUS_SHOW = 1;
     /**
      * @inheritdoc
      */
@@ -35,7 +38,22 @@ class PgBlock extends \yii\db\ActiveRecord
         return [
             [['column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
             [['title', 'created_at', 'updated_at'], 'required'],
-            [['title'], 'string', 'max' => 32]
+            [['title'], 'string', 'max' => 32],
+            ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
+        ];
+    }
+
+    public function getStatusName()
+    {
+        $statuses = self::getStatusesArray();
+        return isset($statuses[$this->status]) ? $statuses[$this->status] : '';
+    }
+
+    public static function getStatusesArray()
+    {
+        return [
+            self::STATUS_HIDDEN => 'Скрыт',
+            self::STATUS_SHOW => 'Отображается',
         ];
     }
 

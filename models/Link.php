@@ -19,7 +19,7 @@ use Yii;
  *
  * @property Block $block
  */
-class PgLink extends \yii\db\ActiveRecord
+class Link extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
