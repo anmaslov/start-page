@@ -3,7 +3,7 @@
 namespace app\models;
 
 use Yii;
-
+use yii\behaviors\TimestampBehavior;
 /**
  * This is the model class for table "{{%user_settings_block}}".
  *
@@ -32,10 +32,20 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
-            [['user_id', 'block_id', 'created_at', 'updated_at'], 'required'],
+            [['user_id', 'block_id'], 'required'],
             [['user_id', 'block_id', 'column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer']
         ];
     }
@@ -71,5 +81,29 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
     public function getBlock()
     {
         return $this->hasOne(Block::className(), ['id' => 'block_id']);
+    }
+
+    /***
+     * sync userBlock
+     * @param $userId
+     */
+    public static function sync($userId)
+    {
+        $blocks = Block::find()->all(); //TODO add this template
+        $userBlocks = self::find()->where(['user_id' => $userId])->indexBy('id')->all();
+
+        foreach($blocks as $block)
+        {
+            if(!array_key_exists($block->id, $userBlocks))
+            {
+                $ub = new self;
+                $ub->user_id = $userId;
+                $ub->block_id = $block->id;
+                $ub->column = $block->column;
+                $ub->order = $block->order;
+                $ub->hidden = $block->hidden;
+                $ub->save();
+            }
+        }
     }
 }
