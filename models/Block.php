@@ -15,7 +15,11 @@ use Yii;
  * @property integer $created_at
  * @property integer $updated_at
  *
+ * @property string $state
+ *
+ * @property State $state0
  * @property Link[] $links
+ * @property UserSettingsBlock[] $userSettingsBlocks
  */
 class Block extends \yii\db\ActiveRecord
 {
@@ -39,6 +43,7 @@ class Block extends \yii\db\ActiveRecord
             [['column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
             [['title', 'created_at', 'updated_at'], 'required'],
             [['title'], 'string', 'max' => 32],
+            [['state'], 'string', 'max' => 64],
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
         ];
     }
@@ -68,6 +73,7 @@ class Block extends \yii\db\ActiveRecord
             'order' => 'Order',
             'title' => 'Title',
             'hidden' => 'Hidden',
+            'state' => 'State',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];
@@ -87,6 +93,14 @@ class Block extends \yii\db\ActiveRecord
     public function getUserSettingsBlocks()
     {
         return $this->hasMany(UserSettingsBlock::className(), ['block_id' => 'id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getState0()
+    {
+        return $this->hasOne(State::className(), ['name' => 'state']);
     }
 
     public function getInfoLink()

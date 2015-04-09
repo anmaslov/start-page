@@ -15,7 +15,9 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $hidden
  * @property integer $created_at
  * @property integer $updated_at
+ * @property string $state
  *
+ * @property State $state0
  * @property User $user
  * @property Block $block
  */
@@ -46,7 +48,8 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'block_id'], 'required'],
-            [['user_id', 'block_id', 'column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer']
+            [['user_id', 'block_id', 'column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
+            [['state'], 'string', 'max' => 64]
         ];
     }
 
@@ -64,7 +67,16 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
             'hidden' => 'Hidden',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
+            'state' => 'State',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getState0()
+    {
+        return $this->hasOne(State::className(), ['name' => 'state']);
     }
 
     /**
