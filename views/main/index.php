@@ -6,16 +6,14 @@ $this->title = 'Стартовая страница';
 
 <div class="row">
 <?$colId = ArrayHelper::map($model, 'column', 'column');?>
-<pre>
-    <? //print_r($model)?>
-</pre>
+
 <?foreach($colId as $col):?>
     <div class="col-md-4">
         <?foreach($model as $arItem):?>
             <?if($arItem->column == $col):?>
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <?=$arItem->block->title?> (<?=$arItem->block->id?>)
+                        <?=$arItem->block->title?>
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     </div>
                     <? $links = $arItem->block->infolink ?>
@@ -40,7 +38,6 @@ $this->title = 'Стартовая страница';
     </div>
 <?endforeach?>
 </div>
-
 
 <div class="row">
     <div class="col-sm-4">

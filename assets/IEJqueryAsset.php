@@ -9,11 +9,11 @@ class IEJqueryAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $js = [
-        'js/html5shiv.js',
+        'js/html5shiv.min.js',
         'js/respond.min.js',
     ];
     public $jsOptions = [
-        'condition' => 'lte IE9',
+        'condition' => 'lt IE 9',
         'position' => \yii\web\View::POS_HEAD,
     ];
 

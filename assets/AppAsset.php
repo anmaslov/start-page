@@ -28,8 +28,8 @@ class AppAsset extends AssetBundle
         //'js/jquery.min.js'
     ];
     public $depends = [
+        'app\assets\IEJqueryAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-        'app\assets\IEJqueryAsset'
     ];
 }
