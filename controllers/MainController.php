@@ -5,14 +5,13 @@ namespace app\controllers;
 use app\models\Block;
 use app\models\Link;
 use app\models\UserSettingsBlock;
+use yii\helpers\Json;
 
 class MainController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-
-        //$dblock = new UserSettingsBlock;
-        UserSettingsBlock::sync(1);
+        UserSettingsBlock::sync(1); //todo return data model
         //$block = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW])->all();
 
         $model = UserSettingsBlock::find()
@@ -24,6 +23,17 @@ class MainController extends \yii\web\Controller
         return $this->render('index', [
             'model' => $model,
         ]);
+    }
+
+    public function actionUpdate()
+    {
+        $items = \Yii::$app->request->get('items');
+        echo json_encode($items);
+        //Yii::app->end();
+
+        //UserWidget::model()->sortUpdate(Yii::app()->user->id, $items);
+        //   echo json_encode($items);
+        //Yii::app()->end();
     }
 
 }

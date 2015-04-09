@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\ArrayHelper;
 use app\assets\UiAsset;
+use yii\helpers\Url;
 
 UiAsset::register($this);
 $this->title = 'Стартовая страница';
@@ -11,7 +12,7 @@ $this->title = 'Стартовая страница';
 <?$colId = ArrayHelper::map($model, 'column', 'column');?>
 
 <?foreach($colId as $col):?>
-    <div class="column col-xs-4">
+    <div class="column col-xs-4" id="column<?=$col?>">
         <?foreach($model as $arItem):?>
             <?if($arItem->column == $col):?>
                 <div class="panel panel-<?=$arItem->state?>">
@@ -50,19 +51,46 @@ $this->title = 'Стартовая страница';
             cursor: 'move',
             placeholder: 'placeholder',
             forcePlaceholderSize: true,
-            opacity: 0.4
-            /*start: function(event, ui){
+            opacity: 0.6,
+            start: function(event, ui){
                 //Firefox, Safari/Chrome fire click event after drag is complete, fix for that
-                if($.browser.mozilla || $.browser.safari)
-                    $(ui.item).find('.dragbox-content').toggle();
+                /*if($.browser.mozilla || $.browser.safari)
+                    $(ui.item).find('.dragbox-content').toggle();*/
             },
             stop: function(event, ui){
                 ui.item.css({'top':'0','left':'0'}); //Opera fix
-                if(!$.browser.mozilla && !$.browser.safari)
-                    //updateWidgetData();
-                    console.log('ok');
-            }*/
+                //if(!$.browser.mozilla && !$.browser.safari)
+                    updateWidgetData();
+            }
         }).disableSelection();
+
+        function updateWidgetData(){
+            var items=[];
+            $('.column').each(function(){
+                var columnId=$(this).attr('id');
+                $('.panel', this).each(function(i){
+                    var collapsed=0;
+                    if($(this).find('.list-group').css('display')=="none")
+                        collapsed=1;
+                    var item={
+                        id: $(this).attr('id'),
+                        collapsed: collapsed,
+                        order : i,
+                        column: columnId
+                    };
+                    items.push(item);
+                });
+            });
+            var sortorder={ items: items };
+
+            $.get('<?=Url::toRoute(['update', 'id' => 'contact'])?>',{items: items},function(data){
+                if(data.result=='success'){
+                    console.log(data);
+                }
+                console.log(data);
+            },"json");
+
+        }
 
         $( ".panel-heading .close" ).click(function() {
             var icon = $( this );
