@@ -1,14 +1,17 @@
 @import "../../vendor/bower/bootstrap/less/bootstrap.less";
 @import "variables.less";
 
-p {
-  margin: 20px 0;
-}
 
-.form-control {
-  box-shadow: none;
-}
-
-.btn {
-
+.column{
+  min-height:300px;
+  .placeholder{
+    background: @gray-lighter;
+    border:1px dashed @gray-light;
+    margin-bottom: 20px;
+    -moz-border-radius:7px;
+    -webkit-border-radius:7px;
+  }
+  .panel-heading{
+    cursor: move;
+  }
 }
