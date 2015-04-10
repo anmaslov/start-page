@@ -41,10 +41,11 @@ class Block extends \yii\db\ActiveRecord
     {
         return [
             [['column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
-            [['title', 'created_at', 'updated_at'], 'required'],
+            [['column', 'title', 'created_at', 'updated_at'], 'required'],
             [['title'], 'string', 'max' => 32],
             [['state'], 'string', 'max' => 64],
-            ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
+            ['hidden', 'in', 'range' => array_keys(self::getStatusesArray())],
+            ['column', 'in', 'range' => array('1', '2', '3')]
         ];
     }
 
@@ -69,11 +70,11 @@ class Block extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'column' => 'Column',
-            'order' => 'Order',
-            'title' => 'Title',
+            'column' => 'Столбец',
+            'order' => 'Сортировка',
+            'title' => 'Заголовк',
             'hidden' => 'Hidden',
-            'state' => 'State',
+            'state' => 'Оформление',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

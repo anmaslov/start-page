@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\Block;
 use yii\filters\AccessControl;
 
@@ -21,7 +22,7 @@ class BlockController extends \yii\web\Controller
                     ],*/
                     [
                         'allow' => true,
-                        'actions' => ['index'],
+                        'actions' => ['index', 'update', 'create'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -38,9 +39,46 @@ class BlockController extends \yii\web\Controller
         ]);
     }
 
-    public function actionEditBlock()
+    public function actionUpdate($id)
     {
+        $model = $this->findModel($id);
 
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('updateBlock', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    public function actionCreate()
+    {
+        $model = new Block();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view']);
+        } else {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+    /**
+     * Finds the Link model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param integer $id
+     * @return Link the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = Block::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
 }
