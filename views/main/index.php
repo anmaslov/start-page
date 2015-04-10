@@ -21,7 +21,10 @@ $this->title = 'Стартовая страница';
                 <div class="panel panel-<?=$arItem->state?>" id="item<?=$arItem->id?>">
                     <div class="panel-heading">
                         <?=$arItem->block->title?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">‒</span></button>
+                        <button type="button" class="close toggle" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">‒</span></button>
+                        <a href="#" class="close config" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true" class="glyphicon glyphicon-cog"></span>
+                        </a>
                     </div>
                     <? $links = $arItem->block->infolink ?>
                     <?if(count($links)>0):?>
@@ -89,13 +92,18 @@ $this->title = 'Стартовая страница';
             },"json");
         }
 
-        $( ".panel-heading .close" ).click(function() {
+        $( '.panel-heading .toggle' ).click(function() {
             var icon = $( this );
             icon.find('span').text() == '+' ? icon.find('span').text('‒') : icon.find('span').text('+');
             $(this).closest( ".panel").find( ".list-group" ).toggle('slow').promise().done(function(){
                 updateWidgetData();
             });
+        });
 
+        $('.panel-heading .config').click(function(){
+            var itemId = $(this).closest( ".panel").attr('id');
+            var link = "<?=Url::toRoute(['block/editUserBlock', 'id' => ''])?>";
+            location.href=link+itemId;
         });
 
     });
