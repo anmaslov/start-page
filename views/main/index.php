@@ -9,16 +9,19 @@ $this->title = 'Стартовая страница';
 ?>
 
 <div class="row">
-<?$colId = ArrayHelper::map($model, 'column', 'column');?>
+<? $colId = array(1, 2, 3);?>
 
 <?foreach($colId as $col):?>
+    <?if(count($colId)<3 && $col==2):?>
+        <div class="column col-xs-4" id="column1">1111111</div>
+    <?endif?>
     <div class="column col-xs-4" id="column<?=$col?>">
         <?foreach($model as $arItem):?>
             <?if($arItem->column == $col):?>
-                <div class="panel panel-<?=$arItem->state?>">
+                <div class="panel panel-<?=$arItem->state?>" id="item<?=$arItem->id?>">
                     <div class="panel-heading">
                         <?=$arItem->block->title?>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">-</span></button>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">‒</span></button>
                     </div>
                     <? $links = $arItem->block->infolink ?>
                     <?if(count($links)>0):?>
@@ -81,21 +84,18 @@ $this->title = 'Стартовая страница';
                     items.push(item);
                 });
             });
-            var sortorder={ items: items };
-
             $.get('<?=Url::toRoute(['update', 'id' => 'contact'])?>',{items: items},function(data){
-                if(data.result=='success'){
-                    console.log(data);
-                }
                 console.log(data);
             },"json");
-
         }
 
         $( ".panel-heading .close" ).click(function() {
             var icon = $( this );
-            icon.find('span').text() == '+' ? icon.find('span').text('-') : icon.find('span').text('+');
-            $(this).closest( ".panel").find( ".list-group" ).toggle('slow');
+            icon.find('span').text() == '+' ? icon.find('span').text('‒') : icon.find('span').text('+');
+            $(this).closest( ".panel").find( ".list-group" ).toggle('slow').promise().done(function(){
+                updateWidgetData();
+            });
+
         });
 
     });

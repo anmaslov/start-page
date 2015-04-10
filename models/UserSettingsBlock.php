@@ -118,5 +118,29 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
         }
     }
 
+    /***
+     * @param $userId
+     * @param array $items
+     * @return bool
+     */
+    public static function sortUpdate($userId, $items = array())
+    {
+        //TODO add collapse and close
+        if (!is_array($items))
+            return false;
+
+        foreach($items as $item)
+        {
+            $itemId = (int)str_replace('item', '', $item['id']);
+            $block = self::find()->where(['user_id' => $userId, 'id' => $itemId])->one();
+
+            $colId = (int)str_replace('column', '', $item['column']);
+            $block->column = $colId==0?1:$colId;
+            $block->order = $item['order'];
+            if(!$block->save())
+                return false;
+        }
+        return true;
+    }
 
 }
