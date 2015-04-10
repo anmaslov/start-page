@@ -26,7 +26,6 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
@@ -40,7 +39,7 @@ AppAsset::register($this);
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
+                    ['label' => 'Блоки', 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
                     ['label' => 'About', 'url' => ['/site/about']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ?

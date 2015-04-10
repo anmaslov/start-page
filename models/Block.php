@@ -72,7 +72,7 @@ class Block extends \yii\db\ActiveRecord
             'id' => 'ID',
             'column' => 'Столбец',
             'order' => 'Сортировка',
-            'title' => 'Заголовк',
+            'title' => 'Заголовок',
             'hidden' => 'Hidden',
             'state' => 'Оформление',
             'created_at' => 'Created At',

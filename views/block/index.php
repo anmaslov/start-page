@@ -18,7 +18,7 @@ use yii\helpers\Html;
 <?endforeach?>
 </ul>
 
-<?= Html::a('<i class="glyphicon glyphicon-plus"></i> Добавить блок', ['create'], ['class' => 'btn btn-primary']) ?>
+<?= Html::a('Добавить блок', ['create'], ['class' => 'btn btn-success']) ?>
 
-<?= Html::a('<i class="glyphicon glyphicon-plus"></i> Добавить ссылку', ['linkCreate'], ['class' => 'btn btn-info']) ?>
+<?= Html::a('Добавить ссылку', ['linkCreate'], ['class' => 'btn btn-info']) ?>
 
