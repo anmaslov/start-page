@@ -3,9 +3,11 @@
 namespace app\controllers;
 
 use app\models\Link;
+use app\models\UserSettingsBlock;
 use Yii;
 use app\models\Block;
 use yii\filters\AccessControl;
+use yii\web\NotFoundHttpException;
 
 class BlockController extends \yii\web\Controller
 {
@@ -16,11 +18,11 @@ class BlockController extends \yii\web\Controller
                 'class' => AccessControl::className(),
                 //'only' => ['index', 'update'],
                 'rules' => [
-                    /*[
+                    [
                         'allow' => true,
-                        'actions' => ['index'],
+                        'actions' => ['edit-user-block'],
                         'roles' => ['@'],
-                    ],*/
+                    ],
                     [
                         'allow' => true,
                         'actions' => ['index', 'update', 'create', 'delete'],
@@ -87,6 +89,21 @@ class BlockController extends \yii\web\Controller
         }
     }
 
+    public function actionEditUserBlock($id)
+    {
+        $userModel = $this->findUserBlock($id);
+        //$model = $this->findModel($userModel->block_id);
+        $model = Block::find()->with('links')->where(['id' => $userModel->block_id])->one();
+
+        if ($userModel->load(Yii::$app->request->post()) && $userModel->save())
+            Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
+
+        return $this->render('userSettings', [
+            'userModel' => $userModel,
+            'model' => $model,
+        ]);
+    }
+
     /**
      * Finds the Link model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -100,6 +117,18 @@ class BlockController extends \yii\web\Controller
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+
+    protected function findUserBlock($id)
+    {
+        $userId = \Yii::$app->user->id;
+        $Id = (int)str_replace('item', '', $id);
+
+        if (($model = UserSettingsBlock::find()->where(['user_id' => $userId, 'id' => $Id])->one()) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('Запрашиваемая страница не найдена!');
         }
     }
 

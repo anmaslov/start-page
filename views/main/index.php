@@ -102,7 +102,7 @@ $this->title = 'Стартовая страница';
 
         $('.panel-heading .config').click(function(){
             var itemId = $(this).closest( ".panel").attr('id');
-            var link = "<?=Url::toRoute(['block/editUserBlock', 'id' => ''])?>";
+            var link = "<?=Url::toRoute(['block/edit-user-block', 'id' => ''])?>";
             location.href=link+itemId;
         });
 

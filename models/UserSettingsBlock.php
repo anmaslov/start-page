@@ -62,12 +62,12 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'block_id' => 'Block ID',
-            'column' => 'Column',
-            'order' => 'Order',
+            'column' => 'Столбец',
+            'order' => 'Сортировка',
             'hidden' => 'Hidden',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
-            'state' => 'State',
+            'created_at' => 'Создано',
+            'updated_at' => 'Обновлено',
+            'state' => 'Цветовое оформление',
         ];
     }
 
