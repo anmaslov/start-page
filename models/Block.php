@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
 
 /**
  * This is the model class for table "{{%block}}".
@@ -37,15 +38,25 @@ class Block extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public function behaviors()
+    {
+        return [
+            TimestampBehavior::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function rules()
     {
         return [
             [['column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
-            [['column', 'title', 'created_at', 'updated_at'], 'required'],
+            [['column', 'title'], 'required'],
             [['title'], 'string', 'max' => 32],
             [['state'], 'string', 'max' => 64],
             ['hidden', 'in', 'range' => array_keys(self::getStatusesArray())],
-            ['column', 'in', 'range' => array('1', '2', '3')]
+            ['column', 'in', 'range' => array_keys(self::getColumnsArray())]
         ];
     }
 
@@ -60,6 +71,15 @@ class Block extends \yii\db\ActiveRecord
         return [
             self::STATUS_HIDDEN => 'Скрыт',
             self::STATUS_SHOW => 'Отображается',
+        ];
+    }
+
+    public static function getColumnsArray()
+    {
+        return [
+            '1' => '1',
+            '2' => '2',
+            '3' => '3',
         ];
     }
 

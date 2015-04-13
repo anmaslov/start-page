@@ -1,6 +1,6 @@
 <?php
 /* @var $this yii\web\View */
-use yii\helpers\ArrayHelper;
+
 use app\assets\UiAsset;
 use yii\helpers\Url;
 
@@ -9,11 +9,11 @@ $this->title = 'Стартовая страница';
 ?>
 
 <div class="row">
-<? $colId = array(1, 2, 3);?>
+<?$colId = array(1, 2, 3);?>
 
 <?foreach($colId as $col):?>
     <?if(count($colId)<3 && $col==2):?>
-        <div class="column col-xs-4" id="column1">1111111</div>
+        <div class="column col-xs-4" id="column1"></div>
     <?endif?>
     <div class="column col-xs-4" id="column<?=$col?>">
         <?foreach($model as $arItem):?>

@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Link;
 use Yii;
 use app\models\Block;
 use yii\filters\AccessControl;
@@ -22,7 +23,7 @@ class BlockController extends \yii\web\Controller
                     ],*/
                     [
                         'allow' => true,
-                        'actions' => ['index', 'update', 'create'],
+                        'actions' => ['index', 'update', 'create', 'delete'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -32,7 +33,9 @@ class BlockController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        $model = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW])->all();
+        $model = Block::find()->with('links')
+        //->where(['hidden' => Block::STATUS_SHOW])
+            ->all();
 
         return $this->render('index', [
             'model' => $model,
@@ -44,6 +47,7 @@ class BlockController extends \yii\web\Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
             return $this->redirect(['index']);
         } else {
             return $this->render('updateBlock', [
@@ -57,11 +61,29 @@ class BlockController extends \yii\web\Controller
         $model = new Block();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view']);
+            Yii::$app->getSession()->setFlash('success', "$model->title успешно создан");
+            return $this->redirect(['index']);
         } else {
+
             return $this->render('create', [
                 'model' => $model,
             ]);
+        }
+    }
+
+    public function actionDelete($id)
+    {
+        $model = $this->findModel($id);
+        $linkCnt = Link::find()->where(['block_id' => $model->id])->count();
+
+        if ($linkCnt) {
+            Yii::$app->getSession()->setFlash('danger', 'Сперва удалите все ссылки');
+            return $this->redirect(['update', 'id' => $model->id]);
+        } else {
+            $this->findModel($id)->delete();
+
+            Yii::$app->getSession()->setFlash('success', "Успешно удалено");
+            return $this->redirect(['index']);
         }
     }
 

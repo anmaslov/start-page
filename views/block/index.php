@@ -1,8 +1,16 @@
 <?php
 /* @var $this yii\web\View */
 use yii\helpers\Html;
+use yii\bootstrap\Alert;
+
+$this->title = 'Список блоков по умолчанию';
 ?>
-<h3>Список основных блоков:</h3>
+<h3><?=$this->title?></h3>
+<?if($msg = \Yii::$app->session->getFlash('success')):?>
+    <div class="alert alert-success">
+        <?=\Yii::$app->session->getFlash('success')?>
+    </div>
+<?endif?>
 
 <ul>
 <?foreach($model as $block):?>
