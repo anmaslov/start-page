@@ -52,8 +52,14 @@ class BlockController extends \yii\web\Controller
             Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
             return $this->redirect(['index']);
         } else {
+
+            $link = Link::find()->where(['block_id' => $model->id])->all();
+            $link_not = Link::find()->where(['!=', 'block_id', $model->id])->all();
+
             return $this->render('updateBlock', [
                 'model' => $model,
+                'link' => $link,
+                'link_not' => $link_not,
             ]);
         }
     }
@@ -79,7 +85,7 @@ class BlockController extends \yii\web\Controller
         $linkCnt = Link::find()->where(['block_id' => $model->id])->count();
 
         if ($linkCnt) {
-            Yii::$app->getSession()->setFlash('danger', 'Сперва удалите все ссылки');
+            Yii::$app->getSession()->setFlash('danger', "Сперва удалите все ссылки для $model->title");
             return $this->redirect(['update', 'id' => $model->id]);
         } else {
             $this->findModel($id)->delete();
@@ -92,7 +98,6 @@ class BlockController extends \yii\web\Controller
     public function actionEditUserBlock($id)
     {
         $userModel = $this->findUserBlock($id);
-        //$model = $this->findModel($userModel->block_id);
         $model = Block::find()->with('links')->where(['id' => $userModel->block_id])->one();
 
         if ($userModel->load(Yii::$app->request->post()) && $userModel->save())
