@@ -52,14 +52,9 @@ class BlockController extends \yii\web\Controller
             Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
             return $this->redirect(['index']);
         } else {
-
-            $link = Link::find()->where(['block_id' => $model->id])->all();
-            $link_not = Link::find()->where(['!=', 'block_id', $model->id])->all();
-
+            //$link_not = Link::find()->where(['!=', 'block_id', $model->id])->all();
             return $this->render('updateBlock', [
                 'model' => $model,
-                'link' => $link,
-                'link_not' => $link_not,
             ]);
         }
     }

@@ -10,7 +10,7 @@ use app\models\State;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="block-form">
+<div class="well">
 
     <?php $form = ActiveForm::begin(); ?>
 
