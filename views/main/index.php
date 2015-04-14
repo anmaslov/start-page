@@ -8,7 +8,7 @@ UiAsset::register($this);
 $this->title = 'Стартовая страница';
 ?>
 
-<div class="row">
+<div class="row block">
 <?$colId = array(1, 2, 3);?>
 
 <?foreach($colId as $col):?>
