@@ -1,7 +1,10 @@
 <?php
 /* @var $this yii\web\View */
 use yii\helpers\Html;
+use app\assets\UiAsset;
 
+
+UiAsset::register($this);
 $this->title = 'Список блоков по умолчанию';
 $colId = array(1, 2, 3);
 ?>
@@ -12,7 +15,7 @@ $colId = array(1, 2, 3);
     </div>
 <?endif?>
 
-<div class="row">
+<div class="row block-default">
     <?foreach($colId as $col):?>
         <?if(count($colId)<3 && $col==2):?>
             <div class="column col-xs-4" id="column1"></div>
@@ -24,15 +27,15 @@ $colId = array(1, 2, 3);
                     <div class="panel-heading">
                         <?= Html::a($arItem->title, ['update', 'id'=>$arItem->id]) ?>
                     </div>
-                    <?if(count($arItem->links)>0):?>
-                        <div class="list-group">
+                    <ul class="list-group">
                             <?foreach($arItem->links as $link):?>
-                                <?= Html::a($link->title,
+                                <li class="list-group-item">
+                                    <?= Html::a($link->title,
                                     ['/link/update', 'id'=>$link->id],
-                                    ['class' => 'list-group-item' . ($link->status == $link::STATUS_DISABLE?' disabled':'')])?>
+                                    ['class' => '' . ($link->status == $link::STATUS_DISABLE?' disabled':'')])?>
+                                </li>
                             <?endforeach?>
-                        </div>
-                    <?endif?>
+                    </ul>
                 </div>
                 <?endif?>
             <?endforeach?>
@@ -44,4 +47,13 @@ $colId = array(1, 2, 3);
 <?= Html::a('Добавить блок', ['create'], ['class' => 'btn btn-success']) ?>
 
 <?= Html::a('Добавить ссылку', ['/link/create'], ['class' => 'btn btn-info']) ?>
+
+<script type="text/javascript">
+    $(function(){
+        $( ".list-group" ).sortable({
+            connectWith: ".list-group"
+        }).disableSelection();
+    });
+
+</script>
 
