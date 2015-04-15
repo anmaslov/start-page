@@ -90,6 +90,16 @@ class LinkController extends Controller
         }
     }
 
+    public function actionOrder()
+    {
+        $links = \Yii::$app->request->get('links');
+        //print_r($links);
+        Link::sortUpdate($links);
+        //todo make bad message if returned false
+        //echo json_encode($items);
+        \Yii::$app->end();
+    }
+
     /**
      * Deletes an existing Link model.
      * If deletion is successful, the browser will be redirected to the 'index' page.

@@ -47,7 +47,7 @@ class Link extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['block_id', 'title', 'href', 'icon', 'created_at', 'updated_at'], 'required'],
+            [['block_id', 'title', 'href'], 'required'],
             [['block_id', 'order', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 64],
             [['href'], 'string', 'max' => 128],
@@ -88,6 +88,28 @@ class Link extends \yii\db\ActiveRecord
             'created_at' => 'Создана',
             'updated_at' => 'Обновлена',
         ];
+    }
+
+    public static function sortUpdate($items = array())
+    {
+        if (!is_array($items))
+            return false;
+
+        foreach($items as $item)
+        {
+            $linkId = (int)str_replace('link', '', $item['linkId']);
+            $blockId = (int)str_replace('block', '', $item['id']);
+
+            $link = self::findOne($linkId);
+
+            if ($link->order != $item['order'] || $link->block_id != $blockId){
+                $link->order = $item['order'];
+                $link->block_id = $blockId;
+                if(!$link->save())
+                    return false;
+            }
+        }
+        return true;
     }
 
     /**

@@ -105,7 +105,7 @@ class Block extends \yii\db\ActiveRecord
      */
     public function getLinks()
     {
-        return $this->hasMany(Link::className(), ['block_id' => 'id']);
+        return $this->hasMany(Link::className(), ['block_id' => 'id'])->orderBy('order');
     }
 
     /**
@@ -113,7 +113,8 @@ class Block extends \yii\db\ActiveRecord
      */
     public function getUserSettingsBlocks()
     {
-        return $this->hasMany(UserSettingsBlock::className(), ['block_id' => 'id']);
+        return $this->hasMany(UserSettingsBlock::className(), ['block_id' => 'id'])
+            ->orderBy(['sort' => 'ASC']);
     }
 
     /**

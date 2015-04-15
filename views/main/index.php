@@ -88,7 +88,7 @@ $this->title = 'Стартовая страница';
                 });
             });
             $.get('<?=Url::toRoute(['update', 'id' => 'contact'])?>',{items: items},function(data){
-                console.log(data);
+                //console.log(data);
             },"json");
         }
 
