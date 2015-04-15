@@ -10,7 +10,7 @@
         "wiki": "https://github.com/anmaslov/start-page/wiki",
         "source": "https://github.com/anmaslov/start-page"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
