@@ -1,34 +1,20 @@
-Start page Based on Yii 2
+Стартовая страница Yii 2
 ================================
 
-REQUIREMENTS
+ИНФОРМАЦИЯ
+------------
+Стартовая страница в процессе разработки.
+
+
+ТРЕБОВАНИЯ
 ------------
 
-The minimum requirement by this application template that your Web server supports PHP 5.4.0.
+Минимальные требования - поддержка на сервере версии PHP 5.4.0.
 
 
-INSTALLATION
+Установка
 ------------
+
+~~~
 ToDo add description
 ~~~
-
-### Install via Composer
-ToDo add description
-~~~
-
-CONFIGURATION
--------------
-
-### Database
-
-Edit the file `config/db.php` with real data, for example:
-
-```php
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-    'username' => 'mysql',
-    'password' => 'mysql',
-    'charset' => 'utf8',
-];
-```
