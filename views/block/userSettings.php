@@ -3,7 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
-use app\models\State;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
@@ -21,21 +20,40 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="row">
     <div class="col-md-5 col-md-offset-1">
-        <h3><?=$this->title?></h3>
+        <div class="panel panel-<?=$userModel->state?>">
+            <div class="panel-heading"><?=$this->title?></div>
+            <div class="panel-body">
+                <?php $form = ActiveForm::begin(); ?>
 
-        <?php $form = ActiveForm::begin(); ?>
+                <?= $form->field($userModel, 'state')->dropDownList(ArrayHelper::map($states, 'name', 'title')) ?>
 
-        <?= $form->field($userModel, 'state')->dropDownList(ArrayHelper::map(State::find()->all(), 'name', 'name')) ?>
+                <div class="form-group">
+                    <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a('Отмена', ['/main'], ['class' => 'btn btn-default']) ?>
+                </div>
 
-        <div class="form-group">
-            <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>
-            <?= Html::a('Отмена', ['/main'], ['class' => 'btn btn-default']) ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
 
-        <?php ActiveForm::end(); ?>
+        <?= $this->render('_userLinks', [
+            'model' => $model,
+        ]) ?>
+    </div>
+
+    <div class="col-md-4 col-md-offset-1">
+        <div class="panel panel-default">
+            <div class="panel-heading">Пример цветового оформления</div>
+            <div class="panel-body">
+                <?foreach($states as $state):?>
+                    <div class="panel panel-<?=$state->name?>">
+                        <div class="panel-heading">
+                            <?=$state->title?>
+                        </div>
+                    </div>
+                <?endforeach?>
+            </div>
+        </div>
     </div>
 </div>
 
-<?= $this->render('_userLinks', [
-    'model' => $model,
-]) ?>

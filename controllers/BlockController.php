@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Link;
+use app\models\State;
 use app\models\UserSettingsBlock;
 use Yii;
 use app\models\Block;
@@ -38,8 +39,7 @@ class BlockController extends \yii\web\Controller
         $model = Block::find()
             ->with('links')
         //->where(['hidden' => Block::STATUS_SHOW])
-            ->orderBy('order')
-            ->all();
+            ->orderBy('order')->all();
 
         return $this->render('index', [
             'model' => $model,
@@ -96,6 +96,7 @@ class BlockController extends \yii\web\Controller
     {
         $userModel = $this->findUserBlock($id);
         $model = Block::find()->with('links')->where(['id' => $userModel->block_id])->one();
+        $states = State::find()->all();
 
         if ($userModel->load(Yii::$app->request->post()) && $userModel->save())
             Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
@@ -103,6 +104,7 @@ class BlockController extends \yii\web\Controller
         return $this->render('userSettings', [
             'userModel' => $userModel,
             'model' => $model,
+            'states' => $states,
         ]);
     }
 
