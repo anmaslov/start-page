@@ -6,16 +6,18 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Create Link';
-$this->params['breadcrumbs'][] = ['label' => 'Links', 'url' => ['index']];
+$this->title = 'Добавить ссылку';
+$this->params['breadcrumbs'][] = ['label' => 'Блоки', 'url' => ['/block/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="link-create">
+<div class="row">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="col-md-10 col-md-offset-1">
+        <h3><?= Html::encode($this->title) ?></h3>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+    </div>
 
 </div>

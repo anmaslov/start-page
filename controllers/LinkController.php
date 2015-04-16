@@ -27,33 +27,6 @@ class LinkController extends Controller
     }
 
     /**
-     * Lists all Link models.
-     * @return mixed
-     */
-    public function actionIndex()
-    {
-        $searchModel = new LinkSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single Link model.
-     * @param integer $id
-     * @return mixed
-     */
-    public function actionView($id)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
      * Creates a new Link model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
@@ -63,7 +36,7 @@ class LinkController extends Controller
         $model = new Link();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['block/index']);
         } else {
             return $this->render('create', [
                 'model' => $model,
@@ -82,7 +55,7 @@ class LinkController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->id]);
+            return $this->redirect(['block/index']);
         } else {
             return $this->render('update', [
                 'model' => $model,
@@ -110,7 +83,7 @@ class LinkController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['block/index']);
     }
 
     /**
@@ -125,7 +98,7 @@ class LinkController extends Controller
         if (($model = Link::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('Запрошеная страница не найдена!');
         }
     }
 }

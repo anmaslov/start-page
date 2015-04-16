@@ -52,6 +52,7 @@ class Link extends \yii\db\ActiveRecord
             [['title'], 'string', 'max' => 64],
             [['href'], 'string', 'max' => 128],
             [['icon'], 'string', 'max' => 32],
+            ['order', 'default', 'value' => 1],
 
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
         ];
@@ -79,8 +80,8 @@ class Link extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'block_id' => 'Block ID',
-            'order' => 'Order',
+            'block_id' => 'Блок',
+            'order' => 'Сортировка',
             'status' => 'Статус',
             'title' => 'Имя',
             'href' => 'Ссылка',

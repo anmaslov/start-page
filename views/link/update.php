@@ -5,17 +5,17 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Update Link: ' . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Links', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->title, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Редактирование ссылки: ' . ' ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => 'Список блоков', 'url' => ['/block/index']];
+$this->params['breadcrumbs'][] = 'Редактирование';
 ?>
-<div class="link-update">
+<div class="row">
+    <div class="col-md-5 col-md-offset-1">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3><?= Html::encode($this->title) ?></h3>
 
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
-
+    </div>
 </div>
