@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
 
         <?= $this->render('_userLinks', [
-            'model' => $model,
+            'model' => $model
         ]) ?>
     </div>
 

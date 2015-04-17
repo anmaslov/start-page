@@ -26,10 +26,20 @@ class BlockController extends \yii\web\Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['index', 'update', 'create', 'delete'],
+                        'actions' => ['index', 'update', 'create', 'delete', 'link'],
                         'roles' => ['admin'],
                     ],
                 ],
+            ],
+        ];
+    }
+
+    public function actions()
+    {
+        return [
+            'link' => [
+                'class' => 'dosamigos\editable\EditableAction',
+                'modelClass' => new Link(),
             ],
         ];
     }
@@ -98,6 +108,8 @@ class BlockController extends \yii\web\Controller
         $model = Block::find()->with('links')->where(['id' => $userModel->block_id])->one();
         $states = State::find()->all();
 
+        $test = Link::find()->where(['id' => 2])->one();
+
         if ($userModel->load(Yii::$app->request->post()) && $userModel->save())
             Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
 
@@ -105,6 +117,7 @@ class BlockController extends \yii\web\Controller
             'userModel' => $userModel,
             'model' => $model,
             'states' => $states,
+            'test' => $test,
         ]);
     }
 

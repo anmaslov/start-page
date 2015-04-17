@@ -73,6 +73,18 @@ class Link extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getStatusesArrayValue()
+    {
+        $valueArr = [];
+        foreach(self::getStatusesArray() as $key => $arItem)
+        {
+            $valueArr[] = [
+                'value' => $key, 'text' => $arItem,
+            ];
+        }
+        return $valueArr;
+    }
+
     /**
      * @inheritdoc
      */
