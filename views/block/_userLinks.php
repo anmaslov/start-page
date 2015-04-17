@@ -20,7 +20,7 @@ use dosamigos\editable\Editable;
                 'url' => 'block/link',
                 'type' => 'select2',
                 'mode' => 'pop',
-                //'id' => 'test',
+                'options' => ['id' => 'link-status-'.$item->id],
                 'clientOptions' => [
                     'pk' => $item->id,
                     'autotext' => 'always',
