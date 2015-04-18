@@ -19,6 +19,14 @@ class m150408_125325_create_table_sp_state extends Migration
             'updated_at' => Schema::TYPE_INTEGER,
             'PRIMARY KEY (name)',
         ], $tableOptions);
+
+        $this->insert('{{%state}}', [
+            'name' => 'default',
+            'title' => 'default',
+            'created_at' => time(),
+            'updated_at' => time(),
+        ]);
+
     }
 
     public function down()

@@ -15,10 +15,10 @@ class m150403_085205_create_user_table extends Migration
         $this->createTable('{{%user}}', [
             'id' => Schema::TYPE_PK,
             'username' => Schema::TYPE_STRING . ' NOT NULL',
-            'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
-            'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
-            'password_reset_token' => Schema::TYPE_STRING,
-            'email' => Schema::TYPE_STRING . ' NOT NULL',
+            //'auth_key' => Schema::TYPE_STRING . '(32) NOT NULL',
+            //'password_hash' => Schema::TYPE_STRING . ' NOT NULL',
+            //'password_reset_token' => Schema::TYPE_STRING,
+            //'email' => Schema::TYPE_STRING . ' NOT NULL',
             'ip' => Schema::TYPE_STRING . '(15) NOT NULL', //15
 
             'status' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 10',
@@ -31,7 +31,9 @@ class m150403_085205_create_user_table extends Migration
 
         $this->insert('{{%user}}', [
             'username' => 'localhost',
-            'ip' => '127.0.0.1'
+            'ip' => '127.0.0.1',
+            'created_at' => time(),
+            'updated_at' => time(),
         ]);
 
     }

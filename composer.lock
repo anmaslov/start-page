@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "66058fb0e49ebbab95072aa881dc17a7",
+    "hash": "edc9358d684f063b635f09baf08b280b",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -499,12 +499,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "095a3a52b9f04cf1650685d73529a2d3b3548fcd"
+                "reference": "1361641224c4145936dc6681a0c95345b67a7867"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/095a3a52b9f04cf1650685d73529a2d3b3548fcd",
-                "reference": "095a3a52b9f04cf1650685d73529a2d3b3548fcd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1361641224c4145936dc6681a0c95345b67a7867",
+                "reference": "1361641224c4145936dc6681a0c95345b67a7867",
                 "shasum": ""
             },
             "require": {
@@ -579,7 +579,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-04-16 08:32:02"
+            "time": "2015-04-17 08:52:32"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
