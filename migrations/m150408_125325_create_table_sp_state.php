@@ -5,6 +5,13 @@ use yii\db\Migration;
 
 class m150408_125325_create_table_sp_state extends Migration
 {
+    public function getStates()
+    {
+        return  [
+            'default', 'primary', 'success', 'info', 'warning', 'danger',
+        ];
+    }
+
     public function up()
     {
         $tableOptions = null;
@@ -20,12 +27,16 @@ class m150408_125325_create_table_sp_state extends Migration
             'PRIMARY KEY (name)',
         ], $tableOptions);
 
-        $this->insert('{{%state}}', [
-            'name' => 'default',
-            'title' => 'default',
-            'created_at' => time(),
-            'updated_at' => time(),
-        ]);
+        foreach($this->getStates() as $state){
+
+            $this->insert('{{%state}}', [
+                'name' => $state,
+                'title' => $state,
+                'created_at' => time(),
+                'updated_at' => time(),
+            ]);
+
+        }
 
     }
 
