@@ -127,7 +127,7 @@ class Block extends \yii\db\ActiveRecord
 
     public function getInfoLink()
     {
-        return Link::find()->where(['block_id' => $this->id])->all();
+        return Link::find()->where(['block_id' => $this->id])->orderBy('order')->all();
     }
 
 }

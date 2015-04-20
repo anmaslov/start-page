@@ -2,9 +2,9 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\assets\UiAsset;
+use app\assets\UserAsset;
 
-UiAsset::register($this);
+UserAsset::register($this);
 $this->title = 'Список блоков по умолчанию';
 $colId = array(1, 2, 3);
 ?>
@@ -53,28 +53,10 @@ $colId = array(1, 2, 3);
         $( ".list-group" ).sortable({
             connectWith: ".list-group",
             stop: function(event, ui) { // begin receive
-                updateLinks();
+                updateLinks('<?=Url::toRoute(['/link/order'])?>');
             }
         }).disableSelection();
 
-        function updateLinks(){
-            var blocks=[];
-            $('.list-group').each(function(){
-                var blockId = $(this).attr('id');
-                $('.list-group-item', this).each(function(i){
-                    var block={
-                        id: blockId,
-                        order: i,
-                        linkId: $(this).attr('id')
-                    }
-                    blocks.push(block);
-                });
-            });
-            //console.log(blocks);
-            $.get('<?=Url::toRoute(['/link/order'])?>',{links: blocks},function(data){
-                //console.log(data);
-            },"json");
-        }
     });
 </script>
 

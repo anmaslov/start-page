@@ -1,16 +1,19 @@
 <?php
+use yii\helpers\Url;
 use dosamigos\editable\Editable;
+use app\assets\UserAsset;
 
+UserAsset::register($this);
 ?>
 
 <? if(count($model->links)>0):?>
 <div class="panel panel-default">
     <div class="panel-heading">Список ссылок:</div>
 
-    <div class="panel-body">
-        <ul class="list-group">
+    <div class="panel-body block-default">
+        <ul class="list-group" id="block<?=$model->id?>">
             <?foreach($model->links as $item):?>
-                <li class="list-group-item">
+                <li class="list-group-item" id="link<?=$item->id?>">
                     <?if(strlen($item->icon)>0):?>
                         <i class="glyphicon glyphicon-<?=$item->icon?>"></i>
                     <?endif?>
@@ -46,3 +49,13 @@ use dosamigos\editable\Editable;
 </div>
 
 <?endif?>
+
+<script type="text/javascript">
+    $(function(){
+        $( ".list-group" ).sortable({
+            stop: function(event, ui) { // begin receive
+                updateLinks('<?=Url::toRoute(['/link/order'])?>');
+            }
+        }).disableSelection();
+    });
+</script>
