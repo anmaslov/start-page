@@ -119,6 +119,15 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
     }
 
     /***
+     * delete all usersetting
+     * @param $userId
+     */
+    public static function del($userId)
+    {
+        return self::deleteAll(['user_id' => $userId]);
+    }
+
+    /***
      * @param $userId
      * @param array $items
      * @return bool
