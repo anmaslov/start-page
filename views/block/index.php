@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Html;
 use yii\helpers\Url;
+use dosamigos\editable\Editable;
 use app\assets\UserAsset;
 
 UserAsset::register($this);
@@ -26,6 +27,9 @@ $colId = array(1, 2, 3);
                 <div class="panel panel-<?=$arItem->state?>">
                     <div class="panel-heading">
                         <?= Html::a($arItem->title, ['update', 'id'=>$arItem->id]) ?>
+
+                        <?= Html::a('Добавить ссылку', ['/link/create', 'id'=>$arItem->id],
+                            ['class' => 'btn btn-info btn-xs pull-right']) ?>
                     </div>
                     <ul class="list-group" id="block<?=$arItem->id?>">
                         <?foreach($arItem->links as $link):?>
@@ -33,6 +37,28 @@ $colId = array(1, 2, 3);
                                 <?= Html::a($link->title,
                                     ['/link/update', 'id'=>$link->id],
                                     ['class' => ($link->status == $link::STATUS_DISABLE?' disabled':'')])?>
+
+                                <?= Editable::widget( [
+                                    'model' => $link,
+                                    'attribute' => 'status',
+                                    'url' => 'block/link',
+                                    'type' => 'select2',
+                                    'mode' => 'pop',
+                                    'options' => [
+                                        'id' => 'link-status-'.$link->id,
+                                        'class' => 'pull-right',
+                                    ],
+                                    'clientOptions' => [
+                                        'pk' => $link->id,
+                                        'autotext' => 'always',
+                                        'select2' => [
+                                            'width' => '150px'
+                                        ],
+                                        'value' => $link->status,
+                                        'source' => $link::getStatusesArrayValue(),
+                                    ]
+                                ]);?>
+
                             </li>
                         <?endforeach?>
                     </ul>

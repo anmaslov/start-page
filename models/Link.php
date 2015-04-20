@@ -68,7 +68,7 @@ class Link extends \yii\db\ActiveRecord
     {
         return [
             self::STATUS_DISABLE => 'Заблокирована',
-            self::STATUS_ACTIVE => 'Активена',
+            self::STATUS_ACTIVE => 'Активна',
             self::STATUS_HIDDEN => 'Скрыта',
         ];
     }
