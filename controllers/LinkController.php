@@ -41,7 +41,7 @@ class LinkController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate($id)
+    public function actionCreate($id=null)
     {
         $model = new Link();
 

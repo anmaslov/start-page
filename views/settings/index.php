@@ -1,8 +1,8 @@
 <?php
 /* @var $this yii\web\View */
-use yii\helpers\Html;
+use yii\bootstrap\Tabs;
 
-$this->title = 'Настройки';
+$this->title = 'Персональные настройки';
 ?>
 
 <?if($msg = \Yii::$app->session->getFlash('success')):?>
@@ -15,9 +15,40 @@ $this->title = 'Настройки';
 <!--<p>Здесь можно сбросить настройки по умолчанию</p>-->
 <div class="row">
     <div class="col-md-3">
-        <?= Html::a('Сброс настроек', ['reset'],
-            ['class' => 'btn btn-danger',
-                'data-confirm' => 'Вы действительно хотите сбросить настройки?',
-                'data-method' => 'post']) ?>
+
     </div>
 </div>
+
+
+<?
+
+echo Tabs::widget([
+    'items' => [
+        [
+            'label' => 'Основные',
+            'content' => 'Основные настройки',
+            'active' => true,
+        ],
+        [
+            'label' => 'Справочники',
+            'content' => 'Справочники',
+            'options' => ['tag' => 'div'],
+            'headerOptions' => ['class' => 'my-class'],
+        ],
+        [
+            'label' => 'Логирование',
+            'content' => 'Управление логированием',
+            'options' => ['tag' => 'div'],
+            'headerOptions' => ['class' => 'my-class'],
+        ],
+        [
+            'label' => 'Сброс настроек',
+            'content' => $this->render('_reset'),
+        ],
+    ],
+    'options' => ['tag' => 'div'],
+    'itemOptions' => ['tag' => 'div'],
+    'headerOptions' => ['class' => 'my-class'],
+    'clientOptions' => ['collapsible' => false],
+]);
+?>
