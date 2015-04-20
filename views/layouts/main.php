@@ -40,11 +40,11 @@ AppAsset::register($this);
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
                     ['label' => 'Блоки', 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'About', 'url' => ['/site/about']],
+                    ['label' => 'Настройки', 'url' => ['/settings/index']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Login', 'url' => ['/site/login']] :
-                        ['label' => 'Logout (' . Yii::$app->user->identity->ip . ')',
+                        ['label' => 'Авторизация', 'url' => ['/site/login']] :
+                        ['label' => 'Привет, ' . Yii::$app->user->identity->ip,
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
