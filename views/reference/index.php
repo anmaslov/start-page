@@ -9,7 +9,7 @@ use yii\helpers\Html;
 
             <?= Html::a('Состояния блоков', ['/reference/state'], ['class' => 'list-group-item']) ?>
 
-            <?= Html::a('Визуальное оформление', ['block'], ['class' => 'list-group-item']) ?>
+            <?= Html::a('Визуальное оформление', ['/reference/style'], ['class' => 'list-group-item']) ?>
 
             <?= Html::a('Виды ролей', ['block'], ['class' => 'list-group-item']) ?>
 

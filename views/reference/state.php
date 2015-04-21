@@ -6,9 +6,6 @@ use dosamigos\editable\Editable;
 
 <div class="row">
     <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">Пример цветового оформления</div>
-            <div class="panel-body">
                 <?foreach($model as $state):?>
                     <div class="panel panel-<?=$state->name?>">
                         <div class="panel-heading">
@@ -29,7 +26,5 @@ use dosamigos\editable\Editable;
                         </div>
                     </div>
                 <?endforeach?>
-            </div>
-        </div>
     </div>
 </div>

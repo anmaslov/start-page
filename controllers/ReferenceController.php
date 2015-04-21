@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Style;
 use yii\filters\AccessControl;
 use app\models\State;
 
@@ -17,7 +18,8 @@ class ReferenceController extends \yii\web\Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'state', 'updateState'],
+                        'actions' => ['index', 'state', 'updateState',
+                            'style', 'updateStyle'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -32,6 +34,10 @@ class ReferenceController extends \yii\web\Controller
                 'class' => 'dosamigos\editable\EditableAction',
                 'modelClass' => new State(),
             ],
+            'updateStyle' => [
+                'class' => 'dosamigos\editable\EditableAction',
+                'modelClass' => new Style(),
+            ],
         ];
     }
 
@@ -45,6 +51,14 @@ class ReferenceController extends \yii\web\Controller
         $states = State::find()->all();
         return $this->render('state', [
             'model' => $states
+        ]);
+    }
+
+    public function actionStyle()
+    {
+        $styles = Style::find()->all();
+        return $this->render('style', [
+            'model' => $styles
         ]);
     }
 
