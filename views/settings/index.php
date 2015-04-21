@@ -33,15 +33,8 @@ echo Tabs::widget([
         ],
         [
             'label' => 'Справочники',
-            'content' => 'Справочники',
+            'content' => $this->render('_reference'),
             'options' => ['tag' => 'div'],
-            'headerOptions' => ['class' => 'my-class'],
-        ],
-        [
-            'label' => 'Логирование',
-            'content' => 'Управление логированием',
-            'options' => ['tag' => 'div'],
-            'headerOptions' => ['class' => 'my-class'],
         ],
         [
             'label' => 'Сброс настроек',
