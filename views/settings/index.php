@@ -26,7 +26,9 @@ echo Tabs::widget([
     'items' => [
         [
             'label' => 'Основные',
-            'content' => 'Основные настройки',
+            'content' => $this->render('_common', [
+                'model' => $user,
+            ]),
             'active' => true,
         ],
         [

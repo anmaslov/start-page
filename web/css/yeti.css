@@ -6589,3 +6589,6 @@ button.close {
 .block-default .list-group .list-group-item a {
   cursor: pointer !important;
 }
+.detail-view a.editable {
+  cursor: pointer !important;
+}

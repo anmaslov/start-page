@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\User;
 use app\models\UserSettingsBlock;
 use yii\filters\AccessControl;
 
@@ -24,9 +25,22 @@ class SettingsController extends \yii\web\Controller
         ];
     }
 
+    public function actions()
+    {
+        return [
+            'user' => [
+                'class' => 'dosamigos\editable\EditableAction',
+                'modelClass' => new User(),
+            ],
+        ];
+    }
+
     public function actionIndex()
     {
-        return $this->render('index');
+        $curUser = User::findOne(\Yii::$app->user->id);
+        return $this->render('index', [
+            'user' => $curUser
+        ]);
     }
 
     public function actionReset()

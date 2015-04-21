@@ -54,6 +54,8 @@ class User extends ActiveRecord implements IdentityInterface
             [['ip'], 'string', 'max' => 15],
             [['username'], 'string', 'max' => 255],
             [['ip'], 'unique'],
+            [['style'], 'string', 'max' => 64],
+            [['fa', 'im', 'ot'], 'string', 'max' => 128],
             [['ip'], 'default', 'value' => $this->remip],
             ['status', 'default', 'value' => self::STATUS_ACTIVE],
             ['status', 'in', 'range' => [self::STATUS_ACTIVE, self::STATUS_DELETED]],
@@ -71,6 +73,27 @@ class User extends ActiveRecord implements IdentityInterface
         return [
             self::STATUS_DELETED => 'Заблокирован',
             self::STATUS_ACTIVE => 'Активен',
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'username' => 'Псевдоним',
+            'auth_key' => 'Auth Key',
+            'password_hash' => 'Password Hash',
+            'password_reset_token' => 'Password Reset Token',
+            'email' => 'Email',
+            'ip' => 'Ip',
+            'status' => 'Статус',
+            'created_at' => 'Создан',
+            'updated_at' => 'Изменен',
+            'style' => 'Тема',
+            'fa' => 'Фамилия',
+            'im' => 'Имя',
+            'ot' => 'Отчество',
+            'dr' => 'Дата рождения',
         ];
     }
     /**
