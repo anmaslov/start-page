@@ -18,8 +18,8 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/default.css', //bootstrap
-        'css/site.css',
+        //'css/default.css', //bootstrap
+        'css/site.css'
     ];
     public $jsOptions = [
         'position' => \yii\web\View::POS_HEAD,
@@ -32,4 +32,12 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+
+    public function registerAssetFiles($view)
+    {
+        $style = 'css/' . \app\models\User::getStyle(). '.css';
+        array_push($this->css, $style);
+
+        parent::registerAssetFiles($view);
+    }
 }

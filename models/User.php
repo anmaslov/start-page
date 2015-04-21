@@ -176,4 +176,10 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return Yii::$app->user->login($this->findUser(), 3600 * 24 * 30);
     }
+
+    public static function getStyle($userId = null)
+    {
+        $user = !$userId ? \Yii::$app->user->id : $userId;
+        return self::findOne($user)->style;
+    }
 }

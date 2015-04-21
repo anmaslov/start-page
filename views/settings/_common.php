@@ -13,6 +13,19 @@ $url = 'settings/user';
 
             <table class="table table-striped table-bordered detail-view">
                 <tbody>
+
+                    <tr>
+                        <th>Визуальное оформление:</th>
+                        <td>
+                            <?= Editable::widget( [
+                                'model' => $model,
+                                'attribute' => 'style',
+                                'url' => $url,
+                                'mode' => 'pop',
+                            ]);?>
+                        </td>
+                    </tr>
+
                     <tr>
                         <th>Псевдоним</th>
                         <td>
