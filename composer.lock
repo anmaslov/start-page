@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "edc9358d684f063b635f09baf08b280b",
+    "hash": "1d09adad59cd5140625bb905204ea34a",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -494,17 +494,75 @@
             "time": "2015-03-30 15:09:02"
         },
         {
+            "name": "thomaspark/bootswatch",
+            "version": "v3.3.4+1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thomaspark/bootswatch.git",
+                "reference": "49ccd07144a7ed8917ab8b715233ffe288a6a9f0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thomaspark/bootswatch/zipball/49ccd07144a7ed8917ab8b715233ffe288a6a9f0",
+                "reference": "49ccd07144a7ed8917ab8b715233ffe288a6a9f0",
+                "shasum": ""
+            },
+            "suggest": {
+                "robloach/component-installer": "Allows installation of Components via Composer"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "name": "bootswatch",
+                    "files": [
+                        "README.md",
+                        "LICENSE",
+                        "amelia/*",
+                        "cerulean/*",
+                        "cosmo/*",
+                        "cyborg/*",
+                        "darkly/*",
+                        "flatly/*",
+                        "fonts/*",
+                        "journal/*",
+                        "lumen/*",
+                        "paper/*",
+                        "readable/*",
+                        "sandstone/*",
+                        "simplex/*",
+                        "slate/*",
+                        "spacelab/*",
+                        "superhero/*",
+                        "united/*",
+                        "yeti/*"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "thomaspark",
+                    "email": "thomas@bootswatch.com"
+                }
+            ],
+            "description": "Themes for Bootstrap",
+            "time": "2015-03-23 20:56:57"
+        },
+        {
             "name": "yiisoft/yii2",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "1361641224c4145936dc6681a0c95345b67a7867"
+                "reference": "64f3f042c0dce15c9b88c43911d8af4c766af526"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/1361641224c4145936dc6681a0c95345b67a7867",
-                "reference": "1361641224c4145936dc6681a0c95345b67a7867",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/64f3f042c0dce15c9b88c43911d8af4c766af526",
+                "reference": "64f3f042c0dce15c9b88c43911d8af4c766af526",
                 "shasum": ""
             },
             "require": {
@@ -579,7 +637,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-04-17 08:52:32"
+            "time": "2015-04-21 01:46:26"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -988,12 +1046,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "188000d505cfc914cf8b61c8628514bd6ad4086f"
+                "reference": "201119398a4b3be981b659080fb2b76062bc5904"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/188000d505cfc914cf8b61c8628514bd6ad4086f",
-                "reference": "188000d505cfc914cf8b61c8628514bd6ad4086f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/201119398a4b3be981b659080fb2b76062bc5904",
+                "reference": "201119398a4b3be981b659080fb2b76062bc5904",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1091,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-04-15 09:05:18"
+            "time": "2015-04-20 09:13:55"
         }
     ],
     "aliases": [],

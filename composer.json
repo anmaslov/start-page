@@ -4,7 +4,7 @@
     "keywords": ["yii2", "framework", "basic", "start"],
     "homepage": "http://www.yiiframework.com/",
     "type": "project",
-    "license": "The MIT License (MIT)",
+    "license": "MIT",
     "support": {
         "issues": "https://github.com/anmaslov/start-page/issues",
         "wiki": "https://github.com/anmaslov/start-page/wiki",
@@ -17,7 +17,8 @@
         "yiisoft/yii2-bootstrap": "*",
         "yiisoft/yii2-swiftmailer": "*",
         "bower-asset/jquery-ui": "*",
-        "2amigos/yii2-editable-widget" : "~1.0"
+        "2amigos/yii2-editable-widget" : "~1.0",
+        "thomaspark/bootswatch" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
