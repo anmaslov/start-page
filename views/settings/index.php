@@ -33,7 +33,7 @@ echo Tabs::widget([
         ],
         [
             'label' => 'Справочники',
-            'content' => $this->render('_reference'),
+            'content' => $this->render('/reference/index'),
             'options' => ['tag' => 'div'],
         ],
         [
