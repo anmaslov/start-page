@@ -19,7 +19,7 @@ class ReferenceController extends \yii\web\Controller
                     [
                         'allow' => true,
                         'actions' => ['index', 'state', 'updateState',
-                            'style', 'updateStyle'],
+                            'style', 'updateStyle', 'roles'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -59,6 +59,14 @@ class ReferenceController extends \yii\web\Controller
         $styles = Style::find()->all();
         return $this->render('style', [
             'model' => $styles
+        ]);
+    }
+
+    public function actionRoles()
+    {
+        $roles = \Yii::$app->authManager->getRoles();
+        return $this->render('roles', [
+            'model' => $roles
         ]);
     }
 

@@ -11,7 +11,7 @@ use yii\helpers\Html;
 
             <?= Html::a('Визуальное оформление', ['/reference/style'], ['class' => 'list-group-item']) ?>
 
-            <?= Html::a('Виды ролей', ['block'], ['class' => 'list-group-item']) ?>
+            <?= Html::a('Виды ролей', ['/reference/roles'], ['class' => 'list-group-item']) ?>
 
             <?= Html::a('Группы ip адресов', ['block'], ['class' => 'list-group-item']) ?>
 
