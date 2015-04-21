@@ -47,6 +47,19 @@ class Style extends \yii\db\ActiveRecord
         ];
     }
 
+    public static function getStyleArray()
+    {
+        $valueArr = [];
+        $style = self::find()->all();
+        foreach($style as $arItem)
+        {
+            $valueArr[] = [
+                'value' => $arItem->name, 'text' => $arItem->title,
+            ];
+        }
+        return $valueArr;
+    }
+
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -8,7 +8,7 @@ class m150421_073422_create_styles_table extends Migration
     public function getStyles()
     {
         return  [
-            'default', 'paper', 'superhero', 'yeti', 'darkly', 'lumen', 'sandstone', 'simplex', 'united', 'slate',
+            'default', 'paper', 'superhero', 'yeti', 'darkly', 'lumen', 'simplex', 'united', 'slate',
         ];
     }
 

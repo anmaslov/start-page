@@ -1,16 +1,17 @@
 <?php
 use dosamigos\editable\Editable;
-use yii\widgets\DetailView;
-use yii\helpers\Html;
-use yii\widgets\ActiveForm;
 
 $url = 'settings/user';
 ?>
 <h3>Редактирование информации:</h3>
 
+<blockquote>
+    <p>Важная информация</p>
+    <footer>При смене стиля оформления - необходимо перезагруть страницу.</footer>
+</blockquote>
+
 <div class="row">
     <div class="col-md-5">
-
             <table class="table table-striped table-bordered detail-view">
                 <tbody>
 
@@ -22,6 +23,17 @@ $url = 'settings/user';
                                 'attribute' => 'style',
                                 'url' => $url,
                                 'mode' => 'pop',
+                                'type' => 'select2',
+                                'clientOptions' => [
+                                    'pk' => $model->id,
+                                    'autotext' => 'always',
+                                    'placement' => 'right',
+                                    'select2' => [
+                                        'width' => '200px'
+                                    ],
+                                    'value' => $model->style,
+                                    'source' => \app\models\Style::getStyleArray(),
+                                ]
                             ]);?>
                         </td>
                     </tr>
@@ -107,6 +119,9 @@ $url = 'settings/user';
 
                 </tbody>
             </table>
+
+        <div class="alert alert-warning">При смене визуального оформления, работоспособность
+            в internet explorer 8 и ниже - <b>не гарантируется</b></div>
 
     </div>
 </div>
