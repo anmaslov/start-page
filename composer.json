@@ -18,7 +18,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "bower-asset/jquery-ui": "*",
         "2amigos/yii2-editable-widget" : "~1.0",
-        "thomaspark/bootswatch" : "*"
+        "thomaspark/bootswatch" : "*",
+        "bower-asset/bootstra.386": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",
