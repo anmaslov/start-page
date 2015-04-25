@@ -28,3 +28,5 @@ use dosamigos\editable\Editable;
                 <?endforeach?>
     </div>
 </div>
+
+<?= $this->render('_back') ?>

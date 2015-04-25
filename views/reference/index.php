@@ -13,6 +13,8 @@ use yii\helpers\Html;
 
             <?= Html::a('Виды ролей', ['/reference/roles'], ['class' => 'list-group-item']) ?>
 
+            <?= Html::a('Список иконок', ['/reference/icons'], ['class' => 'list-group-item']) ?>
+
             <?= Html::a('Группы ip адресов', ['block'], ['class' => 'list-group-item']) ?>
 
             <?= Html::a('Доступные иконки', ['block'], ['class' => 'list-group-item']) ?>

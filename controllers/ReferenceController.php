@@ -19,7 +19,7 @@ class ReferenceController extends \yii\web\Controller
                     [
                         'allow' => true,
                         'actions' => ['index', 'state', 'updateState',
-                            'style', 'updateStyle', 'roles'],
+                            'style', 'updateStyle', 'roles', 'icons'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -68,6 +68,11 @@ class ReferenceController extends \yii\web\Controller
         return $this->render('roles', [
             'model' => $roles
         ]);
+    }
+
+    public function actionIcons()
+    {
+        return $this->render('icons');
     }
 
 

@@ -28,3 +28,5 @@ use yii\helpers\Html;
         </ul>
     </div>
 </div>
+
+<?= $this->render('_back') ?>

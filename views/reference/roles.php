@@ -12,3 +12,5 @@
         </ul>
     </div>
 </div>
+
+<?= $this->render('_back') ?>
