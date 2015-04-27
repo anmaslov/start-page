@@ -1,7 +1,11 @@
 <?php
 
 use app\assets\UserAsset;
+use yii\helpers\Url;
+
 UserAsset::register($this);
+
+$rolesEx = [];
 ?>
 
 <h4>Назначение ролей пользователю</h4>
@@ -21,7 +25,7 @@ UserAsset::register($this);
             <ul class="list-group list-link" id="rolesExist">
                 <?foreach(Yii::$app->authManager->getRolesByUser($model->id) as $role):?>
                     <?$rolesEx[] = $role->name;?>
-                    <li class="list-group-item" id="role_<?=$role->name?>"><?=$role->description?></li>
+                    <li class="list-group-item" id="<?=$role->name?>"><?=$role->description?></li>
                 <?endforeach?>
             </ul>
         </div>
@@ -35,7 +39,7 @@ UserAsset::register($this);
             <ul class="list-group list-link" id="rolesAll">
                 <?foreach(Yii::$app->authManager->getRoles() as $role):?>
                     <?if(!in_array($role->name, $rolesEx)):?>
-                        <li class="list-group-item" id="role_<?=$role->name?>"><?=$role->description?></li>
+                        <li class="list-group-item" id="<?=$role->name?>"><?=$role->description?></li>
                     <?endif?>
                 <?endforeach?>
             </ul>
@@ -50,18 +54,27 @@ UserAsset::register($this);
 
 <script type="text/javascript">
     $(function(){
-        $( "#rolesExist, #rolesAll" ).sortable({
+        $( "#rolesExist" ).sortable({
             connectWith: ".list-group",
             receive: function(event, ui) {
-                var newIndex = ui.item.attr('id');
-                console.log(newIndex);
+                var roleId = ui.item.attr('id');
+                console.log(roleId);
+                $.get('<?=Url::toRoute(['add-role', 'user' => $model->id])?>', {role: roleId},function(data){
+                    //console.log(data);
+                },"json");
             },
-            // Likewise, use the .remove event to *delete* the item from its origin list
             remove: function(event, ui) {
-                var oldIndex = ui.item.index();
+                var roleId = ui.item.attr('id');
                 //console.log(oldIndex);
+                $.get('<?=Url::toRoute(['delete-role', 'user' => $model->id])?>', {role: roleId},function(data){
+                    //console.log(data);
+                },"json");
             }
         }).disableSelection();
+
+        $("#rolesAll").sortable({
+            connectWith: ".list-group"
+        });
 
     });
 </script>

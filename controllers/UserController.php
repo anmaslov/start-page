@@ -54,6 +54,29 @@ class UserController extends Controller
         ]);
     }
 
+    public function actionAddRole($user)
+    {
+        $role = \Yii::$app->request->get('role');
+
+        $authManager = Yii::$app->getAuthManager();
+        $userRole = $authManager->getRole($role);
+
+        if ($userRole)
+            $authManager->assign($userRole, $user);
+        //TODO add bad message
+    }
+
+    public function actionDeleteRole($user)
+    {
+        $role = \Yii::$app->request->get('role');
+
+        $authManager = Yii::$app->getAuthManager();
+        $userRole = $authManager->getRole($role);
+
+        if ($userRole)
+            $authManager->revoke($userRole, $user);
+    }
+
     /**
      * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
@@ -106,7 +129,6 @@ class UserController extends Controller
         }else{
             throw new MethodNotAllowedHttpException('Нельзя удалить самого себя!');
         }
-
 
     }
 
