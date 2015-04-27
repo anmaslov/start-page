@@ -6592,3 +6592,32 @@ button.close {
 .detail-view a.editable {
   cursor: pointer !important;
 }
+.bs-glyphicons-list {
+  list-style: none;
+  margin-bottom: 10px;
+}
+.bs-glyphicons-list li {
+  float: left;
+  width: 10%;
+  height: 90px;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 1px solid #fff;
+}
+.bs-glyphicons-list li .glyphicon {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+.bs-glyphicons-list li .glyphicon-class {
+  display: block;
+  text-align: center;
+  word-wrap: break-word;
+}
+.bs-glyphicons-list li:hover {
+  color: #fff;
+  background-color: #ff4136;
+}
