@@ -6,6 +6,7 @@ use yii\helpers\Url;
 
 UiAsset::register($this);
 $this->title = 'Стартовая страница';
+
 ?>
 
 <div class="row block">

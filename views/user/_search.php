@@ -8,32 +8,25 @@ use yii\widgets\ActiveForm;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="user-search">
+<div class="row">
+    <div class="col-md-3">
+        <div class="well">
 
-    <?php $form = ActiveForm::begin([
-        'action' => ['index'],
-        'method' => 'get',
-    ]); ?>
+            <?php $form = ActiveForm::begin([
+                'action' => ['index'],
+                'method' => 'get',
+            ]); ?>
 
-    <?= $form->field($model, 'id') ?>
+            <?php echo $form->field($model, 'ip') ?>
 
-    <?= $form->field($model, 'username') ?>
+            <div class="form-group">
+                <?= Html::submitButton('Поиск', ['class' => 'btn btn-primary']) ?>
+                <?= Html::resetButton('Сброс', ['class' => 'btn btn-default']) ?>
+            </div>
 
-    <?php echo $form->field($model, 'ip') ?>
+            <?php ActiveForm::end(); ?>
 
-    <?php  echo $form->field($model, 'style') ?>
-
-    <?php  echo $form->field($model, 'fa') ?>
-
-    <?php  echo $form->field($model, 'im') ?>
-
-    <?php  echo $form->field($model, 'ot') ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-default']) ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>
+
