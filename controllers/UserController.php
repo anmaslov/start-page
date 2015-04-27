@@ -7,6 +7,7 @@ use app\models\User;
 use app\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
+use yii\web\MethodNotAllowedHttpException;
 use yii\filters\VerbFilter;
 
 /**
@@ -98,9 +99,15 @@ class UserController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $model = $this->findModel($id);
+        if ($model->id != \Yii::$app->user->id){
+            $model->delete();
+            return $this->redirect(['index']);
+        }else{
+            throw new MethodNotAllowedHttpException('Нельзя удалить самого себя!');
+        }
 
-        return $this->redirect(['index']);
+
     }
 
     /**
