@@ -133,6 +133,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             </table>
         </div>
+
+        <div class="col-md-6">
+            <?= $this->render('_roles', [
+                'model' => $model,
+            ]) ?>
+        </div>
+
     </div>
 
     <p>        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
