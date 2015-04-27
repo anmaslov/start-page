@@ -12,7 +12,15 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1><?= Html::encode($this->title) ?>
+
+        <small>
+            <button class="btn btn-primary btn-small" type="button" data-toggle="collapse"
+                    data-target="#searchUsers" aria-expanded="false" aria-controls="searchUsers">
+                Поиск
+            </button>
+        </small>
+    </h1>
     <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
@@ -21,13 +29,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
+                'label' => 'Ip Адрес',
                 'format' => 'raw',
                 'value'=>function ($data) {
                     return Html::a($data->ip, ['view', 'id'=>$data->id]);
                 },
             ],
             //'username',
-            'style',
+            //'style',
             //['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

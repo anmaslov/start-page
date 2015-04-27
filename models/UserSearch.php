@@ -6,12 +6,14 @@ use Yii;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\User;
+use yii\db\Query;
 
 /**
  * UserSearch represents the model behind the search form about `app\models\User`.
  */
 class UserSearch extends User
 {
+    public $role;
     /**
      * @inheritdoc
      */
@@ -19,7 +21,14 @@ class UserSearch extends User
     {
         return [
             [['id', 'status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'ip', 'style', 'fa', 'im', 'ot', 'dr'], 'safe'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'ip', 'style', 'fa', 'im', 'ot', 'dr', 'role'], 'safe'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'role' => 'Вид доступа',
         ];
     }
 
@@ -32,6 +41,24 @@ class UserSearch extends User
         return Model::scenarios();
     }
 
+    public function getUsersByRole($role)
+    {
+        if (empty($role)) {
+            return [];
+        }
+
+        $query = (new Query)->select('b.*')
+            ->from(['a' => '{{%auth_assignment}}', 'b' => '{{%user}}'])
+            ->where('{{a}}.[[user_id]]={{b}}.[[id]]')
+            ->andWhere(['a.item_name' => (string) $role]);
+           // ->andWhere(['b.type' => Item::TYPE_ROLE]);
+
+        $users = [];
+        foreach ($query->all() as $row) {
+            $users[$row['id']] = $row;
+        }
+        return $users;
+    }
     /**
      * Creates data provider instance with search query applied
      *
@@ -62,6 +89,8 @@ class UserSearch extends User
             'updated_at' => $this->updated_at,
             'dr' => $this->dr,
         ]);
+
+        $query->andFilterWhere(['in', 'id', $this->getUsersByRole($this->role)]);
 
         $query->andFilterWhere(['like', 'username', $this->username])
             ->andFilterWhere(['like', 'auth_key', $this->auth_key])
