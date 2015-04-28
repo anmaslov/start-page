@@ -105,7 +105,14 @@ class BlockController extends \yii\web\Controller
     public function actionBlockUpdate()
     {
         $items = \Yii::$app->request->get('items');
-        Block::updateOrder($items);
+        $state = Block::updateOrder($items);
+        if ($state){
+            $out = ['msg' => 'Сохранение прошло успешно', 'type' => 'success'];
+        }else{
+            $out = ['msg' => 'Ошибка сохранения', 'type' => 'danger'];
+        }
+
+        echo json_encode($out);
         \Yii::$app->end();
     }
 

@@ -58,9 +58,22 @@ class MainController extends \yii\web\Controller
     public function actionUpdate()
     {
         $items = \Yii::$app->request->get('items');
-        UserSettingsBlock::sortUpdate(\Yii::$app->user->id, $items);
-        //todo make bad message if returned false
-        //echo json_encode($items);
+
+        $state = UserSettingsBlock::sortUpdate(\Yii::$app->user->id, $items);
+
+        if ($state){
+            $out = [
+                'msg' => 'Сохранение прошло успешно',
+                'type' => 'success'
+            ];
+        }else{
+            $out = [
+                'msg' => 'Ошибка сохранения',
+                'type' => 'danger'
+            ];
+        }
+
+        echo json_encode($out);
         \Yii::$app->end();
     }
 

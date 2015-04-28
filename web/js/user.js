@@ -16,6 +16,7 @@ function updateLinks(URL){
         });
     });
     $.get(URL,{links: blocks},function(data){
+        $.jGrowl(data.msg, { group: 'alert-' + data.type });
     },"json");
 }
 
@@ -42,6 +43,6 @@ function updateWidgetData(URL){
         });
     });
     $.get(URL,{items: items},function(data){
-        //console.log(data);
+        $.jGrowl(data.msg, { group: 'alert-' + data.type });
     },"json");
 }

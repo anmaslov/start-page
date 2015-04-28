@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\base\ErrorException;
 /**
  * This is the model class for table "{{%user_settings_block}}".
  *
@@ -138,18 +139,22 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
         if (!is_array($items))
             return false;
 
-        foreach($items as $item)
-        {
-            $itemId = (int)str_replace('item', '', $item['id']);
-            $block = self::find()->where(['user_id' => $userId, 'id' => $itemId])->one();
+        try{
+            foreach($items as $item)
+            {
+                $itemId = (int)str_replace('item', '', $item['id']);
+                $block = self::find()->where(['user_id' => $userId, 'id' => $itemId])->one();
 
-            $colId = (int)str_replace('column', '', $item['column']);
-            $block->column = $colId==0?1:$colId;
-            $block->order = $item['order'];
-            if(!$block->save())
-                return false;
+                $colId = (int)str_replace('column', '', $item['column']);
+                $block->column = $colId==0?1:$colId;
+                $block->order = $item['order'];
+                if(!$block->save())
+                    return false;
+            }
+            return true;
+        }catch (ErrorException $e){
+            return false;
         }
-        return true;
     }
 
 }

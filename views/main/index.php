@@ -48,7 +48,7 @@ $this->title = 'Стартовая страница';
     </div>
 <?endforeach?>
 </div>
-
+<div id="jGrowl-container1" class="jGrowl top-right"></div>
 <script type="text/javascript">
     $(function(){
         $('.column').sortable({
@@ -77,8 +77,7 @@ $this->title = 'Стартовая страница';
             location.href=link+itemId;
         });
 
-        $.jGrowl("A message with a header", { header: 'Important' });
-        $.jGrowl("Stick this!", { sticky: true });
+        //$.jGrowl("Stick this!", { sticky: true });
 
     });
 

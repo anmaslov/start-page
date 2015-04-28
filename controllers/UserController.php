@@ -61,9 +61,14 @@ class UserController extends Controller
         $authManager = Yii::$app->getAuthManager();
         $userRole = $authManager->getRole($role);
 
-        if ($userRole)
+        if ($userRole){
             $authManager->assign($userRole, $user);
-        //TODO add bad message
+            $out = ['msg' => "Добавлена роль $userRole->description", 'type' => 'success'];
+        }else{
+            $out = ['msg' => 'Ошибка добавления роли', 'type' => 'danger'];
+        }
+        echo json_encode($out);
+        \Yii::$app->end();
     }
 
     public function actionDeleteRole($user)
@@ -73,8 +78,14 @@ class UserController extends Controller
         $authManager = Yii::$app->getAuthManager();
         $userRole = $authManager->getRole($role);
 
-        if ($userRole)
+        if ($userRole){
             $authManager->revoke($userRole, $user);
+            $out = ['msg' => "Роль успешно удалена", 'type' => 'success'];
+        }else{
+            $out = ['msg' => 'Ошибка удаления роли', 'type' => 'danger'];
+        }
+        echo json_encode($out);
+        \Yii::$app->end();
     }
 
     /**

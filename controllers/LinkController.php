@@ -79,10 +79,14 @@ class LinkController extends Controller
     public function actionOrder()
     {
         $links = \Yii::$app->request->get('links');
-        //print_r($links);
-        Link::sortUpdate($links);
-        //todo make bad message if returned false
-        //echo json_encode($items);
+        $state = Link::sortUpdate($links);
+        if ($state){
+            $out = ['msg' => 'Сохранение прошло успешно', 'type' => 'success'];
+        }else{
+            $out = ['msg' => 'Ошибка сохранения', 'type' => 'danger'];
+        }
+
+        echo json_encode($out);
         \Yii::$app->end();
     }
 

@@ -62,14 +62,14 @@ $rolesEx = [];
                 var roleId = ui.item.attr('id');
                 console.log(roleId);
                 $.get('<?=Url::toRoute(['add-role', 'user' => $model->id])?>', {role: roleId},function(data){
-                    //console.log(data);
+                    $.jGrowl(data.msg, { group: 'alert-' + data.type });
                 },"json");
             },
             remove: function(event, ui) {
                 var roleId = ui.item.attr('id');
                 //console.log(oldIndex);
                 $.get('<?=Url::toRoute(['delete-role', 'user' => $model->id])?>', {role: roleId},function(data){
-                    //console.log(data);
+                    $.jGrowl(data.msg, { group: 'alert-' + data.type });
                 },"json");
             }
         }).disableSelection();
