@@ -9,12 +9,14 @@ $rolesEx = [];
 ?>
 
 <h4>Назначение ролей пользователю</h4>
-<!--
-<div class="row">
-    <div class="col-md-10">
-        <div class="alert alert-warning">Плохая идея - редактировать роли у самого себя!</div>
+
+<?if($model->id == \Yii::$app->user->id):?>
+    <div class="row">
+        <div class="col-md-10">
+            <div class="alert alert-warning">Плохая идея - редактировать роли у самого себя!</div>
+        </div>
     </div>
-</div>-->
+<?endif?>
 
 <div class="row">
     <div class="col-md-5">

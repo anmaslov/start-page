@@ -26,7 +26,7 @@ class BlockController extends \yii\web\Controller
                     ],
                     [
                         'allow' => true,
-                        'actions' => ['index', 'update', 'create', 'delete', 'link'],
+                        'actions' => ['index', 'update', 'create', 'delete', 'link', 'block-update'],
                         'roles' => ['admin'],
                     ],
                 ],
@@ -100,6 +100,13 @@ class BlockController extends \yii\web\Controller
             Yii::$app->getSession()->setFlash('success', "Успешно удалено");
             return $this->redirect(['index']);
         }
+    }
+
+    public function actionBlockUpdate()
+    {
+        $items = \Yii::$app->request->get('items');
+        Block::updateOrder($items);
+        \Yii::$app->end();
     }
 
     public function actionEditUserBlock($id)

@@ -24,7 +24,7 @@ $colId = array(1, 2, 3);
         <div class="column col-xs-4" id="column<?=$col?>">
             <?foreach($model as $arItem):?>
                 <?if($arItem->column == $col):?>
-                <div class="panel panel-<?=$arItem->state?>">
+                <div class="panel panel-<?=$arItem->state?>" id="item<?=$arItem->id?>">
                     <div class="panel-heading">
                         <?= Html::a($arItem->title, ['update', 'id'=>$arItem->id]) ?>
 
@@ -83,6 +83,17 @@ $colId = array(1, 2, 3);
             }
         }).disableSelection();
 
+        $('.column').sortable({
+            connectWith: '.column',
+            handle: '.panel-heading',
+            cursor: 'move',
+            placeholder: 'placeholder',
+            forcePlaceholderSize: true,
+            opacity: 0.6,
+            stop: function(event, ui){
+                updateWidgetData('<?=Url::toRoute(['block-update', 'id' => 'contact'])?>');
+            }
+        }).disableSelection();
     });
 </script>
 

@@ -130,4 +130,23 @@ class Block extends \yii\db\ActiveRecord
         return Link::find()->where(['block_id' => $this->id])->orderBy('order')->all();
     }
 
+    public static function updateOrder($items = [])
+    {
+        if (!is_array($items))
+            return false;
+
+        foreach($items as $item)
+        {
+            $itemId = (int)str_replace('item', '', $item['id']);
+            $block = self::findOne($itemId);
+
+            $colId = (int)str_replace('column', '', $item['column']);
+            $block->column = $colId==0?1:$colId;
+            $block->order = $item['order'];
+            if(!$block->save())
+                return false;
+        }
+        return true;
+    }
+
 }

@@ -1,12 +1,11 @@
 <?php
 /* @var $this yii\web\View */
 
-use app\assets\UiAsset;
 use yii\helpers\Url;
+use app\assets\UserAsset;
 
-UiAsset::register($this);
+UserAsset::register($this);
 $this->title = 'Стартовая страница';
-
 ?>
 
 <div class="row block">
@@ -59,45 +58,16 @@ $this->title = 'Стартовая страница';
             placeholder: 'placeholder',
             forcePlaceholderSize: true,
             opacity: 0.6,
-            start: function(event, ui){
-                //Firefox, Safari/Chrome fire click event after drag is complete, fix for that
-                /*if($.browser.mozilla || $.browser.safari)
-                    $(ui.item).find('.dragbox-content').toggle();*/
-            },
             stop: function(event, ui){
-                ui.item.css({'top':'0','left':'0'}); //Opera fix
-                //if(!$.browser.mozilla && !$.browser.safari)
-                    updateWidgetData();
+                updateWidgetData('<?=Url::toRoute(['update', 'id' => 'contact'])?>');
             }
         }).disableSelection();
-
-        function updateWidgetData(){
-            var items=[];
-            $('.column').each(function(){
-                var columnId=$(this).attr('id');
-                $('.panel', this).each(function(i){
-                    var collapsed=0;
-                    if($(this).find('.list-group').css('display')=="none")
-                        collapsed=1;
-                    var item={
-                        id: $(this).attr('id'),
-                        collapsed: collapsed,
-                        order : i,
-                        column: columnId
-                    };
-                    items.push(item);
-                });
-            });
-            $.get('<?=Url::toRoute(['update', 'id' => 'contact'])?>',{items: items},function(data){
-                //console.log(data);
-            },"json");
-        }
 
         $( '.panel-heading .toggle' ).click(function() {
             var icon = $( this );
             icon.find('span').text() == '+' ? icon.find('span').text('‒') : icon.find('span').text('+');
             $(this).closest( ".panel").find( ".list-group" ).toggle('slow').promise().done(function(){
-                updateWidgetData();
+                //updateWidgetData();
             });
         });
 
