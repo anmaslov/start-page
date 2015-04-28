@@ -32,7 +32,8 @@ $this->title = 'Стартовая страница';
                             <?foreach($links as $link):?>
                                 <?if($link->status != $link::STATUS_HIDDEN):?>
                                 <a <?=($link->status == $link::STATUS_DISABLE?'':"href='$link->href'")?>
-                                    class="list-group-item<?=($link->status == $link::STATUS_DISABLE?' disabled':'')?>">
+                                    class="list-group-item<?=($link->status == $link::STATUS_DISABLE?' disabled':'')?>"
+                                    data-toggle="tooltip" data-placement="top" title="<?=$link->tooltip?>">
                                     <?if(strlen($link->icon)>0):?>
                                         <i class="glyphicon glyphicon-<?=$link->icon?>"></i>
                                     <?endif?>
@@ -62,6 +63,8 @@ $this->title = 'Стартовая страница';
                 updateWidgetData('<?=Url::toRoute(['update', 'id' => 'contact'])?>');
             }
         }).disableSelection();
+
+        $('[data-toggle="tooltip"]').tooltip();
 
         $( '.panel-heading .toggle' ).click(function() {
             var icon = $( this );

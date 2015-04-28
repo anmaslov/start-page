@@ -14,7 +14,15 @@ use app\models\Block;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'title')->textInput(['maxlength' => 64]) ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'title')->textInput(['maxlength' => 64]) ?>
+        </div>
+
+        <div class="col-md-6">
+            <?= $form->field($model, 'tooltip')->textInput(['maxlength' => 128]) ?>
+        </div>
+    </div>
 
     <?= $form->field($model, 'href')->textInput(['maxlength' => 128]) ?>
 

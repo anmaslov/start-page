@@ -17,6 +17,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $icon
  * @property integer $created_at
  * @property integer $updated_at
+ * @property integer $tooltip
  *
  * @property Block $block
  */
@@ -50,7 +51,7 @@ class Link extends \yii\db\ActiveRecord
             [['block_id', 'title', 'href'], 'required'],
             [['block_id', 'order', 'status', 'created_at', 'updated_at'], 'integer'],
             [['title'], 'string', 'max' => 64],
-            [['href'], 'string', 'max' => 128],
+            [['href', 'tooltip'], 'string', 'max' => 128],
             [['icon'], 'string', 'max' => 32],
             ['order', 'default', 'value' => 1],
 
@@ -100,6 +101,7 @@ class Link extends \yii\db\ActiveRecord
             'icon' => 'Иконка',
             'created_at' => 'Создана',
             'updated_at' => 'Обновлена',
+            'tooltip' => 'Подсказка'
         ];
     }
 
