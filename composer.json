@@ -19,7 +19,8 @@
         "bower-asset/jquery-ui": "*",
         "2amigos/yii2-editable-widget" : "~1.0",
         "thomaspark/bootswatch" : "*",
-        "bower-asset/bootstra.386": "*"
+        "bower-asset/bootstra.386": "*",
+        "bower-asset/jgrowl": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

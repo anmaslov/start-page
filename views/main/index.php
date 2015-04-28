@@ -77,6 +77,9 @@ $this->title = 'Стартовая страница';
             location.href=link+itemId;
         });
 
+        $.jGrowl("A message with a header", { header: 'Important' });
+        $.jGrowl("Stick this!", { sticky: true });
+
     });
 
 </script>

@@ -14,5 +14,6 @@ class UserAsset extends AssetBundle
 
     public $depends = [
         'app\assets\UiAsset',
+        'app\assets\jGrowlAsset',
     ];
 }

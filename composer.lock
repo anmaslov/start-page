@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5644075f8010841a6f5cccc6cf3daec9",
+    "hash": "fe45cfd8e98053fa44892d9423df855a",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -154,6 +154,51 @@
                 "responsive",
                 "web"
             ]
+        },
+        {
+            "name": "bower-asset/jgrowl",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stanlemon/jGrowl.git",
+                "reference": "253f3d7f2aba93c958d6d14a7a2be1584bae81ee"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stanlemon/jGrowl/zipball/253f3d7f2aba93c958d6d14a7a2be1584bae81ee",
+                "reference": "253f3d7f2aba93c958d6d14a7a2be1584bae81ee",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.4"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "jquery.jgrowl.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "test",
+                    "tests"
+                ],
+                "branch-alias": {
+                    "dev-master": "1.4.2-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "jGrowl is an unobtrusive notification system for web applications.",
+            "keywords": [
+                "growl",
+                "jgrowl",
+                "jquery",
+                "message",
+                "notification",
+                "toaster"
+            ],
+            "time": "2015-03-05 13:11:03"
         },
         {
             "name": "bower-asset/jquery",
@@ -592,12 +637,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "3f455529c34da4b54aa47db076c1884c10791878"
+                "reference": "228c25ca4250aeb99c1c9b3903bd1a4ab9c1f6e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/3f455529c34da4b54aa47db076c1884c10791878",
-                "reference": "3f455529c34da4b54aa47db076c1884c10791878",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/228c25ca4250aeb99c1c9b3903bd1a4ab9c1f6e3",
+                "reference": "228c25ca4250aeb99c1c9b3903bd1a4ab9c1f6e3",
                 "shasum": ""
             },
             "require": {
@@ -672,7 +717,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-04-24 16:22:26"
+            "time": "2015-04-28 02:10:16"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -856,12 +901,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784"
+                "reference": "1dc7404280b32ee661ea65606efcf792be6fc4ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/901bde792eddf6907f33634ff8aafb2dfddd4784",
-                "reference": "901bde792eddf6907f33634ff8aafb2dfddd4784",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/1dc7404280b32ee661ea65606efcf792be6fc4ca",
+                "reference": "1dc7404280b32ee661ea65606efcf792be6fc4ca",
                 "shasum": ""
             },
             "require": {
@@ -900,7 +945,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-04-14 13:37:56"
+            "time": "2015-04-27 20:30:06"
         },
         {
             "name": "phpspec/php-diff",
@@ -1081,12 +1126,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "b0ed0ad42de3f9539c935b36794b880f78f9c39b"
+                "reference": "4407ae95a8d62aff867d98e277a2697934360b0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/b0ed0ad42de3f9539c935b36794b880f78f9c39b",
-                "reference": "b0ed0ad42de3f9539c935b36794b880f78f9c39b",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/4407ae95a8d62aff867d98e277a2697934360b0f",
+                "reference": "4407ae95a8d62aff867d98e277a2697934360b0f",
                 "shasum": ""
             },
             "require": {
@@ -1126,7 +1171,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-04-24 15:35:21"
+            "time": "2015-04-27 22:17:50"
         }
     ],
     "aliases": [],
