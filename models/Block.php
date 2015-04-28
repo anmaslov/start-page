@@ -55,6 +55,7 @@ class Block extends \yii\db\ActiveRecord
             [['column', 'title'], 'required'],
             [['title'], 'string', 'max' => 32],
             [['state'], 'string', 'max' => 64],
+            ['order', 'default', 'value' => 1],
             ['hidden', 'in', 'range' => array_keys(self::getStatusesArray())],
             ['column', 'in', 'range' => array_keys(self::getColumnsArray())]
         ];
@@ -77,9 +78,9 @@ class Block extends \yii\db\ActiveRecord
     public static function getColumnsArray()
     {
         return [
-            '1' => '1',
-            '2' => '2',
-            '3' => '3',
+            '1' => 'Первый',
+            '2' => 'Второй',
+            '3' => 'Третий',
         ];
     }
 

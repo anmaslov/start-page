@@ -18,14 +18,7 @@ use app\models\State;
 
     <?= $form->field($model, 'state')->dropDownList(ArrayHelper::map(State::find()->all(), 'name', 'name')) ?>
 
-    <div class="row">
-        <div class="col-md-6">
-            <?= $form->field($model, 'column')->textInput() ?>
-        </div>
-        <div class="col-md-6">
-            <?= $form->field($model, 'order')->textInput() ?>
-        </div>
-    </div>
+    <?= $form->field($model, 'column')->dropDownList($model::getColumnsArray()) ?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
