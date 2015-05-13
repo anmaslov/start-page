@@ -26,8 +26,8 @@ use yii\behaviors\TimestampBehavior;
 class Block extends \yii\db\ActiveRecord
 {
 
-    const STATUS_HIDDEN = 0;
-    const STATUS_SHOW = 1;
+    const STATUS_SHOW = 0;
+    const STATUS_HIDDEN = 1;
 
     const TYPE_BLOCK = 0;
     const TYPE_TAB = 1;

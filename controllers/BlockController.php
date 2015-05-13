@@ -48,7 +48,7 @@ class BlockController extends \yii\web\Controller
     {
         $model = Block::find()
             ->with('links')
-        //->where(['hidden' => Block::STATUS_SHOW])
+            ->where(['type' => Block::TYPE_BLOCK])
             ->orderBy('order')->all();
 
         return $this->render('index', [

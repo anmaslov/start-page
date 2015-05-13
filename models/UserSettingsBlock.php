@@ -102,7 +102,7 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
      */
     public static function sync($userId)
     {
-        $blocks = Block::find()->all(); //TODO add this template
+        $blocks = Block::find()->where(['type' => Block::TYPE_BLOCK])->all(); //TODO add this template
         $userBlocks = self::find()->where(['user_id' => $userId])->indexBy('block_id')->all();
 
         foreach($blocks as $block)
@@ -117,6 +117,7 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
                 $ub->save();
             }
         }
+        //todo delete blocks if move it to tab
     }
 
     /***

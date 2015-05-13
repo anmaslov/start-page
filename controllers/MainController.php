@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\UserSettingsBlock;
+use app\models\Block;
 use yii\filters\AccessControl;
 
 class MainController extends \yii\web\Controller
@@ -37,10 +38,9 @@ class MainController extends \yii\web\Controller
     {
         $curUser = \Yii::$app->user->id;
         UserSettingsBlock::sync($curUser); //todo return data model
-        //$block = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW])->all();
+        $block = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW, 'type' => Block::TYPE_TAB])->all();
 
         $model = UserSettingsBlock::find()
-            //->innerJoinWith('block')
             ->with('block')
             ->orderBy('column, order')
             ->where(['{{%user_settings_block}}.user_id' => $curUser])
@@ -48,6 +48,7 @@ class MainController extends \yii\web\Controller
 
         return $this->render('index', [
             'model' => $model,
+            'block' => $block,
         ]);
     }
 
