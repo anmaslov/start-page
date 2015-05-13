@@ -43,6 +43,7 @@ AppAsset::register($this);
                     ['label' => 'Настройки', 'url' => ['/settings/index']],
                     ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
                     ['label' => 'Статистика', 'url' => ['/stat/index'], 'visible' => Yii::$app->user->can('admin')],
+                    ['label' => 'Сообщения', 'url' => ['/message/index'], 'visible' => Yii::$app->user->can('moder')],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Авторизация', 'url' => ['/site/login']] :
                         ['label' => 'Ваш адрес: ' . Yii::$app->user->identity->ip,

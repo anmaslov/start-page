@@ -8,6 +8,7 @@ class StatController extends \yii\web\Controller
 {
     public function actionIndex()
     {
+
         $styles = User::find()
             ->select(['style', 'COUNT(*) AS cnt'])
             ->groupBy('style')
