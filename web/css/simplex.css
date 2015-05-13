@@ -6568,9 +6568,6 @@ button.close {
 .panel-heading span {
   color: #777777;
 }
-.panel-heading .config {
-  margin-right: 5px;
-}
 .panel-heading .config span {
   font-size: 15px;
 }

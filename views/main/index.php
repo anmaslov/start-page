@@ -3,10 +3,34 @@
 
 use yii\helpers\Url;
 use app\assets\UserAsset;
+use yii\bootstrap\Tabs;
 
 UserAsset::register($this);
 $this->title = 'Стартовая страница';
 ?>
+
+<?
+echo Tabs::widget([
+    'items' => [
+        [
+            'label' => 'Основные',
+            'content' => $this->render('_block', [
+                'model' => $model,
+            ]),
+            'active' => true,
+        ],
+        [
+            'label' => 'Ресурсы интернет',
+            'content' => $this->render('_internet'),
+        ],
+    ],
+    'options' => ['tag' => 'div'],
+    'itemOptions' => ['tag' => 'div'],
+    'headerOptions' => ['class' => 'my-class'],
+    'clientOptions' => ['collapsible' => false],
+]);
+?>
+
 
 <div class="row block">
 <?$colId = array(1, 2, 3);?>
@@ -21,7 +45,6 @@ $this->title = 'Стартовая страница';
                 <div class="panel panel-<?=$arItem->state?>" id="item<?=$arItem->id?>">
                     <div class="panel-heading">
                         <?=$arItem->block->title?>
-                        <button type="button" class="close toggle" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">‒</span></button>
                         <a href="#" class="close config" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true" class="glyphicon glyphicon-cog"></span>
                         </a>
@@ -65,14 +88,6 @@ $this->title = 'Стартовая страница';
         }).disableSelection();
 
         $('[data-toggle="tooltip"]').tooltip();
-
-        $( '.panel-heading .toggle' ).click(function() {
-            var icon = $( this );
-            icon.find('span').text() == '+' ? icon.find('span').text('‒') : icon.find('span').text('+');
-            $(this).closest( ".panel").find( ".list-group" ).toggle('slow').promise().done(function(){
-                //updateWidgetData();
-            });
-        });
 
         $('.panel-heading .config').click(function(){
             var itemId = $(this).closest( ".panel").attr('id');

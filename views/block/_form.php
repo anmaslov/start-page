@@ -20,6 +20,8 @@ use app\models\State;
 
     <?= $form->field($model, 'column')->dropDownList($model::getColumnsArray()) ?>
 
+    <?= $form->field($model, 'type')->dropDownList($model::getTypesArray()) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
         <?= Html::a('Отмена', ['index'], ['class' => 'btn btn-default']) ?>
