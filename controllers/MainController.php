@@ -48,7 +48,7 @@ class MainController extends \yii\web\Controller
 
         return $this->render('index', [
             'model' => $model,
-            'block' => $block,
+            'blocks' => $block,
         ]);
     }
 
