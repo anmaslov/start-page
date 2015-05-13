@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\base\ErrorException;
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "{{%user_settings_block}}".
  *
@@ -117,7 +118,9 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
                 $ub->save();
             }
         }
-        //todo delete blocks if move it to tab
+
+        $blocksId = ArrayHelper::map($blocks, 'id', 'id');
+        self::deleteAll('block_id NOT IN (' . implode(', ', $blocksId) . ') and user_id = '.$userId);
     }
 
     /***

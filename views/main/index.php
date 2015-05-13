@@ -33,6 +33,7 @@ echo Tabs::widget([
         $items
     ),
     'options' => ['tag' => 'div'],
+    'navType' => 'nav-pills',
     'itemOptions' => ['tag' => 'div'],
     'headerOptions' => ['class' => 'my-class'],
     'clientOptions' => ['collapsible' => false],

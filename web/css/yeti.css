@@ -6558,6 +6558,9 @@ button.close {
   -moz-border-radius: 7px;
   -webkit-border-radius: 7px;
 }
+.block {
+  margin-top: 5px;
+}
 .block .panel-heading {
   cursor: move;
 }

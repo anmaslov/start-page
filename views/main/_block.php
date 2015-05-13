@@ -6,7 +6,6 @@ use app\assets\UserAsset;
 
 UserAsset::register($this);
 ?>
-
 <div class="row block">
     <?$colId = array(1, 2, 3);?>
 
