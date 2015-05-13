@@ -46,13 +46,16 @@ class BlockController extends \yii\web\Controller
 
     public function actionIndex()
     {
-        $model = Block::find()
-            ->with('links')
-        //->where(['hidden' => Block::STATUS_SHOW])
+        $model = Block::find()->with('links')
+            ->where(['type' => Block::TYPE_BLOCK])
             ->orderBy('order')->all();
+
+        $tabs = Block::find()->with('links')
+            ->where(['type' => Block::TYPE_TAB])->orderBy('order')->all();
 
         return $this->render('index', [
             'model' => $model,
+            'blocks' => $tabs
         ]);
     }
 

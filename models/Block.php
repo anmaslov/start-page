@@ -17,6 +17,7 @@ use yii\behaviors\TimestampBehavior;
  * @property integer $updated_at
  *
  * @property string $state
+ * @property integer $type
  *
  * @property State $state0
  * @property Link[] $links
@@ -25,8 +26,11 @@ use yii\behaviors\TimestampBehavior;
 class Block extends \yii\db\ActiveRecord
 {
 
-    const STATUS_HIDDEN = 0;
-    const STATUS_SHOW = 1;
+    const STATUS_SHOW = 0;
+    const STATUS_HIDDEN = 1;
+
+    const TYPE_BLOCK = 0;
+    const TYPE_TAB = 1;
     /**
      * @inheritdoc
      */
@@ -51,13 +55,14 @@ class Block extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['column', 'order', 'hidden', 'created_at', 'updated_at'], 'integer'],
+            [['column', 'order', 'hidden', 'created_at', 'updated_at', 'type'], 'integer'],
             [['column', 'title'], 'required'],
             [['title'], 'string', 'max' => 32],
             [['state'], 'string', 'max' => 64],
             ['order', 'default', 'value' => 1],
             ['hidden', 'in', 'range' => array_keys(self::getStatusesArray())],
-            ['column', 'in', 'range' => array_keys(self::getColumnsArray())]
+            ['column', 'in', 'range' => array_keys(self::getColumnsArray())],
+            ['type', 'in', 'range' => array_keys(self::getTypesArray())],
         ];
     }
 
@@ -72,6 +77,14 @@ class Block extends \yii\db\ActiveRecord
         return [
             self::STATUS_HIDDEN => 'Скрыт',
             self::STATUS_SHOW => 'Отображается',
+        ];
+    }
+
+    public static function getTypesArray()
+    {
+        return [
+            self::TYPE_BLOCK => 'Основная страница',
+            self::TYPE_TAB => 'Блок-закладка',
         ];
     }
 
@@ -96,6 +109,7 @@ class Block extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'hidden' => 'Hidden',
             'state' => 'Оформление',
+            'type' => 'Тип размещения',
             'created_at' => 'Created At',
             'updated_at' => 'Updated At',
         ];

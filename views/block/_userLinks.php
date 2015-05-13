@@ -1,4 +1,6 @@
 <?php
+
+use yii\helpers\Html;
 use yii\helpers\Url;
 use dosamigos\editable\Editable;
 use app\assets\UserAsset;
@@ -17,9 +19,9 @@ UserAsset::register($this);
                     <?if(strlen($item->icon)>0):?>
                         <i class="glyphicon glyphicon-<?=$item->icon?>"></i>
                     <?endif?>
-                    <?=$item['title']?>
 
                     <?if(Yii::$app->user->can('admin')):?>
+                        <?= Html::a($item->title, ['/link/update', 'id'=>$item->id]) ?>
                         <?= Editable::widget( [
                             'model' => $item,
                             'attribute' => 'status',
@@ -41,6 +43,9 @@ UserAsset::register($this);
                                 'source' => $item::getStatusesArrayValue(),
                             ]
                         ]);?>
+
+                     <?else:?>
+                        <?=$item->title?>
                     <?endif?>
                 </li>
             <?endforeach?>

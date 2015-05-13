@@ -20,7 +20,8 @@
         "2amigos/yii2-editable-widget" : "~1.0",
         "thomaspark/bootswatch" : "*",
         "bower-asset/bootstra.386": "*",
-        "bower-asset/jgrowl": "*"
+        "bower-asset/jgrowl": "*",
+        "miloschuman/yii2-highcharts-widget": "dev-master"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

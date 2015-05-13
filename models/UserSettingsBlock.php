@@ -5,6 +5,7 @@ namespace app\models;
 use Yii;
 use yii\behaviors\TimestampBehavior;
 use yii\base\ErrorException;
+use yii\helpers\ArrayHelper;
 /**
  * This is the model class for table "{{%user_settings_block}}".
  *
@@ -102,7 +103,7 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
      */
     public static function sync($userId)
     {
-        $blocks = Block::find()->all(); //TODO add this template
+        $blocks = Block::find()->where(['type' => Block::TYPE_BLOCK])->all(); //TODO add this template
         $userBlocks = self::find()->where(['user_id' => $userId])->indexBy('block_id')->all();
 
         foreach($blocks as $block)
@@ -117,6 +118,9 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
                 $ub->save();
             }
         }
+
+        $blocksId = ArrayHelper::map($blocks, 'id', 'id');
+        self::deleteAll('block_id NOT IN (' . implode(', ', $blocksId) . ') and user_id = '.$userId);
     }
 
     /***
