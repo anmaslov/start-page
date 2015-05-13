@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe45cfd8e98053fa44892d9423df855a",
+    "hash": "b4f5660e837295f49b4181851f84e8c5",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -523,6 +523,51 @@
             "time": "2013-11-30 08:25:19"
         },
         {
+            "name": "miloschuman/yii2-highcharts-widget",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/miloschuman/yii2-highcharts.git",
+                "reference": "c6c2e163d2cb537b09c5f46b65fc73adc604e904"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/miloschuman/yii2-highcharts/zipball/c6c2e163d2cb537b09c5f46b65fc73adc604e904",
+                "reference": "c6c2e163d2cb537b09c5f46b65fc73adc604e904",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "miloschuman\\highcharts\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Milo Schuman",
+                    "email": "miloschuman@gmail.com"
+                }
+            ],
+            "description": "Highcharts widget for Yii 2 Framework.",
+            "homepage": "https://github.com/miloschuman/yii2-highcharts",
+            "keywords": [
+                "extension",
+                "highcharts",
+                "highmaps",
+                "highstock",
+                "widget",
+                "yii2"
+            ],
+            "time": "2015-04-29 19:14:33"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -638,12 +683,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "492aeb766b30eb00747c54096f790d2afd1090c8"
+                "reference": "c32baa712bbba6389a5ddba35705a36aba54657e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/492aeb766b30eb00747c54096f790d2afd1090c8",
-                "reference": "492aeb766b30eb00747c54096f790d2afd1090c8",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c32baa712bbba6389a5ddba35705a36aba54657e",
+                "reference": "c32baa712bbba6389a5ddba35705a36aba54657e",
                 "shasum": ""
             },
             "require": {
@@ -718,7 +763,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-11 09:52:29"
+            "time": "2015-05-13 10:53:44"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -726,12 +771,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "a02d1356817b988473706f921d7ac56f8797b0bd"
+                "reference": "29ed43dd05df05cb15431503b66cd5ef2fab8a0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/a02d1356817b988473706f921d7ac56f8797b0bd",
-                "reference": "a02d1356817b988473706f921d7ac56f8797b0bd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/29ed43dd05df05cb15431503b66cd5ef2fab8a0d",
+                "reference": "29ed43dd05df05cb15431503b66cd5ef2fab8a0d",
                 "shasum": ""
             },
             "require": {
@@ -768,7 +813,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-11 22:27:56"
+            "time": "2015-05-12 08:39:27"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -1177,7 +1222,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "miloschuman/yii2-highcharts-widget": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
