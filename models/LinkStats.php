@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\behaviors\TimestampBehavior;
+use yii\db\Expression;
 
 /**
  * This is the model class for table "{{%link_stats}}".
@@ -28,18 +30,34 @@ class LinkStats extends \yii\db\ActiveRecord
         return '{{%link_stats}}';
     }
 
+    public function behaviors()
+    {
+        return [
+         [
+             'class' => TimestampBehavior::className(),
+             'updatedAtAttribute' => 'created_at',
+             'value' => new Expression('NOW()'),
+         ],
+        ];
+    }
+
     /**
      * @inheritdoc
      */
     public function rules()
     {
         return [
-            [['link_id', 'user_id', 'created_at'], 'required'],
+            [['link_id', 'user_id'], 'required'],
             [['link_id', 'user_id'], 'integer'],
             [['created_at'], 'safe'],
             [['userip'], 'string', 'max' => 15],
+            ['userip', 'default', 'value' => Yii::$app->getRequest()->getUserIP()],
+            ['userhost', 'default', 'value' => Yii::$app->getRequest()->getUserHost()],
+            ['useragent', 'default', 'value' => Yii::$app->getRequest()->getUserAgent()],
+
             [['userhost'], 'string', 'max' => 150],
             [['useragent'], 'string', 'max' => 500]
+
         ];
     }
 
@@ -57,6 +75,18 @@ class LinkStats extends \yii\db\ActiveRecord
             'useragent' => 'Useragent',
             'created_at' => 'Created At',
         ];
+    }
+
+    public static function create($link)
+    {
+        $linkS = new self;
+        $linkS->link_id = $link;
+        $linkS->user_id = Yii::$app->user->id;
+
+        if(!$linkS->save())
+            return $linkS->getErrors();
+        else
+            return true;
     }
 
     /**
