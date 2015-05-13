@@ -8,6 +8,7 @@ $this->title = 'Стартовая страница';
 
 <?
     //Генерируем массив табов
+    $items = [];
     foreach($blocks as $block)
     {
         $items[] = [

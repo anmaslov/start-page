@@ -8,7 +8,19 @@ class StatController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $styles = User::find()
+            ->select(['style', 'COUNT(*) AS cnt'])
+            ->groupBy('style')
+            ->all();
+
+        foreach($styles as $st){
+            $sta[] = [
+                'name' => $st->style,
+                'y' => (int)$st->cnt
+            ];
+        }
+
+        return $this->render('index', ['st' => $sta]);
     }
 
     public function actionStyle()
