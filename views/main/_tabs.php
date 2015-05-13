@@ -1,6 +1,5 @@
 <?php
 
-use yii\helpers\Html;
 ?>
 <div class="row block">
     <div class="col-md-5">
