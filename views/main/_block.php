@@ -28,7 +28,7 @@ UserAsset::register($this);
                             <div class="list-group">
                                 <?foreach($links as $link):?>
                                     <?if($link->status != $link::STATUS_HIDDEN):?>
-                                        <a <?=($link->status == $link::STATUS_DISABLE?'':"href='$link->href'")?>
+                                        <a <?=($link->status == $link::STATUS_DISABLE?'':"href='$link->stat'")?>
                                             class="list-group-item<?=($link->status == $link::STATUS_DISABLE?' disabled':'')?>"
                                             data-toggle="tooltip" data-placement="top" title="<?=$link->tooltip?>">
                                             <?if(strlen($link->icon)>0):?>

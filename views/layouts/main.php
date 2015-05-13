@@ -42,10 +42,9 @@ AppAsset::register($this);
                     ['label' => 'Блоки', 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
                     ['label' => 'Настройки', 'url' => ['/settings/index']],
                     ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Авторизация', 'url' => ['/site/login']] :
-                        ['label' => 'Привет, ' . Yii::$app->user->identity->ip,
+                        ['label' => 'Ваш адрес: ' . Yii::$app->user->identity->ip,
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],

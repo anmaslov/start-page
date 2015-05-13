@@ -4,6 +4,7 @@ namespace app\models;
 
 use Yii;
 use yii\behaviors\TimestampBehavior;
+use yii\helpers\Url;
 
 /**
  * This is the model class for table "{{%link}}".
@@ -103,6 +104,11 @@ class Link extends \yii\db\ActiveRecord
             'updated_at' => 'Обновлена',
             'tooltip' => 'Подсказка'
         ];
+    }
+
+    public function getStat()
+    {
+        return Url::to(['link-stats/go', 'link' => $this->href, 'id' => $this->id]);
     }
 
     public static function sortUpdate($items = array())
