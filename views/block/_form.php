@@ -18,7 +18,15 @@ use app\models\State;
 
     <?= $form->field($model, 'state')->dropDownList(ArrayHelper::map(State::find()->all(), 'name', 'name')) ?>
 
-    <?= $form->field($model, 'column')->dropDownList($model::getColumnsArray()) ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'column')->dropDownList($model::getColumnsArray()) ?>
+        </div>
+
+        <div class="col-md-6">
+            <?= $form->field($model, 'order')->textInput(['maxlength' => 5, 'type' => 'number']) ?>
+        </div>
+    </div>
 
     <?= $form->field($model, 'type')->dropDownList($model::getTypesArray()) ?>
 
