@@ -42,9 +42,6 @@ echo Tabs::widget([
 ]);
 ?>
 
-
-
-
 <?= Html::a('Добавить блок', ['create'], ['class' => 'btn btn-success']) ?>
 
 <?= Html::a('Добавить ссылку', ['/link/create'], ['class' => 'btn btn-info']) ?>

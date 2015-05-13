@@ -38,7 +38,8 @@ class MainController extends \yii\web\Controller
     {
         $curUser = \Yii::$app->user->id;
         UserSettingsBlock::sync($curUser); //todo return data model
-        $block = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW, 'type' => Block::TYPE_TAB])->all();
+        $block = Block::find()->with('links')->where(['hidden' => Block::STATUS_SHOW, 'type' => Block::TYPE_TAB])
+            ->orderBy('order')->all();
 
         $model = UserSettingsBlock::find()
             ->with('block')

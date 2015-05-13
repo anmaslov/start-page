@@ -5,6 +5,7 @@ use yii\helpers\Html;
 
 <div class="row">
     <div class="col-md-5 block">
+        <?if(count($model->links)>0):?>
         <ul class="list-group" id="block<?=$model->id?>">
             <?foreach($model->links as $link):?>
                 <li class="list-group-item" id="link<?=$link->id?>">
@@ -36,5 +37,14 @@ use yii\helpers\Html;
                 </li>
             <?endforeach?>
         </ul>
+        <?else:?>
+            <div class="jumbotron">
+                <p>Для данного раздела нет ни одной ссылки!</p>
+            </div>
+        <?endif?>
+
+        <p>
+            <?= Html::a('Редактировать этот блок', ['update', 'id'=>$model->id], ['class' => 'btn btn-success']) ?>
+        </p>
     </div>
 </div>
