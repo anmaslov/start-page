@@ -1,5 +1,6 @@
 <?php
 use miloschuman\highcharts\Highcharts;
+use \yii\helpers\Url;
 /* @var $this yii\web\View */
 ?>
 <h1>Статистика:</h1>
@@ -9,6 +10,9 @@ use miloschuman\highcharts\Highcharts;
         <div class="panel panel-default">
             <div class="panel-body">
                 <?
+                $url = URL::to(['stat/style']);
+                $this->registerJs('var data = $.getJSON("'.$url.'");');
+                $this->registerJs('console.log(data)');
                 echo Highcharts::widget([
                     'options' => [
                         'title' => ['text' => 'Распределение тем по пользователям'],
