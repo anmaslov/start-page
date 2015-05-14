@@ -7,35 +7,21 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MessageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Messages';
+$this->title = 'Сообщения';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="message-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<h1><?= Html::encode($this->title) ?></h1>
+<p>
+    <?= Html::a('Создать сообщение', ['create'], ['class' => 'btn btn-success']) ?>
+</p>
 
-    <p>
-        <?= Html::a('Create Message', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'user',
-            'status',
-            'title',
-            'text:ntext',
-            // 'state',
-            // 'created_at',
-            // 'updated_at',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+<div class="row">
+    <div class="col-md-5">
+        <div class="list-group">
+        <?foreach($model as $msg):?>
+            <?= Html::a("Сообщение # $msg->id $msg->title", ['update', 'id'=>$msg->id]) ?>
+        <?endforeach?>
+        </div>
+    </div>
 </div>
