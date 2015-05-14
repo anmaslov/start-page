@@ -9,12 +9,13 @@ $this->title = 'Обновление сообщения: ' . ' ' . $model->title
 $this->params['breadcrumbs'][] = ['label' => 'Сообщения', 'url' => ['index']];
 $this->params['breadcrumbs'][] = 'Обновление';
 ?>
-<div class="message-update">
+<div class="row">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <div class="col-md-6">
+        <h3><?= Html::encode($this->title) ?></h3>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+        <?= $this->render('_form', [
+            'model' => $model,
+        ]) ?>
+    </div>
 </div>

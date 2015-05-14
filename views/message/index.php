@@ -20,7 +20,15 @@ $this->params['breadcrumbs'][] = $this->title;
     <div class="col-md-5">
         <div class="list-group">
         <?foreach($model as $msg):?>
-            <?= Html::a("Сообщение # $msg->id $msg->title", ['update', 'id'=>$msg->id]) ?>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <div class="alert alert-<?=$msg->state?>" role="alert">
+                        <strong><?=$msg->title?></strong><?=$msg->text?>
+                    </div>
+                    <?= Html::a('Редактировать', ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
+                    <span class="label label-warning"><?=$msg::getStatusesArray()[$msg->status] ?></span>
+                </div>
+            </div>
         <?endforeach?>
         </div>
     </div>

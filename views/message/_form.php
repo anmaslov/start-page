@@ -27,6 +27,11 @@ use app\models\State;
             <?= $form->field($model, 'state')->dropDownList(ArrayHelper::map(State::find()->all(), 'name', 'name')) ?>
         </div>
     </div>
+    <!--
+    <div class="row">
+        <div class="col-md-6"> <?= $form->field($model, 'date_start')->textInput(['maxlength' => true]) ?></div>
+        <div class="col-md-6"> <?= $form->field($model, 'date_end')->textInput(['maxlength' => true]) ?></div>
+    </div>-->
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
