@@ -8,37 +8,39 @@ class StatController extends \yii\web\Controller
 {
     public function actionIndex()
     {
-
-        $styles = User::find()
-            ->select(['style', 'COUNT(*) AS cnt'])
-            ->groupBy('style')
-            ->all();
-
-        foreach($styles as $st){
-            $sta[] = [
-                'name' => $st->style,
-                'y' => (int)$st->cnt
-            ];
-        }
-
-        return $this->render('index', ['st' => $sta]);
+        return $this->render('index');
     }
 
     public function actionStyle()
     {
         $query = new Query();
-        $query->select(['style', 'COUNT(*) AS cnt'])
+        $query->select(['style as name', 'COUNT(*) AS cnt'])
             ->from('{{%user}}')->groupBy('style');
             //->orderBy('cnt');
+        $this->genDataJson($query);
+    }
 
+    public function actionBlock()
+    {
+        $query = new Query();
+        $query->select(['{{%block}}.title as name', 'COUNT(*) AS cnt'])
+            ->from('{{%link}}')
+            ->innerJoin('{{%block}}', '{{%link}}.block_id={{%block}}.id')
+            ->groupBy('block_id');
+
+        $this->genDataJson($query);
+    }
+
+    protected function genDataJson($query)
+    {
         foreach($query->all() as $st){
             $sta[] = [
-                'name' => $st['style'],
+                'name' => $st['name'],
                 'y' => (int)$st['cnt']
             ];
         }
-
         echo json_encode($sta);
+
         \Yii::$app->end();
     }
 }
