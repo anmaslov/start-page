@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Message;
 use app\models\UserSettingsBlock;
 use app\models\Block;
 use yii\filters\AccessControl;
@@ -47,9 +48,12 @@ class MainController extends \yii\web\Controller
             ->where(['{{%user_settings_block}}.user_id' => $curUser])
             ->all();
 
+        $msg = Message::find()->where(['status' => Message::STATUS_SHOW])->all();
+
         return $this->render('index', [
             'model' => $model,
             'blocks' => $block,
+            'messages' => $msg,
         ]);
     }
 

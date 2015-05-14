@@ -20,6 +20,10 @@ $this->title = 'Стартовая страница';
     }
 ?>
 
+    <?=$this->render('_message', [
+        'messages' => $messages
+    ]);?>
+
 <?
 echo Tabs::widget([
     'items' => array_merge([
