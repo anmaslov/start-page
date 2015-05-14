@@ -6554,8 +6554,8 @@ button.close {
   background: #eeeeee;
   border: 1px dashed #bbbbbb;
   margin-bottom: 20px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
 }
 .block {
   margin-top: 5px;

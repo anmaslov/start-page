@@ -13,10 +13,10 @@ $config = [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '3OGRrGatQ1P9jYZVw3eucsBRz3NHAdMl',
         ],
-        /*'urlManager' => [
+        'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
-        ],*/
+        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
         ],
