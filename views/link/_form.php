@@ -49,10 +49,9 @@ use app\models\Block;
         <?= Html::a('Отмена', ['/block/index'], ['class' => 'btn btn-default']) ?>
 
         <?if(!$model->isNewRecord):?>
-            <?= Html::a('Удалить', ['delete', 'id' => $model->id],
+            <?= Html::a('Удалить', ['/link/delete', 'id' => $model->id],
                 ['class' => 'btn btn-danger pull-right',
-                    'data-confirm' => 'Вы действительно хотите удалить ссылку?',
-                    'data-method' => 'post']) ?>
+                    'data-confirm' => 'Вы действительно хотите удалить ссылку?']) ?>
         <?endif?>
     </div>
 

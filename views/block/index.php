@@ -9,6 +9,7 @@ use yii\helpers\Url;
 
 <?
 //Генерируем массив табов
+$items = [];
 foreach($blocks as $block)
 {
     $items[] = [
