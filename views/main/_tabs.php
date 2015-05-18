@@ -1,5 +1,6 @@
 <?php
 
+use yii\helpers\Html;
 ?>
 <div class="row block">
     <div class="col-md-5">
@@ -7,7 +8,7 @@
         <div class="list-group">
             <?foreach($model->links as $link):?>
                 <?if($link->status != $link::STATUS_HIDDEN):?>
-                    <a <?=($link->status == $link::STATUS_DISABLE?'':"href='$link->stat'")?>
+                    <a <?=($link->status == $link::STATUS_DISABLE?'':"href='$link->href'")?>
                         class="list-group-item<?=($link->status == $link::STATUS_DISABLE?' disabled':'')?>"
                         data-toggle="tooltip" data-placement="top" title="<?=$link->tooltip?>">
                         <?if(strlen($link->icon)>0):?>
@@ -24,4 +25,5 @@
             </div>
         <?endif?>
     </div>
+
 </div>

@@ -6548,8 +6548,8 @@ button.close {
   background: #ebebeb;
   border: 1px dashed #4e5d6c;
   margin-bottom: 20px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
 }
 .block {
   margin-top: 5px;

@@ -45,6 +45,8 @@ use yii\helpers\Html;
 
         <p>
             <?= Html::a('Редактировать этот блок', ['update', 'id'=>$model->id], ['class' => 'btn btn-success']) ?>
+
+            <?= Html::a('Добавить ссылку', ['/link/create', 'id'=>$model->id], ['class' => 'btn btn-info']) ?>
         </p>
     </div>
 </div>

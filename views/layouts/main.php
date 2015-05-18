@@ -42,7 +42,7 @@ AppAsset::register($this);
                     ['label' => 'Блоки', 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
                     ['label' => 'Настройки', 'url' => ['/settings/index']],
                     ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'Статистика', 'url' => ['/stat/index'], 'visible' => Yii::$app->user->can('admin')],
+                    ['label' => 'Статистика', 'url' => ['/stat/index']],
                     ['label' => 'Сообщения', 'url' => ['/message/index'], 'visible' => Yii::$app->user->can('moder')],
                     Yii::$app->user->isGuest ?
                         ['label' => 'Авторизация', 'url' => ['/site/login']] :
