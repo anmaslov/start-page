@@ -11,6 +11,9 @@ class StatController extends \yii\web\Controller
         return $this->render('index');
     }
 
+    /***
+     * Theme style by user
+     */
     public function actionStyle()
     {
         $query = new Query();
@@ -20,6 +23,9 @@ class StatController extends \yii\web\Controller
         $this->genDataJson($query);
     }
 
+    /***
+     * Count link by block
+     */
     public function actionBlock()
     {
         $query = new Query();
@@ -27,6 +33,24 @@ class StatController extends \yii\web\Controller
             ->from('{{%link}}')
             ->innerJoin('{{%block}}', '{{%link}}.block_id={{%block}}.id')
             ->groupBy('block_id');
+
+        $this->genDataJson($query);
+    }
+
+    /***
+     * @param bool $year
+     * @param bool $month
+     * Count link clicked group by date
+     */
+    public function actionLinkStatByDate($year = false, $month = false)
+    {
+        $query = new Query();
+        $query->select(["DATE_FORMAT(created_at, '%d.%m') as name", 'COUNT(*) AS cnt'])
+            ->from('{{%link_stats}}')
+            ->where('YEAR(created_at) = ' . (!$year ? date('Y') : $year))
+            ->where('MONTH(created_at) = ' . (!$month ? date('m') : $month))
+            ->groupBy(["DATE_FORMAT(created_at, '%Y%m%d')"])
+            ->orderBy('name');
 
         $this->genDataJson($query);
     }

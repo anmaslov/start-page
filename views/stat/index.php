@@ -13,6 +13,8 @@ use \yii\helpers\Url;
     <div class="col-md-4">
         <?= $this->render('_block') ?>
     </div>
-    <div class="col-md-4">Три</div>
+    <div class="col-md-4">
+        <?= $this->render('_linkStatByDate.php') ?>
+    </div>
 </div>
 
