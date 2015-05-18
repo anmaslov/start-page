@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b4f5660e837295f49b4181851f84e8c5",
+    "hash": "ede7799a97bf2253048b7a111e50034e",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -683,12 +683,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "e68f817c6036dec1b226bf0d7a6e7d94fffa6402"
+                "reference": "89aa33f7c97b6b7d4396806ce1a175e9786c7cd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e68f817c6036dec1b226bf0d7a6e7d94fffa6402",
-                "reference": "e68f817c6036dec1b226bf0d7a6e7d94fffa6402",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/89aa33f7c97b6b7d4396806ce1a175e9786c7cd3",
+                "reference": "89aa33f7c97b6b7d4396806ce1a175e9786c7cd3",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-13 22:26:25"
+            "time": "2015-05-18 00:14:14"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -771,12 +771,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "29ed43dd05df05cb15431503b66cd5ef2fab8a0d"
+                "reference": "f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/29ed43dd05df05cb15431503b66cd5ef2fab8a0d",
-                "reference": "29ed43dd05df05cb15431503b66cd5ef2fab8a0d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0",
+                "reference": "f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-12 08:39:27"
+            "time": "2015-05-15 10:20:11"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -916,16 +916,16 @@
     "packages-dev": [
         {
             "name": "bower-asset/typeahead.js",
-            "version": "v0.10.5",
+            "version": "v0.11.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twitter/typeahead.js.git",
-                "reference": "5f198b87d1af845da502ea9df93a5e84801ce742"
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/5f198b87d1af845da502ea9df93a5e84801ce742",
-                "reference": "5f198b87d1af845da502ea9df93a5e84801ce742",
+                "url": "https://api.github.com/repos/twitter/typeahead.js/zipball/588440f66559714280628a4f9799f0c4eb880a4a",
+                "reference": "588440f66559714280628a4f9799f0c4eb880a4a",
                 "shasum": ""
             },
             "require": {
@@ -1078,12 +1078,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-debug.git",
-                "reference": "b2448aa67657323409e97b5facbf21b498b848e2"
+                "reference": "9a945c208f20c129da4fcfe5e8110e0c113c7871"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/b2448aa67657323409e97b5facbf21b498b848e2",
-                "reference": "b2448aa67657323409e97b5facbf21b498b848e2",
+                "url": "https://api.github.com/repos/yiisoft/yii2-debug/zipball/9a945c208f20c129da4fcfe5e8110e0c113c7871",
+                "reference": "9a945c208f20c129da4fcfe5e8110e0c113c7871",
                 "shasum": ""
             },
             "require": {
@@ -1117,7 +1117,7 @@
                 "debugger",
                 "yii2"
             ],
-            "time": "2015-05-10 22:28:14"
+            "time": "2015-05-15 16:46:39"
         },
         {
             "name": "yiisoft/yii2-faker",
@@ -1172,16 +1172,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "dbd9a38f43eb605aa6c433f1ffd3c37c2a3ce9d8"
+                "reference": "1a889d35d7e30b5c56820cc4ec1d7bdacd69244b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/dbd9a38f43eb605aa6c433f1ffd3c37c2a3ce9d8",
-                "reference": "dbd9a38f43eb605aa6c433f1ffd3c37c2a3ce9d8",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/1a889d35d7e30b5c56820cc4ec1d7bdacd69244b",
+                "reference": "1a889d35d7e30b5c56820cc4ec1d7bdacd69244b",
                 "shasum": ""
             },
             "require": {
-                "bower-asset/typeahead.js": "0.10.*",
+                "bower-asset/typeahead.js": "0.10.* | ~0.11.0",
                 "phpspec/php-diff": ">=1.0.2",
                 "yiisoft/yii2": ">=2.0.4",
                 "yiisoft/yii2-bootstrap": "~2.0"
@@ -1217,7 +1217,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-05-10 22:29:47"
+            "time": "2015-05-18 11:12:35"
         }
     ],
     "aliases": [],

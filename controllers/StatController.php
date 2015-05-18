@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
+use app\models\Link;
 use yii\db\Query;
+use yii\helpers\Json;
 
 class StatController extends \yii\web\Controller
 {
@@ -53,6 +55,71 @@ class StatController extends \yii\web\Controller
             ->orderBy('name');
 
         $this->genDataJson($query);
+    }
+
+    public function actionTest()
+    {
+        return $this->render('test');
+    }
+
+    public function actionLinkList()
+    {
+        $data = Link::find()->all();
+
+        $out = [];
+        foreach ($data as $d) {
+            $out[] = [
+                'name' => $d->title,
+                'lang' => $d->title
+            ];
+        }
+
+        //echo Json::encode($out);
+
+        echo '[
+  {
+    "name": "typeahead.js",
+    "description": "A fast and fully-featured autocomplete library",
+    "language": "JavaScript",
+    "value": "typeahead.js",
+    "tokens": [
+      "typeahead.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "cassandra",
+    "description": "A Ruby client for the Cassandra distributed database",
+    "language": "Ruby",
+    "value": "cassandra",
+    "tokens": [
+      "cassandra",
+      "Ruby"
+    ]
+  },
+  {
+    "name": "hadoop-lzo",
+    "description": "Refactored version of code.google.com/hadoop-gpl-compression for hadoop 0.20",
+    "language": "Shell",
+    "value": "hadoop-lzo",
+    "tokens": [
+      "hadoop",
+      "lzo",
+      "Shell",
+      "hadoop-lzo"
+    ]
+  },
+  {
+    "name": "scribe",
+    "description": "A Ruby client library for Scribe",
+    "language": "Ruby",
+    "value": "scribe",
+    "tokens": [
+      "scribe",
+      "Ruby"
+    ]
+  }
+  ]';
     }
 
     protected function genDataJson($query)
