@@ -57,29 +57,6 @@ class StatController extends \yii\web\Controller
         $this->genDataJson($query);
     }
 
-    public function actionTest()
-    {
-        $data = Link::find()
-            ->with('block')
-            ->all();
-
-        $out = [];
-
-        foreach ($data as $d) {
-            $out[] = [
-                'value' => $d->title,
-                'stat' => $d->stat,
-                'data' => [
-                    'category' => $d->block->title
-                ]
-            ];
-        }
-
-        return $this->render('test', [
-            'link' => $out
-        ]);
-    }
-
     protected function genDataJson($query)
     {
         foreach($query->all() as $st){

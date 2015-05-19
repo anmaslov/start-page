@@ -116,11 +116,17 @@
   color: @dropdown-link-hover-color;
 }
 
+.autocomplete-group{
+  padding: 3px 12px;
+}
 .autocomplete-suggestion {
   cursor: pointer;
   overflow: hidden; // From the jQuery Autocomplete README.
   padding: 3px 20px; // Same as .dropdown-menu links.
   white-space: nowrap; // From the jQuery Autocomplete README.
+  strong{
+    color: @brand-danger;
+  }
 }
 
 .autocomplete-suggestions {

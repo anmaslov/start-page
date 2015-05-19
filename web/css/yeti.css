@@ -6644,11 +6644,17 @@ button.close {
   background: #eeeeee;
   color: #262626;
 }
+.autocomplete-group {
+  padding: 3px 12px;
+}
 .autocomplete-suggestion {
   cursor: pointer;
   overflow: hidden;
   padding: 3px 20px;
   white-space: nowrap;
+}
+.autocomplete-suggestion strong {
+  color: #f04124;
 }
 .autocomplete-suggestions {
   background: #ffffff;

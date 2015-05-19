@@ -31,7 +31,7 @@ AutocompleteAsset::register($this);
             minChars: 2,
             groupBy: 'category',
             onSelect: function (suggestion) {
-                alert('You selected: ' + suggestion.value + ', ' + suggestion.stat);
+                location.href = suggestion.stat;
             }
         }).focus();
     });
