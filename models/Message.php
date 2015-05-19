@@ -54,7 +54,7 @@ class Message extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['user', 'text'], 'required'],
+            [['text'], 'required'],
             [['user', 'status', 'created_at', 'updated_at', 'hit'], 'integer'],
             ['user', 'default', 'value' => \Yii::$app->user->id],
             [['text'], 'string'],

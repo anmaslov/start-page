@@ -16,8 +16,18 @@ $this->title = 'Персональные настройки';
 
 <?
 
+$item = [];
+
+if (Yii::$app->user->can('admin'))
+    $item[] = [
+        'label' => 'Справочники',
+        'content' => $this->render('/reference/index'),
+        'visible' => Yii::$app->user->can('admin')
+    ];
+
+
 echo Tabs::widget([
-    'items' => [
+    'items' =>  array_merge([
         [
             'label' => 'Основные',
             'content' => $this->render('_common', [
@@ -25,18 +35,11 @@ echo Tabs::widget([
             ]),
             'active' => true,
         ],
-        Yii::$app->user->can('admin') ?
-            [
-                'label' => 'Справочники',
-                'content' => $this->render('/reference/index'),
-                'visible' => Yii::$app->user->can('admin')
-            ] :
-            [],
         [
             'label' => 'Сброс настроек',
             'content' => $this->render('_reset'),
         ],
-    ],
+    ], $item),
     'options' => ['tag' => 'div'],
     'itemOptions' => ['tag' => 'div'],
     'headerOptions' => ['class' => 'my-class'],
