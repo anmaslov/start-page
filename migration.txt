@@ -1,0 +1,2 @@
+./yii migrate/up
+./yii migrate/up --migrationPath=@vendor/pheme/yii2-settings/migrations

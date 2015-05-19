@@ -8,6 +8,11 @@ $config = [
     'language' => 'ru-RU',
     'bootstrap' => ['log'],
     'defaultRoute' => 'main/index',
+    'modules' => [
+        /*'sett' => [
+            'class' => 'pheme\settings\Module',
+        ]*/
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -36,6 +41,9 @@ $config = [
             // 'useFileTransport' to false and configure a transport
             // for the mailer to send real emails.
             'useFileTransport' => true,
+        ],
+        'settings' => [
+            'class' => 'pheme\settings\components\Settings'
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -70,10 +78,7 @@ $config = [
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = [
-        'class' => 'yii\debug\Module',
-        'allowedIPs' => ['10.39.3.239', '127.0.0.1', '::1']
-    ];
+    $config['modules']['debug'] = 'yii\debug\Module';
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';

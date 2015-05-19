@@ -3,8 +3,27 @@
 @import "default/variables.less";
 
 @link-default-color: #444499;
-
 @font-size-base: 13px;
+
+/*navbar*/
+.navbar-brand{
+  padding-top: 1px;
+  img{
+    float: left;
+    height: 48px;
+  }
+  .text-brand{
+    float: left;
+    margin: 15px 0 0 10px;
+    color: @gray-dark;
+  }
+}
+
+.navbar-brand:hover{
+  .text-brand{
+    color: @gray;
+  }
+}
 
 /*@navbar-default-bg: @body-bg;*/
 

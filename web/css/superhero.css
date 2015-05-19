@@ -6540,6 +6540,19 @@ button.close {
     display: none !important;
   }
 }
+/*navbar*/
+.navbar-brand {
+  padding-top: 1px;
+}
+.navbar-brand img {
+  float: left;
+  height: 48px;
+}
+.navbar-brand .text-brand {
+  float: left;
+  margin: 15px 0 0 10px;
+  font-size: 25px;
+}
 /*default file*/
 .column {
   min-height: 300px;

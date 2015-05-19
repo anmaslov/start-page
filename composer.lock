@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "824e9bc5822f53b2c4999aa2ab7d6bd3",
+    "hash": "bcd3e12c101034ac37b37806602df782",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -610,6 +610,90 @@
             "time": "2015-04-29 19:14:33"
         },
         {
+            "name": "pheme/yii2-settings",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-settings.git",
+                "reference": "97ac35ef46a69afee1252c52524297e4efea5efa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-settings/zipball/97ac35ef46a69afee1252c52524297e4efea5efa",
+                "reference": "97ac35ef46a69afee1252c52524297e4efea5efa",
+                "shasum": ""
+            },
+            "require": {
+                "pheme/yii2-toggle-column": "*",
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "pheme\\settings\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Yii2 Database settings",
+            "keywords": [
+                "Settings",
+                "config",
+                "yii2"
+            ],
+            "time": "2015-04-22 03:38:11"
+        },
+        {
+            "name": "pheme/yii2-toggle-column",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phemellc/yii2-toggle-column.git",
+                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phemellc/yii2-toggle-column/zipball/8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
+                "reference": "8a55ee30d60c53c2b543d4c42ade77a0bf6b3b35",
+                "shasum": ""
+            },
+            "require": {
+                "yiisoft/yii2": "*"
+            },
+            "type": "yii2-extension",
+            "autoload": {
+                "psr-4": {
+                    "\\pheme\\grid\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aris Karageorgos",
+                    "email": "aris@phe.me"
+                }
+            ],
+            "description": "Provides a toggle data column and action",
+            "keywords": [
+                "column",
+                "extension",
+                "toggle",
+                "yii2"
+            ],
+            "time": "2015-02-13 02:36:29"
+        },
+        {
             "name": "swiftmailer/swiftmailer",
             "version": "5.x-dev",
             "source": {
@@ -725,12 +809,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd"
+                "reference": "a090d10b3b1948dcf8f8394c582d461be15bcceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd",
-                "reference": "dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/a090d10b3b1948dcf8f8394c582d461be15bcceb",
+                "reference": "a090d10b3b1948dcf8f8394c582d461be15bcceb",
                 "shasum": ""
             },
             "require": {
@@ -805,7 +889,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-18 23:16:47"
+            "time": "2015-05-19 07:11:09"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
@@ -813,12 +897,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0"
+                "reference": "dbb0ed704ed892a2c3623fb12f6691690b42a711"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0",
-                "reference": "f387e6ebfdfc3621ff7f6aa52f168f26562b6eb0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/dbb0ed704ed892a2c3623fb12f6691690b42a711",
+                "reference": "dbb0ed704ed892a2c3623fb12f6691690b42a711",
                 "shasum": ""
             },
             "require": {
@@ -855,7 +939,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-15 10:20:11"
+            "time": "2015-05-19 07:31:35"
         },
         {
             "name": "yiisoft/yii2-composer",

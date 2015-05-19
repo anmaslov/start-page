@@ -22,7 +22,8 @@
         "bower-asset/bootstra.386": "*",
         "bower-asset/jgrowl": "*",
         "miloschuman/yii2-highcharts-widget": "dev-master",
-        "bower-asset/devbridge-autocomplete" : "*"
+        "bower-asset/devbridge-autocomplete" : "*",
+        "pheme/yii2-settings": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

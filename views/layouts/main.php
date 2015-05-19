@@ -11,6 +11,7 @@ use app\assets\IEJqueryAsset;
 
 AppAsset::register($this);
 //IEJqueryAsset::register($this);
+$settings = Yii::$app->settings;
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -29,13 +30,21 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
+            $brandImg = $settings->get('brand.brand-img');
+            $brandTxt = $settings->get('brand.brand-text');
+
             NavBar::begin([
-                'brandLabel' => 'Стартовая страница',
+                'brandLabel' => ($brandImg ? '<img alt="Brand" src="'.$brandImg.'">' : '').
+                    Html::tag('div', ($brandTxt ? $brandTxt : 'Стартовая страница'), ['class' => 'text-brand']),
                 'brandUrl' => Yii::$app->homeUrl,
+                'innerContainerOptions' => ['class' => 'container-fluid'],
                 'options' => [
                     'class' => 'navbar',
                 ],
             ]);
+
+            //echo Html::tag('p', 'brandtext', ['class' => 'navbar-text']);
+
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
