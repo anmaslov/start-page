@@ -59,24 +59,67 @@ class StatController extends \yii\web\Controller
 
     public function actionTest()
     {
-        $query = Link::find()->select('title as value')
-            ->asArray()->all();
-
-        return $this->render('test', ['data' => $query]);
+        return $this->render('test');
     }
 
     public function actionLinkList()
     {
-        $links = Link::find()//->select(['title as value'])
-            ->all();
+        $data = Link::find()->all();
 
-        foreach ($links as $d) {
-            $out[] = ['language' => $d->title,
-                      'description' => $d->title,
-                      'name' => $d->title];
+        $out = [];
+        foreach ($data as $d) {
+            $out[] = [
+                'name' => $d->title,
+                'lang' => $d->title
+            ];
         }
 
-        echo Json::encode($out);
+        //echo Json::encode($out);
+
+        echo '[
+  {
+    "name": "typeahead.js",
+    "description": "A fast and fully-featured autocomplete library",
+    "language": "JavaScript",
+    "value": "typeahead.js",
+    "tokens": [
+      "typeahead.js",
+      "JavaScript"
+    ]
+  },
+  {
+    "name": "cassandra",
+    "description": "A Ruby client for the Cassandra distributed database",
+    "language": "Ruby",
+    "value": "cassandra",
+    "tokens": [
+      "cassandra",
+      "Ruby"
+    ]
+  },
+  {
+    "name": "hadoop-lzo",
+    "description": "Refactored version of code.google.com/hadoop-gpl-compression for hadoop 0.20",
+    "language": "Shell",
+    "value": "hadoop-lzo",
+    "tokens": [
+      "hadoop",
+      "lzo",
+      "Shell",
+      "hadoop-lzo"
+    ]
+  },
+  {
+    "name": "scribe",
+    "description": "A Ruby client library for Scribe",
+    "language": "Ruby",
+    "value": "scribe",
+    "tokens": [
+      "scribe",
+      "Ruby"
+    ]
+  }
+  ]';
     }
 
     protected function genDataJson($query)
