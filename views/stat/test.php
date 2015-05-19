@@ -1,28 +1,32 @@
 <?php
 
 use yii\helpers\Url;
-use app\assets\UserAsset;
-
-UserAsset::register($this);
+use app\assets\AutocompleteAsset;
+AutocompleteAsset::register($this);
 ?>
 
 
-<input type="text" id="autocomplete"/>
+<input type="text" name="country" id="autocomplete"/>
 
 <script type="text/javascript">
     $(function(){
-        var source = [ { value: "www.foo.com",
-            label: "Spencer Kline"
-        },
-            { value: "www.example.com",
-                label: "James Bond"
-            }
-        ];
 
-        $("input#autocomplete").autocomplete({
-            source: source,
-            select: function( event, ui ) {
-                window.location.href = ui.item.value;
+        var countries = <?= \yii\helpers\Json::encode($link);?>;
+
+        /*var countries = [
+            { value: 'Chicago Blackhawks', data: { category: 'NHL' } },
+            { value: 'Chicago Bulls', data: { category: 'NBA' } },
+            { value: 'Russia', data: { category: 'NBA' } },
+            { value: 'Vild', data: { category: 'NBA' } },
+            { value: 'Canada', data: { category: 'TEST' } }
+        ];*/
+
+        $('#autocomplete').autocomplete({
+            lookup: countries,
+            minChars: 2,
+            groupBy: 'category',
+            onSelect: function (suggestion) {
+                alert('You selected: ' + suggestion.value + ', ' + suggestion.stat);
             }
         });
 

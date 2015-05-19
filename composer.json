@@ -22,7 +22,7 @@
         "bower-asset/bootstra.386": "*",
         "bower-asset/jgrowl": "*",
         "miloschuman/yii2-highcharts-widget": "dev-master",
-        "kartik-v/yii2-widget-typeahead": "*"
+        "bower-asset/devbridge-autocomplete" : "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

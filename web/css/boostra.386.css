@@ -6621,6 +6621,26 @@ button.close {
   color: #fff;
   background-color: #aa0000;
 }
+/**Autocomplete**/
+.autocomplete-selected {
+  background: #aa5500;
+  color: #bbbbbb;
+}
+.autocomplete-suggestion {
+  cursor: pointer;
+  overflow: hidden;
+  padding: 3px 20px;
+  white-space: nowrap;
+}
+.autocomplete-suggestions {
+  background: #bbbbbb;
+  border: 1px solid #000000;
+  border-radius: 0;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  overflow: auto;
+  padding: 5px 0;
+}
 .list-group-item {
   color: #000000;
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "328e5ba680fe5bec9eaeaf084bcb1be3",
+    "hash": "824e9bc5822f53b2c4999aa2ab7d6bd3",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -154,6 +154,48 @@
                 "responsive",
                 "web"
             ]
+        },
+        {
+            "name": "bower-asset/devbridge-autocomplete",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/devbridge/jQuery-Autocomplete.git",
+                "reference": "7f81f72a43cbf790151956926ff07ff8db684dec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/devbridge/jQuery-Autocomplete/zipball/7f81f72a43cbf790151956926ff07ff8db684dec",
+                "reference": "7f81f72a43cbf790151956926ff07ff8db684dec",
+                "shasum": ""
+            },
+            "require": {
+                "bower-asset/jquery": ">=1.7"
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/jquery.autocomplete.js",
+                "bower-asset-ignore": [
+                    "**/.*",
+                    "node_modules",
+                    "bower_components",
+                    "spec",
+                    "scripts",
+                    "content"
+                ],
+                "branch-alias": {
+                    "dev-master": "1.2.20-dev"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Autocomplete provides suggestions while you type into the text field.",
+            "keywords": [
+                "ajax",
+                "autocomplete"
+            ],
+            "time": "2015-05-16 17:17:57"
         },
         {
             "name": "bower-asset/jgrowl",
@@ -523,100 +565,6 @@
             "time": "2013-11-30 08:25:19"
         },
         {
-            "name": "kartik-v/yii2-krajee-base",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-krajee-base.git",
-                "reference": "b5d820b998c0cb169786050ee783054f6b6f4b92"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-krajee-base/zipball/b5d820b998c0cb169786050ee783054f6b6f4b92",
-                "reference": "b5d820b998c0cb169786050ee783054f6b6f4b92",
-                "shasum": ""
-            },
-            "require": {
-                "yiisoft/yii2-bootstrap": "@dev"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "kartik\\base\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Base library and foundation components for all Yii2 Krajee extensions.",
-            "homepage": "https://github.com/kartik-v/yii2-krajee-base",
-            "keywords": [
-                "base",
-                "extension",
-                "foundation",
-                "krajee",
-                "widget",
-                "yii2"
-            ],
-            "time": "2015-05-11 20:41:49"
-        },
-        {
-            "name": "kartik-v/yii2-widget-typeahead",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kartik-v/yii2-widget-typeahead.git",
-                "reference": "2a02dcaad4da3971d4f0dcd578609f755dd44844"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kartik-v/yii2-widget-typeahead/zipball/2a02dcaad4da3971d4f0dcd578609f755dd44844",
-                "reference": "2a02dcaad4da3971d4f0dcd578609f755dd44844",
-                "shasum": ""
-            },
-            "require": {
-                "kartik-v/yii2-krajee-base": "*"
-            },
-            "type": "yii2-extension",
-            "autoload": {
-                "psr-4": {
-                    "kartik\\typeahead\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD 3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Kartik Visweswaran",
-                    "email": "kartikv2@gmail.com",
-                    "homepage": "http://www.krajee.com/"
-                }
-            ],
-            "description": "Enhanced Yii2 wrapper for the Twitter Typeahead plugin (sub repo split from yii2-widgets).",
-            "homepage": "https://github.com/kartik-v/yii2-widget-typeahead",
-            "keywords": [
-                "dropdown",
-                "extension",
-                "form",
-                "jquery",
-                "plugin",
-                "typeahead",
-                "widget",
-                "yii2"
-            ],
-            "time": "2015-04-21 15:41:17"
-        },
-        {
             "name": "miloschuman/yii2-highcharts-widget",
             "version": "dev-master",
             "source": {
@@ -777,12 +725,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "89aa33f7c97b6b7d4396806ce1a175e9786c7cd3"
+                "reference": "dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/89aa33f7c97b6b7d4396806ce1a175e9786c7cd3",
-                "reference": "89aa33f7c97b6b7d4396806ce1a175e9786c7cd3",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd",
+                "reference": "dcc9ec72f5ddcb743a03d60734cf25b438e9f7fd",
                 "shasum": ""
             },
             "require": {
@@ -857,7 +805,7 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-18 00:14:14"
+            "time": "2015-05-18 23:16:47"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
