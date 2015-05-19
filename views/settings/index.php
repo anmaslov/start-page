@@ -25,11 +25,13 @@ echo Tabs::widget([
             ]),
             'active' => true,
         ],
-        /*[
-            'label' => 'Справочники',
-            'content' => $this->render('/reference/index'),
-            'visible' => Yii::$app->user->can('admin')
-        ],*/
+        Yii::$app->user->can('admin') ?
+            [
+                'label' => 'Справочники',
+                'content' => $this->render('/reference/index'),
+                'visible' => Yii::$app->user->can('admin')
+            ] :
+            [],
         [
             'label' => 'Сброс настроек',
             'content' => $this->render('_reset'),
