@@ -6559,6 +6559,11 @@ button.close {
   margin: 15px 0 0 10px;
   font-size: 25px;
 }
+.sub-brand-text h1 {
+  font-size: 22px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
 /*default file*/
 .column {
   min-height: 300px;

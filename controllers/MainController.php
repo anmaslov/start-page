@@ -5,6 +5,7 @@ namespace app\controllers;
 use app\models\Message;
 use app\models\UserSettingsBlock;
 use app\models\Block;
+use app\models\Link;
 use yii\filters\AccessControl;
 
 class MainController extends \yii\web\Controller
@@ -54,6 +55,7 @@ class MainController extends \yii\web\Controller
             'model' => $model,
             'blocks' => $block,
             'messages' => $msg,
+            'link' => Link::getLinksBlocks()
         ]);
     }
 

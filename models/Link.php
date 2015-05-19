@@ -111,6 +111,26 @@ class Link extends \yii\db\ActiveRecord
         return Url::to(['link-stats/go', 'link' => $this->href, 'id' => $this->id]);
     }
 
+    public static function getLinksBlocks()
+    {
+        $data = self::find()
+            ->with('block')
+            ->all();
+
+        $out = [];
+        foreach ($data as $d) {
+            $out[] = [
+                'value' => $d->title,
+                'stat' => $d->stat,
+                'data' => [
+                    'category' => $d->block->title
+                ]
+            ];
+        }
+
+        return $out;
+    }
+
     public static function sortUpdate($items = array())
     {
         if (!is_array($items))

@@ -2,7 +2,9 @@
 /* @var $this yii\web\View */
 
 use yii\bootstrap\Tabs;
+use app\assets\UserAsset;
 
+UserAsset::register($this);
 $this->title = 'Стартовая страница';
 ?>
 
@@ -22,6 +24,10 @@ $this->title = 'Стартовая страница';
 
     <?=$this->render('_message', [
         'messages' => $messages
+    ]);?>
+
+    <?=$this->render('_subtext', [
+        'link' => $link
     ]);?>
 
 <?
