@@ -17,7 +17,7 @@ class m150407_115311_create_block_tables extends Migration
             'column' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
             'order' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
             'title' => Schema::TYPE_STRING . '(32) NOT NULL',
-            'hidden' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 1',
+            'hidden' => Schema::TYPE_SMALLINT . ' NOT NULL DEFAULT 0',
             'created_at' => Schema::TYPE_INTEGER . ' NOT NULL',
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);

@@ -21,7 +21,8 @@
         "thomaspark/bootswatch" : "*",
         "bower-asset/bootstra.386": "*",
         "bower-asset/jgrowl": "*",
-        "miloschuman/yii2-highcharts-widget": "dev-master"
+        "miloschuman/yii2-highcharts-widget": "dev-master",
+        "kartik-v/yii2-widget-typeahead": "*"
     },
     "require-dev": {
         "yiisoft/yii2-codeception": "*",

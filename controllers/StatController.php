@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
+use app\models\Link;
 use yii\db\Query;
+use yii\helpers\Json;
 
 class StatController extends \yii\web\Controller
 {
@@ -53,6 +55,28 @@ class StatController extends \yii\web\Controller
             ->orderBy('name');
 
         $this->genDataJson($query);
+    }
+
+    public function actionTest()
+    {
+        $query = Link::find()->select('title as value')
+            ->asArray()->all();
+
+        return $this->render('test', ['data' => $query]);
+    }
+
+    public function actionLinkList()
+    {
+        $links = Link::find()//->select(['title as value'])
+            ->all();
+
+        foreach ($links as $d) {
+            $out[] = ['language' => $d->title,
+                      'description' => $d->title,
+                      'name' => $d->title];
+        }
+
+        echo Json::encode($out);
     }
 
     protected function genDataJson($query)
