@@ -115,6 +115,8 @@ class Link extends \yii\db\ActiveRecord
     {
         $data = self::find()
             ->with('block')
+            ->orderBy('block_id')
+            ->where(['{{%link}}.status' => self::STATUS_ACTIVE])
             ->all();
 
         $out = [];
