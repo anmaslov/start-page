@@ -14,6 +14,9 @@ return [
     'components' => [
         'db' => [
             'dsn' => 'mysql:host=localhost;dbname=page_tests',
+            'username' => 'mysql',
+            'password' => 'mysql',
+            'tablePrefix' => 'test_',
         ],
         'mailer' => [
             'useFileTransport' => true,

@@ -4,6 +4,7 @@ use tests\codeception\_pages\ContactPage;
 
 /* @var $scenario Codeception\Scenario */
 
+/*
 $I = new AcceptanceTester($scenario);
 $I->wantTo('ensure that contact works');
 
@@ -55,3 +56,4 @@ if (method_exists($I, 'wait')) {
 }
 $I->dontSeeElement('#contact-form');
 $I->see('Thank you for contacting us. We will respond to you as soon as possible.');
+*/
