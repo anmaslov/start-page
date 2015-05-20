@@ -136,7 +136,8 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function getRemIp()
     {
-        return Yii::$app->getRequest()->getUserIP();
+        $userIp = Yii::$app->getRequest()->getUserIP();
+        return $userIp ? $userIp : 'noip';
     }
     /**
      * @inheritdoc

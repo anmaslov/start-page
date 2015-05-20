@@ -6,7 +6,7 @@ use tests\codeception\_pages\ContactPage;
 
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that contact works');
-
+/*
 $contactPage = ContactPage::openBy($I);
 
 $I->see('Contact', 'h1');
@@ -46,3 +46,4 @@ $contactPage->submit([
 ]);
 $I->dontSeeElement('#contact-form');
 $I->see('Thank you for contacting us. We will respond to you as soon as possible.');
+*/
