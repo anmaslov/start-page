@@ -5,7 +5,8 @@ use yii\helpers\Url;
 use dosamigos\editable\Editable;
 use app\assets\UserAsset;
 
-UserAsset::register($this);
+if (Yii::$app->user->can('admin'))
+    UserAsset::register($this);
 ?>
 
 <? if(count($model->links)>0):?>
@@ -55,12 +56,14 @@ UserAsset::register($this);
 
 <?endif?>
 
-<script type="text/javascript">
-    $(function(){
-        $( ".list-group" ).sortable({
-            stop: function(event, ui) { // begin receive
-                updateLinks('<?=Url::toRoute(['/link/order'])?>');
-            }
-        }).disableSelection();
-    });
-</script>
+<?if(Yii::$app->user->can('admin')):?>
+    <script type="text/javascript">
+        $(function(){
+            $( ".list-group" ).sortable({
+                stop: function(event, ui) { // begin receive
+                    updateLinks('<?=Url::toRoute(['/link/order'])?>');
+                }
+            }).disableSelection();
+        });
+    </script>
+<?endif?>

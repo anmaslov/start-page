@@ -11,7 +11,7 @@ echo Highcharts::widget([
     'callback' => 'dataBlock',
     'options' => [
         'chart' => ['type' => 'column'],
-        'title' => ['text' => 'Количестово ссылок'],
+        'title' => ['text' => 'Количество ссылок'],
         'subtitle' => ['text' => 'Число ссылок, принадлежащих блокам'],
         'xAxis' => ['type' => 'category'],
         'yAxis' => [
