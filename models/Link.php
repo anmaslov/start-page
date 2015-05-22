@@ -111,6 +111,15 @@ class Link extends \yii\db\ActiveRecord
         return Url::to(['link-stats/go', 'link' => $this->href, 'id' => $this->id]);
     }
 
+    public function getSubTitle($length = 40)
+    {
+        $append = '';
+        if (mb_strlen($this->title, 'UTF-8') > $length)
+            $append = '...';
+
+        return mb_substr($this->title, 0, $length, 'UTF-8') . $append;
+    }
+
     public static function getLinksBlocks()
     {
         $data = self::find()

@@ -35,7 +35,7 @@ $colId = array(1, 2, 3);
                         <ul class="list-group" id="block<?=$arItem->id?>">
                             <?foreach($arItem->links as $link):?>
                                 <li class="list-group-item" id="link<?=$link->id?>">
-                                    <?= Html::a($link->title,
+                                    <?= Html::a($link->subtitle,
                                         ['/link/update', 'id'=>$link->id],
                                         ['class' => ($link->status == $link::STATUS_DISABLE?' disabled':'')])?>
 
