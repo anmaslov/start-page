@@ -44,9 +44,9 @@ use yii\helpers\Html;
         <?endif?>
 
         <p>
-            <?= Html::a('Редактировать этот блок', ['update', 'id'=>$model->id], ['class' => 'btn btn-success']) ?>
+            <?= Html::a(Yii::t('app', 'BLOCK_EDIT'), ['update', 'id'=>$model->id], ['class' => 'btn btn-success']) ?>
 
-            <?= Html::a('Добавить ссылку', ['/link/create', 'id'=>$model->id], ['class' => 'btn btn-info']) ?>
+            <?= Html::a(Yii::t('app', 'LINK_ADD'), ['/link/create', 'id'=>$model->id], ['class' => 'btn btn-info']) ?>
         </p>
     </div>
 </div>
