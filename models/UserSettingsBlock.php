@@ -64,12 +64,12 @@ class UserSettingsBlock extends \yii\db\ActiveRecord
             'id' => 'ID',
             'user_id' => 'User ID',
             'block_id' => 'Block ID',
-            'column' => 'Столбец',
-            'order' => 'Сортировка',
+            'column' => 'Column',
+            'order' => 'Order',
             'hidden' => 'Hidden',
-            'created_at' => 'Создано',
-            'updated_at' => 'Обновлено',
-            'state' => 'Цветовое оформление',
+            'created_at' => 'Created',
+            'updated_at' => 'Updated',
+            'state' => Yii::t('app', 'COLOR_SCHEME'),
         ];
     }
 

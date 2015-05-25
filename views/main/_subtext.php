@@ -16,7 +16,7 @@ AutocompleteAsset::register($this);
                 <?=Html::textInput('links', null, [
                     'id' => 'autocomplete',
                     'class' => 'form-control',
-                    'placeholder' => 'Быстрый поиск по ссылкам'
+                    'placeholder' => Yii::t('app', 'FAST_SEARCH')
                 ]) ?>
             </div>
         </form>
