@@ -48,14 +48,15 @@ $settings = Yii::$app->settings;
             echo Nav::widget([
                 'options' => ['class' => 'navbar-nav navbar-right'],
                 'items' => [
-                    ['label' => 'Блоки', 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'Настройки', 'url' => ['/settings/index']],
-                    ['label' => 'Пользователи', 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
-                    ['label' => 'Статистика', 'url' => ['/stat/index']],
-                    ['label' => 'Сообщения', 'url' => ['/message/index'], 'visible' => Yii::$app->user->can('moder')],
+                    ['label' => Yii::t('app', 'BLOCKS'), 'url' => ['/block/index'], 'visible' => Yii::$app->user->can('admin')],
+                    ['label' => Yii::t('app', 'SETTINGS'), 'url' => ['/settings/index']],
+                    ['label' => Yii::t('app', 'USERS'), 'url' => ['/user/index'], 'visible' => Yii::$app->user->can('admin')],
+                    ['label' => Yii::t('app', 'STATISTICS'), 'url' => ['/stat/index']],
+                    ['label' => Yii::t('app', 'MESSAGES'), 'url' => ['/message/index'], 'visible' => Yii::$app->user->can('moder')],
                     Yii::$app->user->isGuest ?
-                        ['label' => 'Авторизация', 'url' => ['/site/login']] :
-                        ['label' => 'Ваш адрес: ' . Yii::$app->user->identity->ip,
+                        ['label' => Yii::t('app', 'SING_IN'), 'url' => ['/site/login']] :
+                        ['label' => Yii::t('app', 'YOUR_ADDRESS {ip}', ['ip' => Yii::$app->user->identity->ip]),
+
                             'url' => ['/site/logout'],
                             'linkOptions' => ['data-method' => 'post']],
                 ],
