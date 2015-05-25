@@ -18,4 +18,6 @@ class UserSettingsTest extends BaseTest
     {
         $this->attributesHaveLabels();
     }
+
+
 }
