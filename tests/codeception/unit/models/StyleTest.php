@@ -9,7 +9,6 @@ use app\models\Style;
 
 class StyleTest extends BaseTest
 {
-    public $modelClass;
 
     protected function setUp()
     {
