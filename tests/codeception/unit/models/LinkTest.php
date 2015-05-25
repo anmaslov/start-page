@@ -8,11 +8,7 @@ use app\models\Link;
 
 class LinkTest extends BaseTest
 {
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->modelClass = new Link();
-    }
+    public $modelClass = 'app\models\Link';
 
     public function testAttributeHasLabels()
     {

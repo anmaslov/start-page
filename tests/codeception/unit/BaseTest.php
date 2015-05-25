@@ -11,10 +11,12 @@ class BaseTest extends DbTestCase
 
     public function attributesHaveLabels()
     {
-        $attributes = array_keys($this->modelClass->attributes);
+        $modelClass = new $this->modelClass;
+
+        $attributes = array_keys($modelClass->attributes);
 
         foreach ($attributes as $attribute) {
-            $this->assertArrayHasKey($attribute, $this->modelClass->attributeLabels());
+            $this->assertArrayHasKey($attribute, $modelClass->attributeLabels());
         }
     }
 

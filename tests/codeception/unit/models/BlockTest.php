@@ -8,11 +8,7 @@ use app\models\Block;
 
 class BlockTest extends BaseTest
 {
-    protected function setUp()
-    {
-        parent::setUp();
-        $this->modelClass = new Block();
-    }
+    public $modelClass = 'app\models\Block';
 
     public function testAttributeHasLabels()
     {

@@ -2,15 +2,16 @@
 
 namespace tests\codeception\unit\models;
 
-use yii\codeception\TestCase;
+use tests\codeception\unit\BaseTest;
+use app\models\User;
 
-class UserTest extends TestCase
+class UserTest extends BaseTest
 {
-    protected function setUp()
+    public $modelClass = 'app\models\User';
+
+    public function testAttributeHasLabels()
     {
-        parent::setUp();
-        // uncomment the following to load fixtures for user table
-        //$this->loadFixtures(['style']);
+        $this->attributesHaveLabels();
     }
 
 }
