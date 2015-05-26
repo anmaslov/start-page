@@ -39,7 +39,7 @@ use yii\helpers\Html;
         </ul>
         <?else:?>
             <div class="jumbotron">
-                <p>Для данного раздела нет ни одной ссылки!</p>
+                <p><?=Yii::t('app', 'LINKS_NOT_FOUND')?></p>
             </div>
         <?endif?>
 

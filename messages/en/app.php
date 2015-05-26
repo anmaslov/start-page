@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'APP_NAME' => 'Start page',
+
     'BLOCKS' => 'Blocks',
     'SETTINGS' => 'Settings',
     'USERS' => 'Users',
@@ -56,6 +58,7 @@ return [
     'LINK_ACTIVE' => 'Active',
     'LINK_HIDDEN' => 'Hidden',
     'LINK_DELETE_CONFIRMATION' => 'Are you sure would delete link?',
+    'LINKS_NOT_FOUND' => 'For this block, there is no links',
 
     /*Color*/
     'COLOR_SCHEME' => 'Color scheme',

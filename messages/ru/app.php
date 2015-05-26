@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'APP_NAME' => 'Стартовая страница',
+
     'BLOCKS' => 'Блоки',
     'SETTINGS' => 'Настройки',
     'USERS' => 'Пользователи',
@@ -56,6 +58,7 @@ return [
     'LINK_ACTIVE' => 'Активна',
     'LINK_HIDDEN' => 'Скрыта',
     'LINK_DELETE_CONFIRMATION' => 'Вы действительно хотите удалить ссылку?',
+    'LINKS_NOT_FOUND' => 'Для данного раздела нет ни одной ссылки',
 
     /*Color*/
     'COLOR_SCHEME' => 'Цветовое оформление',
