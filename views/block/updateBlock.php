@@ -4,9 +4,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Редактирование блока: ' . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Список блоков', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Редактирование';
+$this->title = Yii::t('app', 'BLOCK_EDIT') . ': ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'BLOCK_LIST'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('app', 'BUTTON_EDIT');
 ?>
 
 <?if($msg = \Yii::$app->session->getFlash('danger')):?>

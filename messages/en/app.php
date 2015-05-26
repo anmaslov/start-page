@@ -15,6 +15,7 @@ return [
     'BUTTON_EDIT' => 'Edit',
     'BUTTON_DELETE' => 'Delete',
     'BUTTON_CANCEL' => 'Cancel',
+    'BUTTON_CREATE' => 'Create',
 
     'FAST_SEARCH' => 'Fast search',
 
@@ -29,12 +30,23 @@ return [
     'CREATED' => 'Created',
     'UPDATED' => 'Updated',
     'TOOLTIP' => 'Tooltip',
+    'SHOWED' => 'Showed',
+    'HIDDEN' => 'Hidden',
+    'FIRST' => 'First',
+    'SECOND' => 'Second',
+    'THIRD' => 'Third',
+    'COLUMN' => 'Column',
+    'DESIGN' => 'Style',
+    'POSITION_TYPE' => 'Position type',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Block list',
     'BLOCKS_DEFAULT' => 'List default blocks',
     'BLOCK_ADD' => 'Block add',
     'BLOCK_EDIT' => 'Block edit',
+    'BLOCK_DELETE_CONFIRMATION' => 'Are you sure want delete this block (Will be delete all links in this block)?',
+    'BLOCK_COMMON' => 'Common',
+    'BLOCK_TAB' => 'Tab block',
 
     /*Links*/
     'LINK_LIST' => 'Link list',
@@ -43,7 +55,7 @@ return [
     'LINK_BLOCK' => 'Blocked',
     'LINK_ACTIVE' => 'Active',
     'LINK_HIDDEN' => 'Hidden',
-    'LINK_DELETE_CONFIRMATION' => 'Are you shure would delete link?',
+    'LINK_DELETE_CONFIRMATION' => 'Are you sure would delete link?',
 
     /*Color*/
     'COLOR_SCHEME' => 'Color scheme',

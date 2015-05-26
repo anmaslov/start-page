@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Создание блока';
-$this->params['breadcrumbs'][] = ['label' => 'Список блоков', 'url' => ['index']];
+$this->title = Yii::t('app', 'BLOCK_ADD');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'BLOCK_LIST'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
