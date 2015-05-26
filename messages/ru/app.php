@@ -62,4 +62,13 @@ return [
 
     /*Other*/
     'COMMON' => 'Общие',
+    'PAGE_NOT_FOUND' => 'Запрашиваемая страница не найдена.',
+
+    /*MESSAGES*/
+    '{model} SUCCESS_CREATED' => '{model} успешно создан',
+    '{model} SUCCESS_UPDATED' => '{model} успешно обновлен',
+    'SUCCESS_DELETED' => 'Удален',
+    'MSG_DELETED {model}' => 'Сперва удалите все ссылки для {model}',
+    'FLASH_SUCCESS_SAVE' => 'Сохранение прошло успешно',
+    'FLASH_ERROR_SAVE' => 'Ошибка сохранения',
 ];

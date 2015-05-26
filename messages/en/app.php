@@ -62,4 +62,13 @@ return [
 
     /*Other*/
     'COMMON' => 'Common',
+    'PAGE_NOT_FOUND' => 'The requested page does not exist.',
+
+    /*MESSAGES*/
+    '{model} SUCCESS_CREATED' => '{model} created',
+    '{model} SUCCESS_UPDATED' => '{model} updated',
+    'SUCCESS_DELETED' => 'Deleted',
+    'MSG_DELETED {model}' => 'First deleted all links for {model}',
+    'FLASH_SUCCESS_SAVE' => 'Saving was successful',
+    'FLASH_ERROR_SAVE' => 'Error saving',
 ];
