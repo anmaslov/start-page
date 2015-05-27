@@ -18,6 +18,8 @@ return [
     'BUTTON_DELETE' => 'Delete',
     'BUTTON_CANCEL' => 'Cancel',
     'BUTTON_CREATE' => 'Create',
+    'BUTTON_SEARCH' => 'Search',
+    'BUTTON_RESET' => 'Reset',
 
     'FAST_SEARCH' => 'Fast search',
 
@@ -48,6 +50,7 @@ return [
     'USER_FATHER_NAME' => 'Father name',
     'BIRTH_DATE' => 'Birth date',
     'NOT_SET' => 'Not set',
+    'IP_ADDRESS' => 'IP address',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Block list',
@@ -83,7 +86,6 @@ return [
     /*Reference*/
     'REFERENCE' => 'Reference',
     'BLOCK_STATE' => 'Block state',
-    'BLOCK_STATE' => 'Block state',
     'VISUAL_STYLE' => 'Visual style',
     'ROLES_TYPE' => 'Role types',
     'ICON_LIST' => 'Icons list',
@@ -91,6 +93,20 @@ return [
 
     /*Color*/
     'COLOR_SCHEME' => 'Color scheme',
+
+    /*User list*/
+    'USER_LIST' => 'User list',
+    'ACCESS_TYPE' => 'Access type',
+    'USER_EDIT {model}' => 'Edit user #{model}',
+    'USER_DELETE_CONFIRMATION' => 'Are you sure you want to delete the user?',
+
+    /*Roles*/
+    'ROLE_ASSIGN' => 'Assigning roles to users',
+    'ROLE_WARNING_TEXT' => 'Bad idea - to edit the role from yourself!',
+    'ROLES_ASSIGNED' => 'Assignment roles',
+    'ROLES_EXIST' => 'Available Roles',
+    'ROLE_PROMPT' => 'PROMPT',
+    'ROLE_PROMPT_TEXT' => 'To assign / remove user roles - just drag and drop the desired role in the corresponding columns',
 
     /*Other*/
     'COMMON' => 'Common',

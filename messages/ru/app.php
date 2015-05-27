@@ -18,6 +18,8 @@ return [
     'BUTTON_DELETE' => 'Удалить',
     'BUTTON_CANCEL' => 'Отмена',
     'BUTTON_CREATE' => 'Создать',
+    'BUTTON_SEARCH' => 'Поиск',
+    'BUTTON_SEARCH' => 'Сброс',
 
     'FAST_SEARCH' => 'Быстрый поиск по ссылкам',
 
@@ -48,6 +50,7 @@ return [
     'USER_FATHER_NAME' => 'Отчество',
     'BIRTH_DATE' => 'Дата рождения',
     'NOT_SET' => 'Не задано',
+    'IP_ADDRESS' => 'IP адрес',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Список блоков',
@@ -90,6 +93,20 @@ return [
 
     /*Color*/
     'COLOR_SCHEME' => 'Цветовое оформление',
+
+    /*User list*/
+    'USER_LIST' => 'Список пользователей',
+    'ACCESS_TYPE' => 'Вид доступа',
+    'USER_EDIT {model}' => 'Редактирование пользователя №{model}',
+    'USER_DELETE_CONFIRMATION' => 'Вы действительно хотите удалить пользователя?',
+
+    /*Roles*/
+    'ROLE_ASSIGN' => 'Назначение ролей пользователю',
+    'ROLE_WARNING_TEXT' => 'Плохая идея - редактировать роли у самого себя!',
+    'ROLES_ASSIGNED' => 'Назначеные роли',
+    'ROLES_EXIST' => 'Доступные роли',
+    'ROLE_PROMPT' => 'Подсказка',
+    'ROLE_PROMPT_TEXT' => 'Для назначения/удаления ролей пользователю - достаточно перетащить нужные роли в соответсвующие столбцы',
 
     /*Other*/
     'COMMON' => 'Общие',

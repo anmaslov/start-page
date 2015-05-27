@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\UserSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Список пользователей';
+$this->title = Yii::t('app', 'USER_LIST');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="user-index">
@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <small>
             <button class="btn btn-primary btn-small" type="button" data-toggle="collapse"
                     data-target="#searchUsers" aria-expanded="false" aria-controls="searchUsers">
-                Поиск
+                <?=Yii::t('app', 'BUTTON_SEARCH')?>
             </button>
         </small>
     </h1>

@@ -8,12 +8,12 @@ UserAsset::register($this);
 $rolesEx = [];
 ?>
 
-<h4>Назначение ролей пользователю</h4>
+<h4><?=Yii::t('app', 'ROLE_ASSIGN')?></h4>
 
 <?if($model->id == \Yii::$app->user->id):?>
     <div class="row">
         <div class="col-md-10">
-            <div class="alert alert-warning">Плохая идея - редактировать роли у самого себя!</div>
+            <div class="alert alert-warning"><?=Yii::t('app', 'ROLE_WARNING_TEXT')?></div>
         </div>
     </div>
 <?endif?>
@@ -22,7 +22,7 @@ $rolesEx = [];
     <div class="col-md-5">
         <div class="panel panel-default">
             <div class="panel-heading">
-                Назначеные роли
+                <?=Yii::t('app', 'ROLES_ASSIGNED')?>
             </div>
             <ul class="list-group list-link" id="rolesExist">
                 <?foreach(Yii::$app->authManager->getRolesByUser($model->id) as $role):?>
@@ -36,7 +36,7 @@ $rolesEx = [];
     <div class="col-md-5">
         <div class="panel panel-danger">
             <div class="panel-heading">
-                Доступные роли
+                <?=Yii::t('app', 'ROLES_EXIST')?>
             </div>
             <ul class="list-group list-link" id="rolesAll">
                 <?foreach(Yii::$app->authManager->getRoles() as $role):?>
@@ -50,8 +50,8 @@ $rolesEx = [];
 </div>
 
 <blockquote>
-    <p>Подсказка</p>
-    <footer>Для назначения/удаления ролей пользователю - достаточно перетащить нужные роли в соответсвующие столбцы.</footer>
+    <p><?=Yii::t('app', 'ROLE_PROMPT')?></p>
+    <footer><?=Yii::t('app', 'ROLE_PROMPT_TEXT')?></footer>
 </blockquote>
 
 <script type="text/javascript">

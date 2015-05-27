@@ -23,8 +23,8 @@ use yii\helpers\ArrayHelper;
             <?= $form->field($model, 'role')->dropDownList(ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description')) ?>
 
             <div class="form-group">
-                <?= Html::submitButton('Поиск', ['class' => 'btn btn-primary']) ?>
-                <?= Html::resetButton('Сброс', ['class' => 'btn btn-default']) ?>
+                <?= Html::submitButton(Yii::t('app', 'BUTTON_SEARCH'), ['class' => 'btn btn-primary']) ?>
+                <?= Html::resetButton(Yii::t('app', 'BUTTON_RESET'), ['class' => 'btn btn-default']) ?>
             </div>
 
             <?php ActiveForm::end(); ?>
@@ -34,7 +34,7 @@ use yii\helpers\ArrayHelper;
 
     <div class="col-md-3">
         <div class="well">
-            <h4>Список доступных ролей:</h4>
+            <h4><?=Yii::t('app', 'ROLES_TYPE')?>:</h4>
 
             <?foreach(Yii::$app->authManager->getRoles() as $role):?>
                 <p><?=$role->name?> - <?=$role->description?></p>
