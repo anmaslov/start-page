@@ -16,7 +16,7 @@ $url = 'settings/user';
                 <tbody>
 
                     <tr>
-                        <th>Визуальное оформление:</th>
+                        <th><?=Yii::t('app', 'DESIGN')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -39,7 +39,7 @@ $url = 'settings/user';
                     </tr>
 
                     <tr>
-                        <th>Псевдоним</th>
+                        <th><?=Yii::t('app', 'NICKNAME')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -51,7 +51,7 @@ $url = 'settings/user';
                     </tr>
 
                     <tr>
-                        <th>Фамилия</th>
+                        <th><?=Yii::t('app', 'USER_FAMILY')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -59,15 +59,14 @@ $url = 'settings/user';
                                 'url' => $url,
                                 'mode' => 'pop',
                                 'clientOptions' => [
-                                    'title' => 'Введите фамилию',
-                                    'emptytext' => 'Не задано'
+                                    'emptytext' => Yii::t('app', 'NOT_SET')
                                 ]
                             ]);?>
                         </td>
                     </tr>
 
                     <tr>
-                        <th>Имя</th>
+                        <th><?=Yii::t('app', 'USER_NAME')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -75,14 +74,14 @@ $url = 'settings/user';
                                 'url' => $url,
                                 'mode' => 'pop',
                                 'clientOptions' => [
-                                    'emptytext' => 'Не задано'
+                                    'emptytext' => Yii::t('app', 'NOT_SET')
                                 ]
                             ]);?>
                         </td>
                     </tr>
 
                     <tr>
-                        <th>Отчество</th>
+                        <th><?=Yii::t('app', 'USER_FATHER_NAME')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -90,14 +89,14 @@ $url = 'settings/user';
                                 'url' => $url,
                                 'mode' => 'pop',
                                 'clientOptions' => [
-                                    'emptytext' => 'Не задано'
+                                    'emptytext' => Yii::t('app', 'NOT_SET')
                                 ]
                             ]);?>
                         </td>
                     </tr>
 
                     <tr>
-                        <th>Дата рождения</th>
+                        <th><?=Yii::t('app', 'BIRTH_DATE')?></th>
                         <td>
                             <?= Editable::widget( [
                                 'model' => $model,
@@ -106,7 +105,7 @@ $url = 'settings/user';
                                 'url' => $url,
                                 'mode' => 'pop',
                                 'clientOptions' => [
-                                    'emptytext' => 'Не задано',
+                                    'emptytext' => Yii::t('app', 'NOT_SET'),
                                     'format' => 'yyyy-mm-dd',
                                     'viewformat' => 'dd.mm.yyyy',
                                     'datetimepicker' => [
@@ -120,8 +119,9 @@ $url = 'settings/user';
                 </tbody>
             </table>
 
-        <div class="alert alert-warning">При смене визуального оформления, работоспособность
-            в internet explorer 8 и ниже - <b>не гарантируется</b></div>
+        <div class="alert alert-warning">
+            <?=Yii::t('app', 'WARNING_IE8')?>
+        </div>
 
     </div>
 </div>

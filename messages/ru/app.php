@@ -40,6 +40,14 @@ return [
     'COLUMN' => 'Столбец',
     'DESIGN' => 'Оформление',
     'POSITION_TYPE' => 'Тип размещения',
+    'BLOCK' => 'Заблокирован',
+    'ACTIVE' => 'Активн',
+    'NICKNAME' => 'Псевдоним',
+    'USER_FAMILY' => 'Фамилия',
+    'USER_NAME' => 'Имя',
+    'USER_FATHER_NAME' => 'Отчество',
+    'BIRTH_DATE' => 'Дата рождения',
+    'NOT_SET' => 'Не задано',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Список блоков',
@@ -64,8 +72,13 @@ return [
     'SETTINGS_PERSONAL' => 'Персональные настройки',
     'RESET_SETTINGS_SUCCESS' => 'Настройки успешно сброшены',
     'SETTINGS_RESET' => 'Сброс настроек',
+    'SETTINGS_RESET_CONFIRMATION' => 'Вы действительно хотите сбросить настройки?',
     'WARNING_INFO' => 'Важная информация',
     'WARNING_DESCRIPTION' => 'При смене стиля оформления - необходимо перезагруть страницу',
+    'WARNING_IE8' => 'При смене визуального оформления, работоспособность в internet explorer 8 и ниже - не гарантируется',
+    'SETTINGS_CLICK_INFO' => 'При нажатии кнопки',
+    'SETTINGS_CLICK_INFO1' => 'На главной странице блоки отобразятся так, как задал администратор',
+    'SETTINGS_CLICK_INFO2' => 'Визуальное оформление станет таким, как задал администратор',
 
     /*Reference*/
     'REFERENCE' => 'Справочники',

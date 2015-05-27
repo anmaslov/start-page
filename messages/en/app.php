@@ -40,6 +40,14 @@ return [
     'COLUMN' => 'Column',
     'DESIGN' => 'Style',
     'POSITION_TYPE' => 'Position type',
+    'BLOCK' => 'Block',
+    'ACTIVE' => 'Active',
+    'NICKNAME' => 'Nickname',
+    'USER_FAMILY' => 'Family',
+    'USER_NAME' => 'Name',
+    'USER_FATHER_NAME' => 'Father name',
+    'BIRTH_DATE' => 'Birth date',
+    'NOT_SET' => 'Not set',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Block list',
@@ -64,8 +72,13 @@ return [
     'SETTINGS_PERSONAL' => 'Personal settings',
     'RESET_SETTINGS_SUCCESS' => 'Settings successfully reset',
     'SETTINGS_RESET' => 'Settings reset',
+    'SETTINGS_RESET_CONFIRMATION' => 'Do you really want to reset settings?',
     'WARNING_INFO' => 'Important information',
     'WARNING_DESCRIPTION' => 'If you change your style - you must refresh page',
+    'WARNING_IE8' => 'If you change the visual style, useful work in internet explorer 8 and below - is not guaranteed',
+    'SETTINGS_CLICK_INFO' => 'When you press',
+    'SETTINGS_CLICK_INFO1' => 'The main page display blocks as specified by the administrator',
+    'SETTINGS_CLICK_INFO2' => 'The visual design will be the same as specified by the administrator',
 
     /*Reference*/
     'REFERENCE' => 'Reference',

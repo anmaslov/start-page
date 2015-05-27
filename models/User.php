@@ -71,8 +71,8 @@ class User extends ActiveRecord implements IdentityInterface
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_DELETED => 'Заблокирован',
-            self::STATUS_ACTIVE => 'Активен',
+            self::STATUS_DELETED => Yii::t('app', 'BLOCK'),
+            self::STATUS_ACTIVE => Yii::t('app', 'ACTIVE'),
         ];
     }
 
@@ -80,20 +80,20 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'username' => 'Псевдоним',
+            'username' => Yii::t('app', 'NICKNAME'),
             'auth_key' => 'Auth Key',
             'password_hash' => 'Password Hash',
             'password_reset_token' => 'Password Reset Token',
             'email' => 'Email',
             'ip' => 'Ip',
-            'status' => 'Статус',
-            'created_at' => 'Создан',
-            'updated_at' => 'Изменен',
-            'style' => 'Тема',
-            'fa' => 'Фамилия',
-            'im' => 'Имя',
-            'ot' => 'Отчество',
-            'dr' => 'Дата рождения',
+            'status' => Yii::t('app', 'STATUS'),
+            'created_at' => Yii::t('app', 'CREATED'),
+            'updated_at' => Yii::t('app', 'UPDATED'),
+            'style' => Yii::t('app', 'DESIGN'),
+            'fa' => Yii::t('app', 'USER_FAMILY'),
+            'im' => Yii::t('app', 'USER_NAME'),
+            'ot' => Yii::t('app', 'USER_FATHER_NAME'),
+            'dr' => Yii::t('app', 'BIRTH_DATE'),
         ];
     }
     /**
