@@ -75,25 +75,25 @@ class Block extends \yii\db\ActiveRecord
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_HIDDEN => 'Скрыт',
-            self::STATUS_SHOW => 'Отображается',
+            self::STATUS_HIDDEN => Yii::t('app', 'HIDDEN'),
+            self::STATUS_SHOW => Yii::t('app', 'SHOWED'),
         ];
     }
 
     public static function getTypesArray()
     {
         return [
-            self::TYPE_BLOCK => 'Основная страница',
-            self::TYPE_TAB => 'Блок-закладка',
+            self::TYPE_BLOCK => Yii::t('app', 'BLOCK_COMMON'),
+            self::TYPE_TAB => Yii::t('app', 'BLOCK_TAB'),
         ];
     }
 
     public static function getColumnsArray()
     {
         return [
-            '1' => 'Первый',
-            '2' => 'Второй',
-            '3' => 'Третий',
+            '1' => Yii::t('app', 'FIRST'),
+            '2' => Yii::t('app', 'SECOND'),
+            '3' => Yii::t('app', 'THIRD'),
         ];
     }
 
@@ -104,14 +104,14 @@ class Block extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'column' => 'Столбец',
-            'order' => 'Сортировка',
-            'title' => 'Заголовок',
-            'hidden' => 'Hidden',
-            'state' => 'Оформление',
-            'type' => 'Тип размещения',
-            'created_at' => 'Created At',
-            'updated_at' => 'Updated At',
+            'column' => Yii::t('app', 'COLUMN'),
+            'order' => Yii::t('app', 'ORDER'),
+            'title' => Yii::t('app', 'TITLE'),
+            'hidden' => Yii::t('app', 'HIDDEN'),
+            'state' => Yii::t('app', 'DESIGN'),
+            'type' => Yii::t('app', 'POSITION_TYPE'),
+            'created_at' => Yii::t('app', 'CREATED'),
+            'updated_at' => Yii::t('app', 'UPDATED'),
         ];
     }
 

@@ -11,7 +11,7 @@ if (Yii::$app->user->can('admin'))
 
 <? if(count($model->links)>0):?>
 <div class="panel panel-default">
-    <div class="panel-heading">Список ссылок:</div>
+    <div class="panel-heading"><?=Yii::t('app', 'LINK_LIST')?>:</div>
 
     <div class="panel-body block-default">
         <ul class="list-group" id="block<?=$model->id?>">

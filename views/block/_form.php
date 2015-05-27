@@ -31,13 +31,13 @@ use app\models\State;
     <?= $form->field($model, 'type')->dropDownList($model::getTypesArray()) ?>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        <?= Html::a('Отмена', ['index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_UPDATE'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'BUTTON_CANCEL'), ['index'], ['class' => 'btn btn-default']) ?>
 
         <?if(!$model->isNewRecord):?>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->id],
+        <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id' => $model->id],
             ['class' => 'btn btn-danger pull-right',
-             'data-confirm' => 'Вы действительно хотите удалить основной блок (Удалятся и все ссылки, входящие в этот блок)?']) ?>
+             'data-confirm' => Yii::t('app', 'BLOCK_DELETE_CONFIRMATION')]) ?>
         <?endif?>
     </div>
 

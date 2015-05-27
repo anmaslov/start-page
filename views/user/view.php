@@ -9,7 +9,7 @@ $url = 'settings/user';
 /* @var $this yii\web\View */
 /* @var $model app\models\User */
 
-$this->title = "Редактирование пользователя #$model->id";
+$this->title = Yii::t('app', 'USER_EDIT {model}', ['model' => $model->id]);
 $this->params['breadcrumbs'][] = ['label' => 'Пользователи', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -23,12 +23,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 <tbody>
 
                 <tr>
-                    <th>Ip адрес:</th>
+                    <th><?=Yii::t('app', 'IP_ADDRESS')?>:</th>
                     <td><?=$model->ip?></td>
                 </tr>
 
                 <tr>
-                    <th>Визуальное оформление:</th>
+                    <th><?=Yii::t('app', 'DESIGN')?>:</th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -51,7 +51,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
 
                 <tr>
-                    <th>Псевдоним</th>
+                    <th><?=Yii::t('app', 'NICKNAME')?></th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -63,7 +63,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
 
                 <tr>
-                    <th>Фамилия</th>
+                    <th><?=Yii::t('app', 'USER_FAMILY')?>:</th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -79,7 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
 
                 <tr>
-                    <th>Имя</th>
+                    <th><?=Yii::t('app', 'USER_NAME')?>:</th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -94,7 +94,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
 
                 <tr>
-                    <th>Отчество</th>
+                    <th><?=Yii::t('app', 'USER_FATHER_NAME')?>:</th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -109,7 +109,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </tr>
 
                 <tr>
-                    <th>Дата рождения</th>
+                    <th><?=Yii::t('app', 'BIRTH_DATE')?>:</th>
                     <td>
                         <?= Editable::widget( [
                             'model' => $model,
@@ -142,10 +142,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     </div>
 
-    <p>        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
+    <p>        <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Вы действительно хотите удалить пользователя?',
+                'confirm' => Yii::t('app', 'USER_DELETE_CONFIRMATION'),
                 'method' => 'post',
             ],
         ]) ?>

@@ -5,7 +5,7 @@ use yii\bootstrap\Tabs;
 use app\assets\UserAsset;
 
 UserAsset::register($this);
-$this->title = 'Стартовая страница';
+$this->title = Yii::t('app', 'APP_NAME');
 ?>
 
 <?
@@ -34,7 +34,7 @@ $this->title = 'Стартовая страница';
 echo Tabs::widget([
     'items' => array_merge([
         [
-            'label' => 'Основные',
+            'label' => Yii::t('app', 'COMMON'),
             'content' => $this->render('_block', [
                 'model' => $model,
             ]),

@@ -1,15 +1,15 @@
 <?
 use yii\helpers\Html;
 ?>
-<h4>Сброс настроек:</h4>
+<h4><?=Yii::t('app', 'SETTINGS_RESET')?>:</h4>
 
     <blockquote>
-        <p>При нажатии кнопки <b>Сброс настроек</b></p>
-        <footer>На главной странице блоки отобразятся так, как задал администратор</footer>
-        <footer>Визуальное оформление станет таким, как задал администратор</footer>
+        <p><?=Yii::t('app', 'SETTINGS_CLICK_INFO')?> <b><?=Yii::t('app', 'SETTINGS_RESET')?></b></p>
+        <footer><?=Yii::t('app', 'SETTINGS_CLICK_INFO1')?></footer>
+        <footer><?=Yii::t('app', 'SETTINGS_CLICK_INFO2')?></footer>
     </blockquote>
 
-<?= Html::a('Сброс настроек', ['reset'],
+<?= Html::a(Yii::t('app', 'SETTINGS_RESET'), ['reset'],
     ['class' => 'btn btn-danger',
-        'data-confirm' => 'Вы действительно хотите сбросить настройки?',
+        'data-confirm' => Yii::t('app', 'SETTINGS_RESET_CONFIRMATION'),
         'data-method' => 'post']) ?>

@@ -4,8 +4,9 @@ $params = require(__DIR__ . '/params.php');
 
 $config = [
     'id' => 'page',
+    'name' => 'start-page',
     'basePath' => dirname(__DIR__),
-    'language' => 'ru-RU',
+    'language' => 'en-EN',
     'bootstrap' => ['log'],
     'defaultRoute' => 'main/index',
     'modules' => [
@@ -70,6 +71,16 @@ $config = [
                 ],
             ],
             'appendTimestamp' => true,
+        ],
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                    ],
+                ],
+            ],
         ],
     ],
     'params' => $params,

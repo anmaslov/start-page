@@ -11,12 +11,12 @@ echo Highcharts::widget([
     'callback' => 'linkstsbyday',
     'options' => [
         'chart' => ['type' => 'spline'],
-        'title' => ['text' => 'Переходы по ссылкам'],
-        'subtitle' => ['text' => 'Число переходов по ссылкам'],
+        'title' => ['text' => Yii::t('app', 'STAT_LINK_CLICKING')],
+        'subtitle' => ['text' => Yii::t('app', 'STAT_LINK_CLICKING_COUNT')],
         'xAxis' => ['type' => 'category'],
         'yAxis' => [
             'title' => [
-                'text' => 'Количество переходов'
+                'text' => Yii::t('app', 'STAT_COUNT')
             ]
         ],
         'legend' => [
@@ -36,7 +36,7 @@ echo Highcharts::widget([
             ]
         ],
         'series' => [[
-            'name' => 'Количество',
+            'name' => Yii::t('app', 'STAT_COUNT'),
             'data' => new JsExpression('data')
         ]]
     ]

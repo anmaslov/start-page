@@ -1,4 +1,4 @@
-<h3>Виды ролей</h3>
+<h3><?=Yii::t('app', 'ROLES_TYPE')?></h3>
 
 <div class="row">
     <div class="col-md-3">

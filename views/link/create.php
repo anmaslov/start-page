@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Link */
 
-$this->title = 'Добавить ссылку';
-$this->params['breadcrumbs'][] = ['label' => 'Блоки', 'url' => ['/block/index']];
+$this->title = Yii::t('app', 'LINK_ADD');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'BLOCK_LIST'), 'url' => ['/block/index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">

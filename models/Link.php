@@ -69,9 +69,9 @@ class Link extends \yii\db\ActiveRecord
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_DISABLE => 'Заблокирована',
-            self::STATUS_ACTIVE => 'Активна',
-            self::STATUS_HIDDEN => 'Скрыта',
+            self::STATUS_DISABLE => Yii::t('app', 'LINK_BLOCK'),
+            self::STATUS_ACTIVE => Yii::t('app', 'LINK_ACTIVE'),
+            self::STATUS_HIDDEN => Yii::t('app', 'LINK_HIDDEN'),
         ];
     }
 
@@ -94,15 +94,15 @@ class Link extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'block_id' => 'Блок',
-            'order' => 'Сортировка',
-            'status' => 'Статус',
-            'title' => 'Имя',
-            'href' => 'Ссылка',
-            'icon' => 'Иконка',
-            'created_at' => 'Создана',
-            'updated_at' => 'Обновлена',
-            'tooltip' => 'Подсказка'
+            'block_id' => Yii::t('app', 'BLOCK'),
+            'order' => Yii::t('app', 'ORDER'),
+            'status' => Yii::t('app', 'STATUS'),
+            'title' => Yii::t('app', 'NAME'),
+            'href' => Yii::t('app', 'LINK'),
+            'icon' => Yii::t('app', 'ICON'),
+            'created_at' => Yii::t('app', 'CREATED'),
+            'updated_at' => Yii::t('app', 'UPDATED'),
+            'tooltip' => Yii::t('app', 'TOOLTIP')
         ];
     }
 

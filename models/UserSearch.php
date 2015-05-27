@@ -28,7 +28,7 @@ class UserSearch extends User
     public function attributeLabels()
     {
         return [
-            'role' => 'Вид доступа',
+            'role' => Yii::t('app', 'ACCESS_TYPE'),
         ];
     }
 

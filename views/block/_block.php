@@ -5,7 +5,7 @@ use app\assets\UserAsset;
 
 UserAsset::register($this);
 
-$this->title = 'Список блоков по умолчанию';
+$this->title = Yii::t('app', 'BLOCKS_DEFAULT');
 $colId = array(1, 2, 3);
 ?>
 
@@ -29,7 +29,7 @@ $colId = array(1, 2, 3);
                         <div class="panel-heading">
                             <?= Html::a($arItem->title, ['update', 'id'=>$arItem->id]) ?>
 
-                            <?= Html::a('Добавить ссылку', ['/link/create', 'id'=>$arItem->id],
+                            <?= Html::a(Yii::t('app', 'LINK_ADD'), ['/link/create', 'id'=>$arItem->id],
                                 ['class' => 'btn btn-info btn-xs pull-right']) ?>
                         </div>
                         <ul class="list-group" id="block<?=$arItem->id?>">

@@ -64,7 +64,7 @@ class BlockController extends \yii\web\Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
+            Yii::$app->getSession()->setFlash('success', "$model->title " . Yii::t('app', 'UPDATED'));
             return $this->redirect(['index']);
         } else {
             //$link_not = Link::find()->where(['!=', 'block_id', $model->id])->all();
@@ -79,7 +79,7 @@ class BlockController extends \yii\web\Controller
         $model = new Block();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            Yii::$app->getSession()->setFlash('success', "$model->title успешно создан");
+            Yii::$app->getSession()->setFlash('success', Yii::t('app', '{model} SUCCESS_CREATED', ['model' => $model->title]));
             return $this->redirect(['index']);
         } else {
 
@@ -95,12 +95,12 @@ class BlockController extends \yii\web\Controller
         $linkCnt = Link::find()->where(['block_id' => $model->id])->count();
 
         if ($linkCnt) {
-            Yii::$app->getSession()->setFlash('danger', "Сперва удалите все ссылки для $model->title");
+            Yii::$app->getSession()->setFlash('danger', Yii::t('app', 'MSG_DELETED {model}', ['model' => $model->title]));
             return $this->redirect(['update', 'id' => $model->id]);
         } else {
             $this->findModel($id)->delete();
 
-            Yii::$app->getSession()->setFlash('success', "Успешно удалено");
+            Yii::$app->getSession()->setFlash('success', Yii::t('app', 'SUCCESS_DELETED'));
             return $this->redirect(['index']);
         }
     }
@@ -110,9 +110,9 @@ class BlockController extends \yii\web\Controller
         $items = \Yii::$app->request->post('items');
         $state = Block::updateOrder($items);
         if ($state){
-            $out = ['msg' => 'Сохранение прошло успешно', 'type' => 'success'];
+            $out = ['msg' => Yii::t('app', 'FLASH_SUCCESS_SAVE'), 'type' => 'success'];
         }else{
-            $out = ['msg' => 'Ошибка сохранения', 'type' => 'danger'];
+            $out = ['msg' => Yii::t('app', 'FLASH_ERROR_SAVE'), 'type' => 'danger'];
         }
 
         echo json_encode($out);
@@ -128,7 +128,7 @@ class BlockController extends \yii\web\Controller
         $test = Link::find()->where(['id' => 2])->one();
 
         if ($userModel->load(Yii::$app->request->post()) && $userModel->save())
-            Yii::$app->getSession()->setFlash('success', "$model->title обновлен");
+            Yii::$app->getSession()->setFlash('success', Yii::t('app', '{model} SUCCESS_UPDATED', ['model' => $model->title]));
 
         return $this->render('userSettings', [
             'userModel' => $userModel,
@@ -150,7 +150,7 @@ class BlockController extends \yii\web\Controller
         if (($model = Block::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException(Yii::t('app', 'PAGE_NOT_FOUND'));
         }
     }
 
@@ -162,7 +162,7 @@ class BlockController extends \yii\web\Controller
         if (($model = UserSettingsBlock::find()->where(['user_id' => $userId, 'id' => $Id])->one()) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('Запрашиваемая страница не найдена!');
+            throw new NotFoundHttpException(Yii::t('app', 'PAGE_NOT_FOUND'));
         }
     }
 

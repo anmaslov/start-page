@@ -26,7 +26,7 @@ foreach($blocks as $block)
 echo Tabs::widget([
     'items' => array_merge([
         [
-            'label' => 'Основные',
+            'label' => Yii::t('app', 'COMMON'),
             'content' => $this->render('_block', [
                 'model' => $model,
             ]),
@@ -43,7 +43,7 @@ echo Tabs::widget([
 ]);
 ?>
 
-<?= Html::a('Добавить блок', ['create'], ['class' => 'btn btn-success']) ?>
+<?= Html::a(Yii::t('app', 'BLOCK_ADD'), ['create'], ['class' => 'btn btn-success']) ?>
 
 <script type="text/javascript">
     $(function(){

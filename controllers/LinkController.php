@@ -75,9 +75,9 @@ class LinkController extends Controller
         $links = \Yii::$app->request->post('links');
         $state = Link::sortUpdate($links);
         if ($state){
-            $out = ['msg' => 'Сохранение прошло успешно', 'type' => 'success'];
+            $out = ['msg' => Yii::t('app', 'FLASH_SUCCESS_SAVE'), 'type' => 'success'];
         }else{
-            $out = ['msg' => 'Ошибка сохранения', 'type' => 'danger'];
+            $out = ['msg' => Yii::t('app', 'FLASH_ERROR_SAVE'), 'type' => 'danger'];
         }
 
         echo json_encode($out);
@@ -109,7 +109,7 @@ class LinkController extends Controller
         if (($model = Link::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('Запрошеная страница не найдена!');
+            throw new NotFoundHttpException(Yii::t('app', 'PAGE_NOT_FOUND'));
         }
     }
 }

@@ -45,11 +45,11 @@ use app\models\Block;
     </div>
 
     <div class="form-group">
-        <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
-        <?= Html::a('Отмена', ['/block/index'], ['class' => 'btn btn-default']) ?>
+        <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'BUTTON_SAVE') : Yii::t('app', 'BUTTON_UPDATE'), ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+        <?= Html::a(Yii::t('app', 'BUTTON_CANCEL'), ['/block/index'], ['class' => 'btn btn-default']) ?>
 
         <?if(!$model->isNewRecord):?>
-            <?= Html::a('Удалить', ['/link/delete', 'id' => $model->id],
+            <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['/link/delete', 'id' => $model->id],
                 ['class' => 'btn btn-danger pull-right',
                     'data-confirm' => 'Вы действительно хотите удалить ссылку?']) ?>
         <?endif?>

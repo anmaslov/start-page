@@ -71,12 +71,12 @@ class MainController extends \yii\web\Controller
 
         if ($state){
             $out = [
-                'msg' => 'Сохранение прошло успешно',
+                'msg' => Yii::t('app', 'FLASH_SUCCESS_SAVE'),
                 'type' => 'success'
             ];
         }else{
             $out = [
-                'msg' => 'Ошибка сохранения',
+                'msg' => Yii::t('app', 'FLASH_ERROR_SAVE'),
                 'type' => 'danger'
             ];
         }
