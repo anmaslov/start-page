@@ -60,6 +60,16 @@ return [
     'LINK_DELETE_CONFIRMATION' => 'Вы действительно хотите удалить ссылку?',
     'LINKS_NOT_FOUND' => 'Для данного раздела нет ни одной ссылки',
 
+    /*SETTINGS*/
+    'SETTINGS_PERSONAL' => 'Персональные настройки',
+    'RESET_SETTINGS_SUCCESS' => 'Настройки успешно сброшены',
+    'SETTINGS_RESET' => 'Сброс настроек',
+    'WARNING_INFO' => 'Важная информация',
+    'WARNING_DESCRIPTION' => 'При смене стиля оформления - необходимо перезагруть страницу',
+
+    /*Reference*/
+    'REFERENCE' => 'Справочники',
+
     /*Color*/
     'COLOR_SCHEME' => 'Цветовое оформление',
 

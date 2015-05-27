@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 use yii\bootstrap\Tabs;
 
-$this->title = 'Персональные настройки';
+$this->title = Yii::t('app', 'SETTINGS_PERSONAL');
 ?>
 
 <?if($msg = \Yii::$app->session->getFlash('success')):?>
@@ -20,7 +20,7 @@ $item = [];
 
 if (Yii::$app->user->can('admin'))
     $item[] = [
-        'label' => 'Справочники',
+        'label' => Yii::t('app', 'REFERENCE'),
         'content' => $this->render('/reference/index'),
         'visible' => Yii::$app->user->can('admin')
     ];
@@ -29,14 +29,14 @@ if (Yii::$app->user->can('admin'))
 echo Tabs::widget([
     'items' =>  array_merge([
         [
-            'label' => 'Основные',
+            'label' => Yii::t('app', 'COMMON'),
             'content' => $this->render('_common', [
                 'model' => $user,
             ]),
             'active' => true,
         ],
         [
-            'label' => 'Сброс настроек',
+            'label' => Yii::t('app', 'SETTINGS_RESET'),
             'content' => $this->render('_reset'),
         ],
     ], $item),

@@ -60,6 +60,16 @@ return [
     'LINK_DELETE_CONFIRMATION' => 'Are you sure would delete link?',
     'LINKS_NOT_FOUND' => 'For this block, there is no links',
 
+    /*SETTINGS*/
+    'SETTINGS_PERSONAL' => 'Personal settings',
+    'RESET_SETTINGS_SUCCESS' => 'Settings successfully reset',
+    'SETTINGS_RESET' => 'Settings reset',
+    'WARNING_INFO' => 'Important information',
+    'WARNING_DESCRIPTION' => 'If you change your style - you must refresh page',
+
+    /*Reference*/
+    'REFERENCE' => 'Reference',
+
     /*Color*/
     'COLOR_SCHEME' => 'Color scheme',
 

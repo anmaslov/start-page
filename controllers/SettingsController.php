@@ -48,7 +48,7 @@ class SettingsController extends \yii\web\Controller
         $curUser = \Yii::$app->user->id;
         if (UserSettingsBlock::del($curUser)){
             UserSettingsBlock::sync($curUser);
-            \Yii::$app->getSession()->setFlash('success', 'Настройки успешно сброшены!');
+            \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'RESET_SETTINGS_SUCCESS'));
             return $this->redirect(['index']);
         }
 

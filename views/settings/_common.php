@@ -3,11 +3,11 @@ use dosamigos\editable\Editable;
 
 $url = 'settings/user';
 ?>
-<h3>Редактирование информации:</h3>
+<h3><?=Yii::t('app', 'SETTINGS_PERSONAL')?>:</h3>
 
 <blockquote>
-    <p>Важная информация</p>
-    <footer>При смене стиля оформления - необходимо перезагруть страницу.</footer>
+    <p><?=Yii::t('app', 'WARNING_INFO')?></p>
+    <footer><?=Yii::t('app', 'WARNING_DESCRIPTION')?></footer>
 </blockquote>
 
 <div class="row">
