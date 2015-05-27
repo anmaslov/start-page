@@ -1,93 +1,75 @@
-Стартовая страница на Yii 2
+Simple start page based on Yii 2 [![Yii2](https://img.shields.io/badge/Powered_by-Yii_Framework-green.svg?style=flat)](http://www.yiiframework.com/)
 ================================
 
-ТРЕБОВАНИЯ
+REQUIREMENTS
 ------------
 
-Минимальные требования - поддержка на сервере версии PHP 5.4.0.
+Minimum requirements - support the server version of PHP 5.4.0.
 
-УСТАНОВКА
+INSTALL
 ------------
 
-### Установка с помощью Composer
+### Install via Composer
 
-Если у вас не установлен [Composer](http://getcomposer.org/) - вы можете установить его по следующей инструкции [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
+If you do not have [Composer](http://getcomposer.org/) - you may install it by following the instructions at [getcomposer.org](http://getcomposer.org/doc/00-intro.md#installation-nix).
 
-Для того, чтобы установить приложение достаточно выполнить
+You can then install this start-page using the following command
 
 ~~~
 composer create-project --stability=dev anmaslov/start-page
 ~~~
 
-Создаем и Настраиваем подключение к базе
+Now you should be able to access the application through the following URL, assuming basic is the directory directly under the Web root.
 
 ~~~
-config\db.php
+http://localhost/start-page/web/
 ~~~
 
-Применяем миграции
+CONFIGURATION
+------------
+
+### Database
+Edit the file `config/db.php` with real data, for example:
+
+```php
+return [
+    'class' => 'yii\db\Connection',
+    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'username' => 'root',
+    'password' => '1234',
+    'charset' => 'utf8',
+];
+```
+
+**NOTE:** Yii won't create the database for you, this has to be done manually before you can access it.
+
+Also check and edit the other files in the `config/` directory to customize your application.
+
+### Migration
+
+Apply migration
 
 ~~~
-yii migrate
+.\yii migrate
 ~~~
 
-Приложение будет доступно по ссылке:
-
-~~~
-http://адрес_веб_сервера/start-page/web/
-~~~
-
-### Второй способ установки
-
-Клонируем репозиторий к себе на компьютер
+### Second mode
 
 ~~~
 git clone https://github.com/anmaslov/start-page.git
 ~~~
 
-Переходим в дирректорию проекта
+go to project folder
 
 ~~~
 cd start-page
 ~~~
 
-Подтягиваем все зависимости
+then run
 
 ~~~
 composer install
 yii init
 ~~~
 
-Создаем и Настраиваем подключение к базе
-
-~~~
-config\db.php
-~~~
-
-Применяем миграции
-
-~~~
-yii migrate
-~~~
-
-Приложение будет доступно по ссылке:
-
-~~~
-http://адрес_веб_сервера/start-page/web/
-~~~
-
-### Установка с помощью Архива
-
-В [релизах](/anmaslov/start-page/releases) скачиваем архив с исходным кодом и со всеми зависимостями
-
-Применяем миграции
-
-~~~
-yii migrate
-~~~
-
-Приложение будет доступно по ссылке:
-
-~~~
-http://адрес_веб_сервера/start-page/web/
-~~~
+Then configure database connection `config/db.php` and apply all migration `.\yii migrate`
