@@ -69,8 +69,8 @@ class Message extends \yii\db\ActiveRecord
     public static function getStatusesArray()
     {
         return [
-            self::STATUS_HIDDEN => 'Скрыт',
-            self::STATUS_SHOW => 'Отображается',
+            self::STATUS_HIDDEN => Yii::t('app', 'HIDDEN'),
+            self::STATUS_SHOW => Yii::t('app', 'SHOWED'),
         ];
     }
 
@@ -81,17 +81,17 @@ class Message extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'user' => 'Пользователь',
-            'status' => 'Статус',
-            'title' => 'Заголовок',
-            'text' => 'Текст сообщения',
-            'state' => 'Оформление',
-            'created_at' => 'Создан',
-            'updated_at' => 'Обновлен',
-            'date_start' => 'Дата начала',
-            'date_end' => 'Дата окончания',
-            'ip_adr' => 'Разрешенные ip адреса',
-            'hit' => 'Кол-во хитов',
+            'user' => Yii::t('app', 'USER'),
+            'status' => Yii::t('app', 'STATUS'),
+            'title' => Yii::t('app', 'TITLE'),
+            'text' => Yii::t('app', 'TEXT'),
+            'state' => Yii::t('app', 'DESIGN'),
+            'created_at' => Yii::t('app', 'CREATED'),
+            'updated_at' => Yii::t('app', 'UPDATED'),
+            'date_start' => 'date start',
+            'date_end' => 'date end',
+            'ip_adr' => 'allowed ip address',
+            'hit' => 'hit count',
         ];
     }
 

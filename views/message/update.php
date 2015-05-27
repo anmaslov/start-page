@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Message */
 
-$this->title = 'Обновление сообщения: ' . ' ' . $model->title;
-$this->params['breadcrumbs'][] = ['label' => 'Сообщения', 'url' => ['index']];
-$this->params['breadcrumbs'][] = 'Обновление';
+$this->title = Yii::t('app', 'MESSAGE_UPDATE') . ' ' . $model->title;
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'MESSAGES'), 'url' => ['index']];
+$this->params['breadcrumbs'][] = Yii::t('app', 'BUTTON_UPDATE');
 ?>
 <div class="row">
 

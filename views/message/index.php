@@ -7,13 +7,13 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\MessageSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Сообщения';
+$this->title = Yii::t('app', 'MESSAGES');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <h1><?= Html::encode($this->title) ?></h1>
 <p>
-    <?= Html::a('Создать сообщение', ['create'], ['class' => 'btn btn-success']) ?>
+    <?= Html::a(Yii::t('app', 'BUTTON_CREATE'), ['create'], ['class' => 'btn btn-success']) ?>
 </p>
 
 <div class="row">
@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     <div class="alert alert-<?=$msg->state?>" role="alert">
                         <strong><?=$msg->title?></strong><?=$msg->text?>
                     </div>
-                    <?= Html::a('Редактировать', ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
+                    <?= Html::a(Yii::t('app', 'BUTTON_EDIT'), ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
                     <span class="label label-warning"><?=$msg::getStatusesArray()[$msg->status] ?></span>
                 </div>
             </div>

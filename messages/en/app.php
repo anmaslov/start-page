@@ -51,6 +51,8 @@ return [
     'BIRTH_DATE' => 'Birth date',
     'NOT_SET' => 'Not set',
     'IP_ADDRESS' => 'IP address',
+    'USER' => 'User',
+    'TEXT' => 'Text',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Block list',
@@ -107,6 +109,11 @@ return [
     'ROLES_EXIST' => 'Available Roles',
     'ROLE_PROMPT' => 'PROMPT',
     'ROLE_PROMPT_TEXT' => 'To assign / remove user roles - just drag and drop the desired role in the corresponding columns',
+
+    /*Messages*/
+    'MESSAGES' => 'Messages',
+    'MESSAGE_UPDATE' => 'Message update',
+    'MESSAGE_CREATE' => 'Create message',
 
     /*Other*/
     'COMMON' => 'Common',
