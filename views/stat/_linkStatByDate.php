@@ -15,6 +15,7 @@ echo Highcharts::widget([
         'subtitle' => ['text' => Yii::t('app', 'STAT_LINK_CLICKING_COUNT')],
         'xAxis' => ['type' => 'category'],
         'yAxis' => [
+            'min' => 0,
             'title' => [
                 'text' => Yii::t('app', 'STAT_COUNT')
             ]

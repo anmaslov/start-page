@@ -57,6 +57,24 @@ class StatController extends \yii\web\Controller
         $this->genDataJson($query);
     }
 
+    /***
+     * @param int $count
+     * Top link per day
+     */
+    public function actionTopLinks($count = 15)
+    {
+        $query = new Query();
+        $query->select(['title as name', 'COUNT(*) AS cnt'])
+            ->from('{{%link_stats}}')
+            ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
+            ->where(["DATE_FORMAT({{%link_stats}}.created_at, '%Y%m%d')" => date('Ymd')])
+            ->groupBy('link_id')
+            ->limit($count)
+            ->orderBy('cnt desc');
+
+        $this->genDataJson($query);
+    }
+
     protected function genDataJson($query)
     {
         foreach($query->all() as $st){

@@ -124,6 +124,7 @@ return [
     'STAT_LINK_COUNT_IN_BLOCK' => 'The number of links in block',
     'STAT_LINK_CLICKING' => 'Clicking on links',
     'STAT_LINK_CLICKING_COUNT' => 'Clicking on links count',
+    'STAT_TOP_LINK' => 'Top link per today',
 
     /*Other*/
     'COMMON' => 'Common',

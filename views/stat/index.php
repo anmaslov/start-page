@@ -18,3 +18,9 @@ use \yii\helpers\Url;
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-6">
+        <?= $this->render('_toplink') ?>
+    </div>
+</div>
+

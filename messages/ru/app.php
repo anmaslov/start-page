@@ -124,6 +124,7 @@ return [
     'STAT_LINK_COUNT_IN_BLOCK' => 'Количество ссылок в блоке',
     'STAT_LINK_CLICKING' => 'Переходы по ссылкам',
     'STAT_LINK_CLICKING_COUNT' => 'Число переходов по ссылкам',
+    'STAT_TOP_LINK' => 'Топ переходов по ссылкам за сегодня',
 
     /*Other*/
     'COMMON' => 'Общие',
