@@ -7,8 +7,11 @@ use tests\codeception\_pages\SettingsPage;
 $I = new FunctionalTester($scenario);
 $I->wantTo('ensure that settings works');
 SettingsPage::openBy($I);
-$I->see('Персональные настройки', 'h3');
+$I->see('Personal settings', 'h3');
 
+
+
+/*
 $I->see('Справочники');
 $I->click('Справочники');
 
@@ -30,4 +33,4 @@ $I->click('К списку справочников');
 
 $I->click('Список иконок');
 $I->see('Список иконок', 'h3');
-$I->click('К списку справочников');
+$I->click('К списку справочников');*/

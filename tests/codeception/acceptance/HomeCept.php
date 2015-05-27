@@ -5,8 +5,8 @@
 $I = new AcceptanceTester($scenario);
 $I->wantTo('ensure that main page works');
 $I->amOnPage(Yii::$app->homeUrl);
-$I->see('Стартовая страница', 'title');
+$I->see('Start page', 'title');
 
-$I->seeLink('Статистика');
-$I->click('Статистика');
-$I->see('Статистика');
+$I->seeLink('Statistics');
+$I->click('Statistics');
+$I->see('Statistics');

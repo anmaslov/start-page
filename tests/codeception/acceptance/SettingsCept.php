@@ -9,6 +9,6 @@ $I->wantTo('ensure that about works');
 
 $contactPage = SettingsPage::openBy($I);
 
-$I->see('Персональные настройки', 'h3');
+$I->see('Personal settings', 'h3');
 
-$I->see('Редактирование информации', 'h3');
+$I->see('Important information');

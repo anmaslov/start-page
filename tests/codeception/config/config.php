@@ -11,6 +11,7 @@ return [
             'namespace' => 'tests\codeception\fixtures',
         ],
     ],
+    'language' => 'en-EN',
     'components' => [
         'db' => [
             'dsn' => 'mysql:host=localhost;dbname=page_tests',
