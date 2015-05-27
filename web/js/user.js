@@ -15,7 +15,7 @@ function updateLinks(URL){
             blocks.push(block);
         });
     });
-    $.get(URL,{links: blocks},function(data){
+    $.post(URL, {links: blocks},function(data){
         $.jGrowl(data.msg, { group: 'alert-' + data.type });
     },"json");
 }
@@ -31,8 +31,8 @@ function updateWidgetData(URL){
         var columnId=$(this).attr('id');
         $('.panel', this).each(function(i){
             var collapsed=0;
-            if($(this).find('.list-group').css('display')=="none")
-                collapsed=1;
+            //if($(this).find('.list-group').css('display')=="none")
+            //    collapsed=1;
             var item={
                 id: $(this).attr('id'),
                 collapsed: collapsed,
@@ -42,7 +42,7 @@ function updateWidgetData(URL){
             items.push(item);
         });
     });
-    $.get(URL,{items: items},function(data){
+    $.post(URL,{items: items},function(data){
         $.jGrowl(data.msg, { group: 'alert-' + data.type });
     },"json");
 }

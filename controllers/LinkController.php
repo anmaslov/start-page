@@ -72,7 +72,7 @@ class LinkController extends Controller
 
     public function actionOrder()
     {
-        $links = \Yii::$app->request->get('links');
+        $links = \Yii::$app->request->post('links');
         $state = Link::sortUpdate($links);
         if ($state){
             $out = ['msg' => 'Сохранение прошло успешно', 'type' => 'success'];

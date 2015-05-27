@@ -65,7 +65,7 @@ class MainController extends \yii\web\Controller
      */
     public function actionUpdate()
     {
-        $items = \Yii::$app->request->get('items');
+        $items = \Yii::$app->request->post('items');
 
         $state = UserSettingsBlock::sortUpdate(\Yii::$app->user->id, $items);
 
