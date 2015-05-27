@@ -27,10 +27,7 @@ $colId = array(1, 2, 3);
                 <?if($arItem->column == $col):?>
                     <div class="panel panel-<?=$arItem->state?>" id="item<?=$arItem->id?>">
                         <div class="panel-heading">
-                            <?= Html::a($arItem->title, ['update', 'id'=>$arItem->id]) ?>
-
-                            <?= Html::a(Yii::t('app', 'LINK_ADD'), ['/link/create', 'id'=>$arItem->id],
-                                ['class' => 'btn btn-info btn-xs pull-right']) ?>
+                            <?=$arItem->title?>
                         </div>
                         <ul class="list-group" id="block<?=$arItem->id?>">
                             <?foreach($arItem->links as $link):?>
@@ -63,6 +60,15 @@ $colId = array(1, 2, 3);
                                 </li>
                             <?endforeach?>
                         </ul>
+                        <div class="panel-footer clearfix">
+                            <div class="pull-right">
+                                <?= Html::a(Yii::t('app', 'BUTTON_EDIT'), ['update', 'id'=>$arItem->id],
+                                    ['class' => 'btn btn-primary btn-xs']) ?>&nbsp;
+
+                                <?= Html::a(Yii::t('app', 'LINK_ADD'), ['/link/create', 'id'=>$arItem->id],
+                                    ['class' => 'btn btn-info btn-xs pull-right']) ?>
+                            </div>
+                        </div>
                     </div>
                 <?endif?>
             <?endforeach?>
