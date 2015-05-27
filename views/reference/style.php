@@ -3,7 +3,7 @@ use dosamigos\editable\Editable;
 use yii\helpers\Html;
 ?>
 
-<h3>Визуальное оформление</h3>
+<h3><?=Yii::t('app', 'VISUAL_STYLE')?></h3>
 <div class="row">
     <div class="col-md-4">
 

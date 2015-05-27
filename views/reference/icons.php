@@ -1,7 +1,7 @@
 <div class="row">
 
     <div class="col-md-12">
-        <h3>Список иконок</h3>
+        <h3><?=Yii::t('app', 'ICON_LIST')?></h3>
 
         <ul class="bs-glyphicons-list">
 

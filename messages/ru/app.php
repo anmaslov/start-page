@@ -82,6 +82,11 @@ return [
 
     /*Reference*/
     'REFERENCE' => 'Справочники',
+    'BLOCK_STATE' => 'Состояние блоков',
+    'VISUAL_STYLE' => 'Визуальное оформление',
+    'ROLES_TYPE' => 'Виды ролей',
+    'ICON_LIST' => 'Список иконок',
+    'REFERENCE_BACK' => 'К списку справочников',
 
     /*Color*/
     'COLOR_SCHEME' => 'Цветовое оформление',

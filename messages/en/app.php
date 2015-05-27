@@ -82,6 +82,12 @@ return [
 
     /*Reference*/
     'REFERENCE' => 'Reference',
+    'BLOCK_STATE' => 'Block state',
+    'BLOCK_STATE' => 'Block state',
+    'VISUAL_STYLE' => 'Visual style',
+    'ROLES_TYPE' => 'Role types',
+    'ICON_LIST' => 'Icons list',
+    'REFERENCE_BACK' => 'Back to reference',
 
     /*Color*/
     'COLOR_SCHEME' => 'Color scheme',

@@ -3,4 +3,4 @@
 use yii\helpers\Html;
 ?>
 
-<?= Html::a('К списку справочников', ['index'], ['class' => '']) ?>
+<?= Html::a(Yii::t('app', 'REFERENCE_BACK'), ['index'], ['class' => '']) ?>
