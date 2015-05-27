@@ -115,11 +115,21 @@ return [
     'MESSAGE_UPDATE' => 'Обновление сообщения',
     'MESSAGE_CREATE' => 'Создать сообщение',
 
+    /*Stat*/
+    'STAT' => 'Статистика',
+    'STAT_COUNT' => 'Количество',
+    'STAT_DISTRIBUTION' => 'Распределение тем по пользователям',
+    'STAT_LINK_COUNT' => 'Количество ссылок',
+    'STAT_LINK_COUNT_BLOCK' => 'Число ссылок, принадлежащих блокам',
+    'STAT_LINK_COUNT_IN_BLOCK' => 'Количество ссылок в блоке',
+    'STAT_LINK_CLICKING' => 'Переходы по ссылкам',
+    'STAT_LINK_CLICKING_COUNT' => 'Число переходов по ссылкам',
+
     /*Other*/
     'COMMON' => 'Общие',
     'PAGE_NOT_FOUND' => 'Запрашиваемая страница не найдена.',
 
-    /*MESSAGES*/
+    /*ALERT MESSAGES*/
     '{model} SUCCESS_CREATED' => '{model} успешно создан',
     '{model} SUCCESS_UPDATED' => '{model} успешно обновлен',
     'SUCCESS_DELETED' => 'Удален',

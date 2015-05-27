@@ -115,11 +115,21 @@ return [
     'MESSAGE_UPDATE' => 'Message update',
     'MESSAGE_CREATE' => 'Create message',
 
+    /*Stat*/
+    'STAT' => 'Statistics',
+    'STAT_COUNT' => 'Count',
+    'STAT_DISTRIBUTION' => 'The distribution styles of the users',
+    'STAT_LINK_COUNT' => 'Link count',
+    'STAT_LINK_COUNT_BLOCK' => 'The number of links belonging to the blocks',
+    'STAT_LINK_COUNT_IN_BLOCK' => 'The number of links in block',
+    'STAT_LINK_CLICKING' => 'Clicking on links',
+    'STAT_LINK_CLICKING_COUNT' => 'Clicking on links count',
+
     /*Other*/
     'COMMON' => 'Common',
     'PAGE_NOT_FOUND' => 'The requested page does not exist.',
 
-    /*MESSAGES*/
+    /*ALERT MESSAGES*/
     '{model} SUCCESS_CREATED' => '{model} created',
     '{model} SUCCESS_UPDATED' => '{model} updated',
     'SUCCESS_DELETED' => 'Deleted',

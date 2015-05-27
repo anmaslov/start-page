@@ -11,12 +11,12 @@ echo Highcharts::widget([
     'callback' => 'dataBlock',
     'options' => [
         'chart' => ['type' => 'column'],
-        'title' => ['text' => 'Количество ссылок'],
-        'subtitle' => ['text' => 'Число ссылок, принадлежащих блокам'],
+        'title' => ['text' => Yii::t('app', 'STAT_LINK_COUNT')],
+        'subtitle' => ['text' => Yii::t('app', 'STAT_LINK_COUNT_BLOCK')],
         'xAxis' => ['type' => 'category'],
         'yAxis' => [
             'title' => [
-                'text' => 'Количество ссылок в блоке'
+                'text' => Yii::t('app', 'STAT_LINK_COUNT_IN_BLOCK')
             ]
         ],
         'legend' => [
@@ -31,7 +31,7 @@ echo Highcharts::widget([
             ]
         ],
         'series' => [[
-            'name' => 'Количество',
+            'name' => Yii::t('app', 'STAT_COUNT'),
             'colorByPoint' => true,
             'data' => new JsExpression('data')
         ]]
