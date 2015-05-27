@@ -22,5 +22,8 @@ use \yii\helpers\Url;
     <div class="col-md-6">
         <?= $this->render('_toplink') ?>
     </div>
+    <div class="col-md-6">
+        <?= $this->render('_blockLink') ?>
+    </div>
 </div>
 

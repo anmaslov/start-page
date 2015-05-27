@@ -75,6 +75,23 @@ class StatController extends \yii\web\Controller
         $this->genDataJson($query);
     }
 
+    /***
+     * Top block link by day
+     */
+    public function actionBlockLink()
+    {
+        $query = new Query();
+        $query->select(['{{%block}}.title as name', 'COUNT(*) AS cnt'])
+            ->from('{{%link_stats}}')
+            ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
+            ->innerJoin('{{%block}}', '{{%link}}.block_id = {{%block}}.id')
+            ->where(["DATE_FORMAT({{%link_stats}}.created_at, '%Y%m%d')" => date('Ymd')])
+            ->groupBy('{{%block}}.title')
+            ->orderBy('cnt desc');
+
+        $this->genDataJson($query);
+    }
+
     protected function genDataJson($query)
     {
         foreach($query->all() as $st){
