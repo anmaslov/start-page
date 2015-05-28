@@ -28,6 +28,14 @@ $config = [
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
+            /*'class' => 'yii\caching\MemCache',
+            'servers' => [
+                [
+                    'host' => 'localhost',
+                    'port' => 11211,
+                    'weight' => 50,
+                ]
+            ],*/
         ],
         'user' => [
             'identityClass' => 'app\models\User',
@@ -89,7 +97,11 @@ $config = [
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = 'yii\debug\Module';
+    //$config['modules']['debug'] = 'yii\debug\Module';
+    $config['modules']['debug'] = [
+        'class' => 'yii\debug\Module',
+        'allowedIPs' => ['10.39.3.239', '127.0.0.1', '::1']
+    ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = 'yii\gii\Module';
