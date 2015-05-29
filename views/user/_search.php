@@ -20,7 +20,11 @@ use yii\helpers\ArrayHelper;
 
             <?php echo $form->field($model, 'ip') ?>
 
-            <?= $form->field($model, 'role')->dropDownList(ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description')) ?>
+            <?= $form->field($model, 'role')->dropDownList(
+                array_merge([''=>Yii::t('app', 'ROLE_NONE')],
+                    ArrayHelper::map(Yii::$app->authManager->getRoles(), 'name', 'description')
+                )
+            ) ?>
 
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'BUTTON_SEARCH'), ['class' => 'btn btn-primary']) ?>

@@ -109,6 +109,7 @@ return [
     'ROLES_EXIST' => 'Available Roles',
     'ROLE_PROMPT' => 'PROMPT',
     'ROLE_PROMPT_TEXT' => 'To assign / remove user roles - just drag and drop the desired role in the corresponding columns',
+    'ROLE_NONE' => 'No roles',
 
     /*Messages*/
     'MESSAGES' => 'Messages',

@@ -19,7 +19,7 @@ return [
     'BUTTON_CANCEL' => 'Отмена',
     'BUTTON_CREATE' => 'Создать',
     'BUTTON_SEARCH' => 'Поиск',
-    'BUTTON_SEARCH' => 'Сброс',
+    'BUTTON_RESET' => 'Сброс',
 
     'FAST_SEARCH' => 'Быстрый поиск по ссылкам',
 
@@ -109,6 +109,7 @@ return [
     'ROLES_EXIST' => 'Доступные роли',
     'ROLE_PROMPT' => 'Подсказка',
     'ROLE_PROMPT_TEXT' => 'Для назначения/удаления ролей пользователю - достаточно перетащить нужные роли в соответсвующие столбцы',
+    'ROLE_NONE' => 'Без ролей',
 
     /*Messages*/
     'MESSAGES' => 'Сообщения',
