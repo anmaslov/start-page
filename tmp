@@ -1,0 +1,46 @@
+>git bisect start
+
+>git bisect good 726867ca
+Bisecting: 21 revisions left to test after this (roughly 5 steps)
+[0297ad8d9cfefd716560d809a49fee9d06e01163] Issue #6043 added to CHANGELOG.md
+
+>git bisect good
+Bisecting: 8 revisions left to test after this (roughly 4 steps)
+[ab1169f501e71dd32749a87da36d67c92d979b21] Merge branch 'master' into 7374-inser
+ting-ar-without-values
+
+>git bisect bad
+Bisecting: 6 revisions left to test after this (roughly 3 steps)
+[9648a8ffb09850629f12750480407a5c5ae97e81] `yii\widgets\ActiveField` now uses co
+rresponding methods for default parts rendering
+
+>git bisect good
+Bisecting: 3 revisions left to test after this (roughly 2 steps)
+[5b3ed4bbd6d8e2dfd171af706fff3181d6304a11] fix typos
+
+>git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 1 step)
+[e0adcf4efe6f5132a432828b4498cb89b46a191c] add missing space
+
+>git bisect bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[21379a8f1a11b16f691280f644dea0772a1dc165] allow calling Command::insert() witho
+ut any columns
+
+>git bisect bad
+21379a8f1a11b16f691280f644dea0772a1dc165 is the first bad commit
+commit 21379a8f1a11b16f691280f644dea0772a1dc165
+Author: Jan Was <janek.jan@gmail.com>
+Date:   Sat Apr 11 02:20:13 2015 +0200
+
+    allow calling Command::insert() without any columns
+
+:040000 040000 3f81687c9c6e1a9aec7ac886cde07d187f8dadb8 0c63ba58964b7919ab18f1f2
+4fb9ebf3d19048e0 M      db
+
+>git bisect reset
+Previous HEAD position was 21379a8... allow calling Command::insert() without an
+y columns
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 142 commits.
+  (use "git push" to publish your local commits)

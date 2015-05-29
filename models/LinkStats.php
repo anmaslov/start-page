@@ -36,7 +36,7 @@ class LinkStats extends \yii\db\ActiveRecord
          [
              'class' => TimestampBehavior::className(),
              'updatedAtAttribute' => 'created_at',
-             'value' => new Expression(date('Y-m-d H:i:s')),
+             'value' => new Expression('NOW()'),
          ],
         ];
     }
