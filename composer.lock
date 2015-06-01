@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "154183380bc0c54155e78465ccdc812f",
+    "hash": "437a39f59a4af5bd799f6f9201512ea0",
     "packages": [
         {
             "name": "2amigos/yii2-editable-widget",
@@ -74,12 +74,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/anmaslov/yii2-autocomplete-widget.git",
-                "reference": "22b51b9cf4e5006985ba769900ae3b106b0a37d9"
+                "reference": "808642418dc0a5ed24d861e8c213df26fdb87383"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/anmaslov/yii2-autocomplete-widget/zipball/22b51b9cf4e5006985ba769900ae3b106b0a37d9",
-                "reference": "22b51b9cf4e5006985ba769900ae3b106b0a37d9",
+                "url": "https://api.github.com/repos/anmaslov/yii2-autocomplete-widget/zipball/808642418dc0a5ed24d861e8c213df26fdb87383",
+                "reference": "808642418dc0a5ed24d861e8c213df26fdb87383",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
                 "yii 2",
                 "yii2"
             ],
-            "time": "2015-05-29 11:30:23"
+            "time": "2015-06-01 12:48:55"
         },
         {
             "name": "bower-asset/bootstra.386",
@@ -853,16 +853,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "dev-master",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "8f1202b07fac71be6208ae0805ff95b8550b8f4f"
+                "reference": "726867caee3f23aa7a6975c801e64b6021e14f86"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/8f1202b07fac71be6208ae0805ff95b8550b8f4f",
-                "reference": "8f1202b07fac71be6208ae0805ff95b8550b8f4f",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/726867caee3f23aa7a6975c801e64b6021e14f86",
+                "reference": "726867caee3f23aa7a6975c801e64b6021e14f86",
                 "shasum": ""
             },
             "require": {
@@ -937,25 +937,25 @@
                 "framework",
                 "yii2"
             ],
-            "time": "2015-05-29 10:18:20"
+            "time": "2015-05-10 20:09:47"
         },
         {
             "name": "yiisoft/yii2-bootstrap",
-            "version": "dev-master",
+            "version": "2.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-bootstrap.git",
-                "reference": "f90a610e1a531d1b8057215ffc69e891f136f414"
+                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/f90a610e1a531d1b8057215ffc69e891f136f414",
-                "reference": "f90a610e1a531d1b8057215ffc69e891f136f414",
+                "url": "https://api.github.com/repos/yiisoft/yii2-bootstrap/zipball/1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
+                "reference": "1b6b1e61cf91c3cdd517d6a7e71d30bb212e4af0",
                 "shasum": ""
             },
             "require": {
                 "bower-asset/bootstrap": "3.3.* | 3.2.* | 3.1.*",
-                "yiisoft/yii2": ">=2.0.x-dev"
+                "yiisoft/yii2": ">=2.0.4"
             },
             "type": "yii2-extension",
             "extra": {
@@ -987,7 +987,7 @@
                 "bootstrap",
                 "yii2"
             ],
-            "time": "2015-05-29 11:28:09"
+            "time": "2015-05-10 22:08:17"
         },
         {
             "name": "yiisoft/yii2-composer",
@@ -1121,12 +1121,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "9254a0eb8993148b3d872fd83b852cb8c09f3e0d"
+                "reference": "2cfecfe1dbc32cfec713db5c83c78c2ecc66c6dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/9254a0eb8993148b3d872fd83b852cb8c09f3e0d",
-                "reference": "9254a0eb8993148b3d872fd83b852cb8c09f3e0d",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/2cfecfe1dbc32cfec713db5c83c78c2ecc66c6dc",
+                "reference": "2cfecfe1dbc32cfec713db5c83c78c2ecc66c6dc",
                 "shasum": ""
             },
             "require": {
@@ -1165,7 +1165,7 @@
                 "faker",
                 "fixtures"
             ],
-            "time": "2015-05-29 06:33:50"
+            "time": "2015-05-31 18:44:10"
         },
         {
             "name": "phpspec/php-diff",
@@ -1346,12 +1346,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-gii.git",
-                "reference": "ec0c94d5992a27f9c81558fe2b825f209c1e5f75"
+                "reference": "c10afb648124fb27bebb803645a2af91d8f6651a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/ec0c94d5992a27f9c81558fe2b825f209c1e5f75",
-                "reference": "ec0c94d5992a27f9c81558fe2b825f209c1e5f75",
+                "url": "https://api.github.com/repos/yiisoft/yii2-gii/zipball/c10afb648124fb27bebb803645a2af91d8f6651a",
+                "reference": "c10afb648124fb27bebb803645a2af91d8f6651a",
                 "shasum": ""
             },
             "require": {
@@ -1391,7 +1391,7 @@
                 "gii",
                 "yii2"
             ],
-            "time": "2015-05-26 15:10:54"
+            "time": "2015-05-31 10:41:25"
         }
     ],
     "aliases": [],

@@ -1,10 +1,7 @@
 <?php
 
-use yii\bootstrap\Html;
-use app\assets\AutocompleteAsset;
 use anmaslov\autocomplete\AutoComplete;
-
-AutocompleteAsset::register($this);
+use yii\web\JsExpression;
 ?>
 
 <div class="row">
@@ -12,19 +9,9 @@ AutocompleteAsset::register($this);
         <h1><?=\Yii::$app->settings->get('brand.brand-sub-text')?></h1>
     </div>
     <div class="col-md-6">
-        <form>
-            <div class="form-group">
-                <?=Html::textInput('links', null, [
-                    'id' => 'autocomplete',
-                    'class' => 'form-control',
-                    'placeholder' => Yii::t('app', 'FAST_SEARCH')
-                ]) ?>
-            </div>
-        </form>
-
-        <?= AutoComplete::widget([
+            <?= AutoComplete::widget([
                 'name' => 'link',
-                'id' => 'super',
+                'id' => 'autocomplete',
                 'data' =>  $link,
                 'options' => [
                     'placeholder' => Yii::t('app', 'FAST_SEARCH'),
@@ -32,6 +19,7 @@ AutocompleteAsset::register($this);
                 'clientOptions' => [
                     'minChars' => 2,
                     'groupBy' => 'category',
+					'onSelect' => new JsExpression("function(suggestion) { location.href = suggestion.stat }"),
                 ],
             ])?>
 
@@ -40,14 +28,6 @@ AutocompleteAsset::register($this);
 
 <script type="text/javascript">
     $(function(){
-        var countries = <?= \yii\helpers\Json::encode($link);?>;
-        $('#autocomplete').autocomplete({
-            lookup: countries,
-            minChars: 2,
-            groupBy: 'category',
-            onSelect: function (suggestion) {
-                location.href = suggestion.stat;
-            }
-        }).focus();
+        $('#autocomplete').focus();
     });
 </script>
