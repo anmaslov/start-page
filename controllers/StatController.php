@@ -40,19 +40,17 @@ class StatController extends \yii\web\Controller
     }
 
     /***
-     * @param bool $year
-     * @param bool $month
+     * @param int $days
      * Count link clicked group by date
      */
-    public function actionLinkStatByDate($year = false, $month = false)
+    public function actionLinkStatByDate($days = 30)
     {
         $query = new Query();
         $query->select(["DATE_FORMAT(created_at, '%d.%m') as name", 'COUNT(*) AS cnt'])
             ->from('{{%link_stats}}')
-            ->where('YEAR(created_at) = ' . (!$year ? date('Y') : $year))
-            ->where('MONTH(created_at) = ' . (!$month ? date('m') : $month))
+            ->where("created_at > DATE_SUB(now(), INTERVAL $days DAY)")
             ->groupBy(["DATE_FORMAT(created_at, '%Y%m%d')"])
-            ->orderBy('name');
+            ->orderBy('id');
 
         $this->genDataJson($query);
     }

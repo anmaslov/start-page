@@ -7,13 +7,7 @@ use \yii\helpers\Url;
 <h1><?=Yii::t('app', 'STAT')?>:</h1>
 
 <div class="row">
-    <div class="col-md-4">
-        <?= $this->render('_styleStat') ?>
-    </div>
-    <div class="col-md-4">
-        <?= $this->render('_block') ?>
-    </div>
-    <div class="col-md-4">
+    <div class="col-md-10 col-md-offset-1">
         <?= $this->render('_linkStatByDate.php') ?>
     </div>
 </div>
@@ -26,4 +20,14 @@ use \yii\helpers\Url;
         <?= $this->render('_blockLink') ?>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-md-6">
+        <?= $this->render('_styleStat') ?>
+    </div>
+    <div class="col-md-6">
+        <?= $this->render('_block') ?>
+    </div>
+</div>
+
 
