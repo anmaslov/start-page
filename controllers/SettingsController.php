@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\User;
 use app\models\UserSettingsBlock;
 use yii\filters\AccessControl;
@@ -45,10 +46,10 @@ class SettingsController extends \yii\web\Controller
 
     public function actionReset()
     {
-        $curUser = \Yii::$app->user->id;
+        $curUser = Yii::$app->user->id;
         if (UserSettingsBlock::del($curUser)){
             UserSettingsBlock::sync($curUser);
-            \Yii::$app->getSession()->setFlash('success', Yii::t('app', 'RESET_SETTINGS_SUCCESS'));
+            Yii::$app->getSession()->setFlash('success', Yii::t('app', 'RESET_SETTINGS_SUCCESS'));
             return $this->redirect(['index']);
         }
 
