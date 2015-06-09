@@ -6665,3 +6665,6 @@ button.close {
   overflow: auto;
   padding: 5px 0;
 }
+.list-group-item {
+  padding: 8px 15px;
+}
