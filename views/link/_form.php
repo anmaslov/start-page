@@ -29,17 +29,21 @@ use app\models\Block;
     <?= $form->field($model, 'block_id')->dropDownList(ArrayHelper::map(Block::find()->all(), 'id', 'title')) ?>
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <?= $form->field($model, 'order')->textInput() ?>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <?if($model->isNewRecord) $model->status = $model::STATUS_ACTIVE; ?>
             <?= $form->field($model, 'status')->dropDownList($model::getStatusesArray()) ?>
         </div>
 
-        <div class="col-md-4">
+        <div class="col-md-3">
             <?= $form->field($model, 'icon')->textInput(['maxlength' => 32]) ?>
+        </div>
+
+        <div class="col-md-3">
+            <?= $form->field($model, 'version')->textInput(['maxlength' => 10]) ?>
         </div>
 
     </div>

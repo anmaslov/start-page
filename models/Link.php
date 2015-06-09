@@ -19,6 +19,7 @@ use yii\helpers\Url;
  * @property integer $created_at
  * @property integer $updated_at
  * @property integer $tooltip
+ * @property string $version
  *
  * @property Block $block
  */
@@ -55,6 +56,7 @@ class Link extends \yii\db\ActiveRecord
             [['href', 'tooltip'], 'string', 'max' => 128],
             [['icon'], 'string', 'max' => 32],
             ['order', 'default', 'value' => 1],
+            [['version'], 'string', 'max' => 10],
 
             ['status', 'in', 'range' => array_keys(self::getStatusesArray())]
         ];
@@ -102,13 +104,22 @@ class Link extends \yii\db\ActiveRecord
             'icon' => Yii::t('app', 'ICON'),
             'created_at' => Yii::t('app', 'CREATED'),
             'updated_at' => Yii::t('app', 'UPDATED'),
-            'tooltip' => Yii::t('app', 'TOOLTIP')
+            'tooltip' => Yii::t('app', 'TOOLTIP'),
+            'version' => Yii::t('app', 'VERSION'),
         ];
     }
 
     public function getStat()
     {
         return Url::to(['link-stats/go', 'link' => $this->href, 'id' => $this->id]);
+    }
+
+    public function getVer()
+    {
+        if (strlen(trim($this->version))>0)
+            return $this->version;
+        else
+            return false;
     }
 
     public function getSubTitle($length = 40)

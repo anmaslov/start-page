@@ -53,7 +53,8 @@ return [
     'IP_ADDRESS' => 'IP address',
     'USER' => 'User',
     'TEXT' => 'Text',
-    'LINK' => 'Ссылка',
+    'LINK' => 'Link',
+    'VERSION' => 'Version',
 
     /*Blocks*/
     'BLOCK_LIST' => 'Block list',

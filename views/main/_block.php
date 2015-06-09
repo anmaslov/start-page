@@ -2,7 +2,7 @@
 /* @var $this yii\web\View */
 
 use yii\helpers\Url;
-
+use \yii\helpers\Html;
 ?>
 <div class="row block">
     <?$colId = array(1, 2, 3);?>
@@ -32,7 +32,8 @@ use yii\helpers\Url;
                                             <?if(strlen($link->icon)>0):?>
                                                 <i class="glyphicon glyphicon-<?=$link->icon?>"></i>
                                             <?endif?>
-                                            <?=$link->title?>
+                                            <?=$link->subtitle?>
+                                            <?=($link->ver)?Html::tag('span', $link->ver, ['class' => 'badge']):''?>
                                         </a>
                                     <?endif?>
                                 <?endforeach?>
