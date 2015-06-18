@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use Yii;
 use app\models\Message;
 use app\models\UserSettingsBlock;
 use app\models\Block;
@@ -65,9 +66,9 @@ class MainController extends \yii\web\Controller
      */
     public function actionUpdate()
     {
-        $items = \Yii::$app->request->post('items');
+        $items = Yii::$app->request->post('items');
 
-        $state = UserSettingsBlock::sortUpdate(\Yii::$app->user->id, $items);
+        $state = UserSettingsBlock::sortUpdate(Yii::$app->user->id, $items);
 
         if ($state){
             $out = [
@@ -82,7 +83,7 @@ class MainController extends \yii\web\Controller
         }
 
         echo json_encode($out);
-        \Yii::$app->end();
+        Yii::$app->end();
     }
 
 }
