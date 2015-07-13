@@ -180,6 +180,12 @@ class User extends ActiveRecord implements IdentityInterface
 
     public static function getStyle($userId = null)
     {
+        if (Yii::$app->user->isGuest)
+        {
+            $usr = new self;
+            $usr->login();
+        }
+
         $user = !$userId ? \Yii::$app->user->id : $userId;
         return self::findOne($user)->style;
     }

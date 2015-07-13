@@ -5,6 +5,7 @@ namespace app\controllers;
 use Yii;
 use app\models\Link;
 use app\models\LinkStats;
+use app\models\User;
 use yii\web\NotFoundHttpException;
 
 class LinkStatsController extends \yii\web\Controller
@@ -20,6 +21,11 @@ class LinkStatsController extends \yii\web\Controller
      */
     public function actionGo($id)
     {
+        if (Yii::$app->user->isGuest) {
+            $model = new User;
+            $model->login();
+        }
+
         if (($link = Link::findOne($id)) !== null) {
             if (LinkStats::create($id) === true){
                 $this->redirect($link->href);
