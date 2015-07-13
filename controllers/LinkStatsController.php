@@ -21,10 +21,7 @@ class LinkStatsController extends \yii\web\Controller
      */
     public function actionGo($id)
     {
-        if (Yii::$app->user->isGuest) {
-            $model = new User;
-            $model->login();
-        }
+        User::loginGuest();
 
         if (($link = Link::findOne($id)) !== null) {
             if (LinkStats::create($id) === true){
