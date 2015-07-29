@@ -53,7 +53,33 @@ class StatController extends \yii\web\Controller
             ->groupBy(["DATE_FORMAT(created_at, '%Y%m%d')"])
             ->orderBy('id');
 
-        $this->genDataJson($query);
+        foreach($query->all() as $st){
+            $sta[] = [
+                'name' => $st['name'],
+                'y' => (int)$st['cnt'],
+                'drilldown' => $st['name'],
+            ];
+        }
+
+        $query->select(['title as name', "DATE_FORMAT({{%link_stats}}.created_at, '%d.%m') as dtcreate", 'COUNT(*) AS cnt'])
+            ->from('{{%link_stats}}')
+            ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
+            ->where("{{%link_stats}}.created_at > DATE_SUB(now(), INTERVAL $days DAY)")
+            ->groupBy("title, dtcreate")
+            ->orderBy('cnt desc');
+
+        $drill = [];
+        foreach($query->all() as $st){
+            $drill[$st['dtcreate']]['data'][] = [$st['name'], (int)$st['cnt']];
+        }
+
+        $drillArr = array();
+        foreach($drill as $key=>$item){
+            $drillArr[] = ['name' => $key, 'id' => $key, 'data' => $drill[$key]['data']];
+        }
+
+        echo json_encode(['dt' => $sta, 'drill' => $drillArr]);
+        \Yii::$app->end();
     }
 
     /***

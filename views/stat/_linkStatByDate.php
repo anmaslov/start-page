@@ -9,6 +9,9 @@ $this->registerJs('$.getJSON("'.URL::to(['stat/link-stat-by-date']).'", linkstsb
 
 echo Highcharts::widget([
     'callback' => 'linkstsbyday',
+    'scripts' => [
+        'modules/drilldown',
+    ],
     'options' => [
         'chart' => ['type' => 'spline'],
         'title' => ['text' => Yii::t('app', 'STAT_LINK_CLICKING')],
@@ -38,8 +41,26 @@ echo Highcharts::widget([
         ],
         'series' => [[
             'name' => Yii::t('app', 'STAT_COUNT'),
-            'data' => new JsExpression('data')
-        ]]
+            'data' => new JsExpression('data.dt'),
+            /*'data' => [
+                ['name' => 'Microsoft Internet Explorer', 'y' => 56, 'drilldown' => 'Microsoft Internet Explorer'],
+                ['name' => 'Chrome', 'y' => 23, 'drilldown' => 'Chrome'],
+                ['name' => 'Firefox', 'y' => 10, 'drilldown' => null],
+            ],*/
+        ]],
+        'drilldown' => [
+            'series' => new JsExpression('data.drill'),
+        ]
+        /*'drilldown' => [
+            'series' => [
+                ['name' => 'Microsoft Internet Explorer', 'id' => 'Microsoft Internet Explorer', 'data' => [
+                    ["v11.0", 24], ["v12", 25], ["v7", 4]
+                ]],
+                ['name' => 'Chrome', 'id' => 'Chrome', 'data' => [
+                    ["v11.0", 24], ["v12", 25], ["v7", 4]
+                ]],
+            ]
+        ]*/
     ]
 ]);
 ?>
