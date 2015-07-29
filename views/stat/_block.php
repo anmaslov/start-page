@@ -9,8 +9,11 @@ $this->registerJs('$.getJSON("'.URL::to(['stat/block']).'", dataBlock);');
 
 echo Highcharts::widget([
     'callback' => 'dataBlock',
+    'scripts' => [
+        'modules/funnel',
+    ],
     'options' => [
-        'chart' => ['type' => 'column'],
+        'chart' => ['type' => 'pyramid'],
         'title' => ['text' => Yii::t('app', 'STAT_LINK_COUNT')],
         'subtitle' => ['text' => Yii::t('app', 'STAT_LINK_COUNT_BLOCK')],
         'xAxis' => ['type' => 'category'],
@@ -24,9 +27,9 @@ echo Highcharts::widget([
         ],
         'plotOptions' =>[
             'series' => [
-                'borderWidth' => '0',
                 'dataLabels' => [
-                    'enabled' => 'true'
+                    'enabled' => 'true',
+                    'format' => '<b>{point.name}</b> ({point.y:,.0f})',
                 ]
             ]
         ],

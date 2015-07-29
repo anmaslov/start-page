@@ -34,7 +34,8 @@ class StatController extends \yii\web\Controller
         $query->select(['{{%block}}.title as name', 'COUNT(*) AS cnt'])
             ->from('{{%link}}')
             ->innerJoin('{{%block}}', '{{%link}}.block_id={{%block}}.id')
-            ->groupBy('block_id');
+            ->groupBy('block_id')
+            ->orderBy('cnt desc');
 
         $this->genDataJson($query);
     }
