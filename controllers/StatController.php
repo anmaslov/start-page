@@ -92,7 +92,10 @@ class StatController extends \yii\web\Controller
         $query->select(['title as name', 'COUNT(*) AS cnt'])
             ->from('{{%link_stats}}')
             ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
-            ->where(["DATE_FORMAT({{%link_stats}}.created_at, '%Y%m%d')" => date('Ymd')])
+            ->where(['between','{{%link_stats}}.created_at',
+                date('Y-m-d')." 00:00:00",
+                date('Y-m-d')." 23:59:59",
+            ])
             ->groupBy('link_id')
             ->limit($count)
             ->orderBy('cnt desc');
@@ -110,7 +113,11 @@ class StatController extends \yii\web\Controller
             ->from('{{%link_stats}}')
             ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
             ->innerJoin('{{%block}}', '{{%link}}.block_id = {{%block}}.id')
-            ->where(["DATE_FORMAT({{%link_stats}}.created_at, '%Y%m%d')" => date('Ymd')])
+            //->where(["DATE_FORMAT({{%link_stats}}.created_at, '%Y%m%d')" => date('Ymd')])
+            ->where(['between','{{%link_stats}}.created_at',
+                date('Y-m-d')." 00:00:00",
+                date('Y-m-d')." 23:59:59",
+            ])
             ->groupBy('{{%block}}.title')
             ->orderBy('cnt desc');
 
