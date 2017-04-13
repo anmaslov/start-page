@@ -27,6 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     </div>
                     <?= Html::a(Yii::t('app', 'BUTTON_EDIT'), ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
                     <span class="label label-warning"><?=$msg::getStatusesArray()[$msg->status] ?></span>
+                    <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id'=>$msg->id], ['class' => 'btn btn-danger']) ?>
                 </div>
             </div>
         <?endforeach?>

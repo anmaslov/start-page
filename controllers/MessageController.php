@@ -23,7 +23,7 @@ class MessageController extends Controller
                 'rules' => [
                     [
                         'allow' => true,
-                        'actions' => ['index', 'update', 'create'],
+                        'actions' => ['index', 'update', 'create', 'delete'],
                         'roles' => ['moder'],
                     ],
                 ],
@@ -91,7 +91,7 @@ class MessageController extends Controller
     {
         $this->findModel($id)->delete();
 
-        return $this->redirect(['index']);
+        return $this->redirect(['message/index']);
     }
 
     /**

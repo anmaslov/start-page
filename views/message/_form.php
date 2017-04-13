@@ -36,6 +36,12 @@ use app\models\State;
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? Yii::t('app', 'BUTTON_CREATE') : Yii::t('app', 'BUTTON_UPDATE'),
             ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
+
+        <?if(!$model->isNewRecord):?>
+            <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['/message/delete', 'id' => $model->id],
+                ['class' => 'btn btn-danger pull-right',
+                    'data-confirm' => 'Вы действительно хотите удалить сообщение?']) ?>
+        <?endif?>
     </div>
 
     <?php ActiveForm::end(); ?>
