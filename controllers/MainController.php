@@ -51,6 +51,7 @@ class MainController extends \yii\web\Controller
             ->all();
 
         $msg = Message::find()->where(['status' => Message::STATUS_SHOW])->all();
+        Message::updateAllCounters(['hit' => 1], ['status' => Message::STATUS_SHOW]);
 
         return $this->render('index', [
             'model' => $model,

@@ -117,6 +117,7 @@ return [
     'MESSAGES' => 'Messages',
     'MESSAGE_UPDATE' => 'Message update',
     'MESSAGE_CREATE' => 'Create message',
+    'MESSAGE_HIT' => 'Message views',
 
     /*Stat*/
     'STAT' => 'Statistics',

@@ -117,6 +117,7 @@ return [
     'MESSAGES' => 'Сообщения',
     'MESSAGE_UPDATE' => 'Обновление сообщения',
     'MESSAGE_CREATE' => 'Создать сообщение',
+    'MESSAGE_HIT' => 'Количество просмотров',
 
     /*Stat*/
     'STAT' => 'Статистика',

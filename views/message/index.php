@@ -21,13 +21,20 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="list-group">
         <?foreach($model as $msg):?>
             <div class="panel panel-default">
+                <div class="panel-heading">
+                    <?=$msg->title?>
+                    <b class="status pull-right">
+                        <span class="badge"><?=$msg::getStatusesArray()[$msg->status] ?></span>
+                        <?=Yii::t('app', 'MESSAGE_HIT')?>: <span class="badge"><?=$msg->hit?></span>
+                    </b>
+                </div>
                 <div class="panel-body">
                     <div class="alert alert-<?=$msg->state?>" role="alert">
-                        <strong><?=$msg->title?></strong> <br />
                         <?=nl2br($msg->text)?>
                     </div>
+                </div>
+                <div class="panel-footer">
                     <?= Html::a(Yii::t('app', 'BUTTON_EDIT'), ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
-                    <span class="label label-warning"><?=$msg::getStatusesArray()[$msg->status] ?></span>
                     <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id'=>$msg->id], ['class' => 'btn btn-danger pull-right']) ?>
                 </div>
             </div>
