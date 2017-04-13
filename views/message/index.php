@@ -17,17 +17,18 @@ $this->params['breadcrumbs'][] = $this->title;
 </p>
 
 <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-12">
         <div class="list-group">
         <?foreach($model as $msg):?>
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="alert alert-<?=$msg->state?>" role="alert">
-                        <strong><?=$msg->title?></strong><?=$msg->text?>
+                        <strong><?=$msg->title?></strong> <br />
+                        <?=nl2br($msg->text)?>
                     </div>
                     <?= Html::a(Yii::t('app', 'BUTTON_EDIT'), ['update', 'id'=>$msg->id], ['class' => 'btn btn-primary']) ?>
                     <span class="label label-warning"><?=$msg::getStatusesArray()[$msg->status] ?></span>
-                    <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id'=>$msg->id], ['class' => 'btn btn-danger']) ?>
+                    <?= Html::a(Yii::t('app', 'BUTTON_DELETE'), ['delete', 'id'=>$msg->id], ['class' => 'btn btn-danger pull-right']) ?>
                 </div>
             </div>
         <?endforeach?>
