@@ -7,4 +7,5 @@ return [
     'password' => 'mysql',
     'tablePrefix' => 'pg_',
     'charset' => 'utf8',
+    'enableSchemaCache' => true, //Caching table scheme (clear cache: php yii cache/flush)
 ];

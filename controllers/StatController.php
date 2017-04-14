@@ -8,6 +8,8 @@ use yii\helpers\Json;
 
 class StatController extends \yii\web\Controller
 {
+    private $duration = 3600;
+
     public function actionIndex()
     {
         return $this->render('index');
@@ -46,14 +48,16 @@ class StatController extends \yii\web\Controller
      */
     public function actionLinkStatByDate($days = 30)
     {
-        $query = new Query();
-        $query->select(["DATE_FORMAT(created_at, '%d.%m') as name", 'COUNT(*) AS cnt'])
-            ->from('{{%link_stats}}')
-            ->where("created_at > DATE_SUB(now(), INTERVAL $days DAY)")
-            ->groupBy(["DATE_FORMAT(created_at, '%Y%m%d')"])
-            ->orderBy('id');
+        $result = Link::getDb()->cache(function() use($days){
+            $query = new Query();
+            return $query->select(["DATE_FORMAT(created_at, '%d.%m') as name", 'COUNT(*) AS cnt'])
+                ->from('{{%link_stats}}')
+                ->where("created_at > DATE_SUB(now(), INTERVAL $days DAY)")
+                ->groupBy(["DATE_FORMAT(created_at, '%Y%m%d')"])
+                ->orderBy('id')->all();
+        }, $this->duration);
 
-        foreach($query->all() as $st){
+        foreach($result as $st){
             $sta[] = [
                 'name' => $st['name'],
                 'y' => (int)$st['cnt'],
@@ -61,15 +65,20 @@ class StatController extends \yii\web\Controller
             ];
         }
 
-        $query->select(['title as name', "DATE_FORMAT({{%link_stats}}.created_at, '%d.%m') as dtcreate", 'COUNT(*) AS cnt'])
-            ->from('{{%link_stats}}')
-            ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
-            ->where("{{%link_stats}}.created_at > DATE_SUB(now(), INTERVAL $days DAY)")
-            ->groupBy("title, dtcreate")
-            ->orderBy('cnt desc');
+        $res = Link::getDb()->cache(function() use($days){
+            $query = new Query();
+            return $query->select(['title as name', "DATE_FORMAT({{%link_stats}}.created_at, '%d.%m') as dtcreate", 'COUNT(*) AS cnt'])
+                ->from('{{%link_stats}}')
+                ->innerJoin('{{%link}}', '{{%link_stats}}.link_id = {{%link}}.id')
+                ->where("{{%link_stats}}.created_at > DATE_SUB(now(), INTERVAL $days DAY)")
+                ->groupBy("title, dtcreate")
+                ->orderBy('cnt desc')
+                ->all();
+
+        }, $this->duration);
 
         $drill = [];
-        foreach($query->all() as $st){
+        foreach($res as $st){
             $drill[$st['dtcreate']]['data'][] = [$st['name'], (int)$st['cnt']];
         }
 

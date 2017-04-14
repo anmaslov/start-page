@@ -30,6 +30,7 @@ $this->title = Yii::t('app', 'APP_NAME');
         'link' => $link
     ]);?>
 
+<?// if ($this->beginCache('widget')):?>
 <?
 echo Tabs::widget([
     'items' => array_merge([
@@ -50,4 +51,4 @@ echo Tabs::widget([
     'clientOptions' => ['collapsible' => false],
 ]);
 ?>
-
+<?//$this->endCache(); endif;?>
