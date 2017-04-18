@@ -39,7 +39,7 @@ $settings = Yii::$app->settings;
                 'brandUrl' => Yii::$app->homeUrl,
                 'innerContainerOptions' => ['class' => 'container-fluid'],
                 'options' => [
-                    'class' => 'navbar',
+                    'class' => 'navbar navbar-default',
                 ],
             ]);
 
