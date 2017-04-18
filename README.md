@@ -19,11 +19,24 @@ You can then install this start-page using the following command
 composer create-project --stability=dev anmaslov/start-page
 ~~~
 
+Install [gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+
+Then need install all packages 
+~~~
+npm install
+~~~
+
+After package install you need make css files:
+~~~
+gulp css
+~~~
+
 Now you should be able to access the application through the following URL, assuming basic is the directory directly under the Web root.
 
 ~~~
 http://localhost/start-page/web/
 ~~~
+
 
 CONFIGURATION
 ------------
@@ -51,6 +64,11 @@ Apply migration
 
 ~~~
 .\yii migrate
+~~~
+
+### Npm and Gulp
+~~~
+gulp css
 ~~~
 
 ### Second mode
