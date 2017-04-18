@@ -7,7 +7,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('css', function(){
-    return gulp.src('assets/templates/*.less')
+    return gulp.src(['assets/templates/*.less', '!assets/templates/_common.less'])
         .pipe(less())
         .pipe(autoprefixer())
         .pipe(cssmin())
