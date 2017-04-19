@@ -1,7 +1,6 @@
 'use strict';
 
 var gulp = require('gulp'),
-    autoprefixer = require('gulp-autoprefixer'),
     cssmin = require('gulp-cssmin'),
     less = require('gulp-less');
 
