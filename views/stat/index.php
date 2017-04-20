@@ -7,7 +7,7 @@ use \yii\helpers\Url;
 <h1><?=Yii::t('app', 'STAT')?>:</h1>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-10 col-md-offset-1">
         <?= $this->render('_count_link.php') ?>
     </div>
 </div>

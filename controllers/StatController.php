@@ -140,19 +140,23 @@ class StatController extends \yii\web\Controller
 
         $query = new Query();
         $query->select([
-            'SUBSTRING(sec_to_time(time_to_sec(created_at)- time_to_sec(created_at)%(1*60)), 1, 5) as name',
+            'SUBSTRING(sec_to_time(time_to_sec(created_at)- time_to_sec(created_at)%(5*60)), 1, 5) as name',
             'count(*) as cnt'
             ])
             ->from('{{%link_stats}}')
             ->where('created_at > DATE_SUB(now(), INTERVAL 12 HOUR)')
             ->groupBy('name')
             ->limit((int)$limit)
-            ->orderBy('id asc');
+            ->orderBy('id desc');
 
-        if ($limit == 1)
-            $query->orderBy('id desc');
+        foreach($query->all() as $st){
+            $sta[] = [
+                'name' => $st['name'],
+                'y' => (int)$st['cnt']
+            ];
+        }
 
-        $this->genDataJson($query);
+        echo json_encode(array_reverse($sta));
 
         \Yii::$app->end();
     }

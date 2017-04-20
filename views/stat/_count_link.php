@@ -27,7 +27,7 @@ $jsData = <<<JS
                     series.data[len-1].update([x, y], true, true);
                 }
                 
-                timerId = setTimeout(getLast, 2000);
+                timerId = setTimeout(getLast, 5000);
             });
         }, 2000);
     }
