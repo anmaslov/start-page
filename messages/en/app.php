@@ -130,6 +130,8 @@ return [
     'STAT_LINK_CLICKING_COUNT' => 'Clicking on links count',
     'STAT_TOP_LINK' => 'Top link per today',
     'STAT_TOP_BLOCK_LINK' => 'Top block by link per date',
+    'STAT_COUNT_OF_CLICK' => 'Count of link click in real time',
+    'STAT_COUNT_OF_CLICK_PER5' => 'Count of click per 5 min',
 
     /*Other*/
     'COMMON' => 'Common',

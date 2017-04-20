@@ -133,6 +133,30 @@ class StatController extends \yii\web\Controller
         $this->genDataJson($query);
     }
 
+    public function actionEveryMin($limit = 100)
+    {
+        if (!is_numeric($limit) || $limit<=0 || $limit > 100)
+            $limit = 100;
+
+        $query = new Query();
+        $query->select([
+            'SUBSTRING(sec_to_time(time_to_sec(created_at)- time_to_sec(created_at)%(1*60)), 1, 5) as name',
+            'count(*) as cnt'
+            ])
+            ->from('{{%link_stats}}')
+            ->where('created_at > DATE_SUB(now(), INTERVAL 12 HOUR)')
+            ->groupBy('name')
+            ->limit((int)$limit)
+            ->orderBy('id asc');
+
+        if ($limit == 1)
+            $query->orderBy('id desc');
+
+        $this->genDataJson($query);
+
+        \Yii::$app->end();
+    }
+
     protected function genDataJson($query)
     {
         foreach($query->all() as $st){
